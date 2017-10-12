@@ -1,0 +1,23 @@
+<div class="login" id="main">
+	<div class="bg">
+		<div class="logo"></div>
+	</div>
+	<div class="form">
+		<div class="form-box">
+			<div class="title"></div>
+			<div class="input-box">
+				<div class="input-item" id="user">
+					<label class="user"></label>
+					<input type="text" ng-focus="addClass('user')" ng-blur="removeClass('user')" placeholder="请输入用户名" ng-model="user.name"  autocomplete="off">
+				</div>
+				<div class="input-item" id="password">
+					<label class="key"></label>
+					<input type="text" id="passwordInput" ng-focus="addClass('password')" ng-blur="removeClass('password')" placeholder="请输入用户名" ng-model="user.password" autocomplete="off">
+				</div>
+				<div class="button-item" ng-click="login()">登&nbsp;&nbsp;&nbsp;&nbsp;陆</div>	
+				<a href="" class="forget">忘记密码？</a>			
+			</div>
+
+		</div>
+	</div>
+</div>

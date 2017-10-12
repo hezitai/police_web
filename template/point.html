@@ -1,0 +1,47 @@
+<div class="point">
+	<header-crumbs title="#/index/point:{{title}}"></header-crumbs>
+
+	
+	<div class="main-block point1">
+		<div class="title">重点人口</div>
+		<ul class="speci-people">
+			<li>
+				<span class="class2">派出所</span>
+				<select ng-options="items.ds_name for items in policeList" ng-model="policeHouse"  ng-change="chooseEnd(policeHouse)"></select>
+			</li>
+			<li>
+				<span class="class2">类别</span>
+				<select ng-options="item.ds_name for item in causeList" ng-model="cause" ng-change="chooseFinish(cause)"></select>
+			</li>
+						
+			<div class="btn btn-yellow class3" ng-click="newPoint()" style="float: right;">新增</div>
+			<!--<div class="btn btn-blue class1" style="float: right;">查询</div>-->			
+		</ul>
+	</div>
+
+	<div class="main-block result">
+		<div class="title">查询结果</div>
+		<div class="empty" style="display: none;"><img src="img/empty.png"/><span class="emptyValue">暂无数据</span></div>
+		<table border="1" cellspacing="0" cellpadding="0" bordercolor="#e6e6e6" width="100%">
+			<tr class="head">
+				<th width="10%">姓名</th>
+				<th width="25%">身份证号</th>
+				<th width="15%">监管原因</th>
+				<th width="10%">监管范围</th>
+				<th width="15%">截止时间</th>
+				<th width="10%">是否签到</th>
+			</tr>			
+			<tr ng-repeat="person in peopleList" ng-if="isShow" ng-click="resetPeople(person['ds_prioritypeopleid'])">
+				<td ng-bind="person['ds_person-ds_name']"></td>
+				<td ng-bind="person['ds_person-ds_id']"></td>
+				<td ng-bind="person['ds_regulatoryreason-ds_name']"></td>
+				<td ng-bind="person['ds_regulatoryscope-ds_name']"></td>
+				<td ng-bind="formatDate(person['ds_enddate'])"></td>
+				<td >是</td>
+			</tr>
+		</table>
+		
+		
+	</div>
+
+</div>

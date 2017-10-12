@@ -1,0 +1,523 @@
+<div class="CheckFire">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">消防检查项</span>
+	</div>
+	<div class="new-body">
+		<div class="form">
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal dateType">
+					<span>复查时间 : </span>
+					<input type="date" ng-model="options['ds_reviewdate']" >
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>检查记录编号 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjl_bh" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>单位性质 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_dwxz" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>单位主管人员 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_dwzgryqm" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>主要负责人 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_zyfzr" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>监督检查人员 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_jdjcryqm" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>建筑层数 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_jzcs" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>建筑高度 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_jzgd" class="ui_list_input">
+				</div>
+			</div>
+			<div class="ui_list">
+				<div class="ui_list_button ui_item_normal">
+					<span>建筑面积 :</span>
+					<input type="text" ng-model="options.ds_gapcsrcxfjdjcjlb_jzmj" class="ui_list_input">
+				</div>
+			</div>
+		</div>
+		<div class="fireChoice">
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">一、单位履行消防安全职责</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">1、合法性</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">①建筑物是否通过消防验收？</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_hfx1sfys = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjlb_hfx1sfys?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>是</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_hfx1sfys = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_hfx1sfys?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}" />
+						<span>否</span>
+					</div>
+				</div>
+				<div class="options cl">
+					<span>文号</span>
+					<input ng-model="options.ds_gapcsrcxfjdjcjlb_hfx1wh" type="" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">②建筑物是否进行消防竣工验收备案？</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_hfx2sfba = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjlb_hfx2sfba ? '/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>是</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_hfx2sfba = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_hfx2sfba ? '/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>否</span>
+					</div>
+				</div>
+				<div class="options cl">
+					<span>备案号</span>
+					<input ng-model="options.ds_gapcsrcxfjdjcjlb_hfx2bah" type="" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">③公众聚集场所是否通过投入使用、营业前消防安全检查？</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_sfaqjc = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjlb_sfaqjc?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>是</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_sfaqjc = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_sfaqjc?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>否</span>
+					</div>
+				</div>
+				<div class="options cl">
+					<span>文号</span>
+					<input ng-model="options.ds_gapcsrcxfjdjcjlb_hfx3wh" type="" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">2、消防安全管理</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">①消防安全制度？</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl1 = '100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl1 == '100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>有</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl1 = '100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl1 == '100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl1 = '100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl1 == '100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>不全</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">②员工消防安全教育培训</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl2 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjlb_xfaqgl2 ? '/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>组织开展</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl2 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl2 ? '/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>未组织开展</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">③防火检查</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl3 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjlb_xfaqgl3?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>组织开展</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl3 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl3?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>未组织开展</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">④灭火和应急疏散预案</div>
+				<div class="options cl">
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl4 = '100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl4 == '100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>有且组织演练</span>
+					</div>
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl4 = '100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl4 == '100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>有，未演练</span>
+					</div>
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl4 = '100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl4 == '100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无且未演练</span>
+					</div>
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl4 = '100000003'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl4 == '100000003'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无，组织演练</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑤生产、存储、经营易燃易爆危险品的场所与居住场所设置在同一建筑物内</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl5 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjlb_xfaqgl5 ? '/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>是</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjlb_xfaqgl5 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_xfaqgl5 ? '/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>否</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑥其他情况</div>
+				<div class="options cl">
+					<input ng-model="options.ds_gapcsrcxfjdjcjlb_xfaqgl6" type="" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">3、建筑防火</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">①消防车通道</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh1 = '100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh1 == '100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh1 =  '100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh1 == '100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>畅通</span>
+					</div>
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh1 =  '100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh1 == '100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>被堵塞、占用</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">②疏散通道、安全出口</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh2 = '100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh2 == '100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>畅通</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh2 = '100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh2 == '100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>堵塞</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh2 = '100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh2 == '100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}">
+						<span>锁闭</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">③防火门</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh3 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh3 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>完好有效</span>
+					</div>
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh3 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh3 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>常闭式防火门常开</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh3 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh3 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>损坏</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">④疏散指示标志</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh4 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh4 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>完好有效</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh4 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh4 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>损坏</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh4 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh4 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>缺少</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑤应急照明</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh5 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh5 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>完好有效</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh5 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh5 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>损坏</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_jzfh5 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_jzfh5 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>缺少</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑥其他情况</div>
+				<div class="options cl">
+					<input ng-model="options.ds_gapcsrcxfjdjcjl_jzfh6" type="" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">4、消防设施</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">①室内消火栓</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss1 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss1 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>未设置</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss1 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss1 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>完好有效</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss1 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss1 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>损坏</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss1 ='100000003'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss1 =='100000003'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无水</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss1 ='100000004'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss1 =='100000004'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>配件不齐</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">②灭火器</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss2 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss2 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>未配置</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss2 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss2 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>完好有效</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss2 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss2 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>失效</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">③建筑消防设施</div>
+				<div class="options cl">
+					<div class="middle" ng-click="options.ds_gapcsrcxfjdjcjl_xfss3 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss3 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>定期检查并记录</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss3 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss3 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>未定期检查</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss3 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss3 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无记录</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">④物业服务企业对管理区域内公用消防设施是否维护管理？</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss4 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjl_xfss4?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>是</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_xfss4 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_xfss4?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}" />
+						<span>否</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">二、村（居）委员会履行消防安全职责</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">①消防安全管理人</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk1 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk1?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>是</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk1 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk1?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}" />
+						<span>否</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">②消防安全工作制度</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk2 = '100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk2 == '100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>有</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk2 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk2 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk2 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk2 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>不全</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">③防火安全公约</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk3 ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk3 =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>有</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk3 ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk3 =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>无</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk3 ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk3 =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>不全</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">④消防宣传教育</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk4 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk4?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>开展</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk4 = false" >
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk4?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}" />
+						<span>未开展</span>
+					</div>
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑤防火安全检查</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk5 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk5?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>开展</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk5 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk5?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>未开展</span>
+					</div>	
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑥消防水源、消防车通道、消防器材</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk6 = true" >
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk6?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>维护管理</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk6 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk6?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}" />
+						<span>未维护管理</span>
+					</div>	
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">⑦多种形式消防组织</div>
+				<div class="options cl">
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk7 = true">
+						<img ng-src="{{!options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk7?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}"/>
+						<span>建立</span>
+					</div>
+					<div class="short" ng-click="options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk7 = false">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjl_cmwyhlxxfaqzzqk7?'/police_web/img/icon/select1.png':'/police_web/img/icon/select.png'}}" />
+						<span>未建立</span>
+					</div>	
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">三、责令改正情况</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">下发《责令改正通知书》编号</div>
+				<div class="options cl">
+					<span>编号</span>
+					<input ng-model="options.ds_gapcsrcxfjdjcjlb_zlgzqk" type="" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">四、移送消防机构处理的内容</div>
+			</div>
+			<div class="fireCheck_list">
+				<div class="fireCheck_title">发现的下列消防安全违法行为，移送公安机关消防机构依法处理</div>
+				<div class="options cl">
+					<div class="long" ng-click="options.ds_gapcsrcxfjdjcjlb_wfxw ='100000000'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_wfxw =='100000000'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>1、建筑物未依法通过公安机关消防机构消防验收，擅自投入使用；</span>
+					</div>
+					<div class="long" ng-click="options.ds_gapcsrcxfjdjcjlb_wfxw ='100000001'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_wfxw =='100000001'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>2、建筑物未惊醒竣工验收备案，擅自投入使用；</span>
+					</div>
+					<div class="long" ng-click="options.ds_gapcsrcxfjdjcjlb_wfxw ='100000002'">
+						<img ng-src="{{options.ds_gapcsrcxfjdjcjlb_wfxw =='100000002'?'/police_web/img/icon/select.png':'/police_web/img/icon/select1.png'}}"/>
+						<span>3、公众聚集场所未依法通过使用、经营前消防安全检查，擅自投入使用、经营。</span>
+					</div>
+				</div>
+			</div>
+			<div class="ui_list cl">
+				<div class="ui_list_button ui_item_normal">
+					<span style="margin-top: 10px;float: left;">备注 : </span>
+					<textarea class="ui_textarea" ng-model="options.ds_gapcsrcxfjdjcjlb_bz"></textarea>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+
+	<!-- <div class="div-sub">
+		<div class="btn clo" style="float: right;border-radius: 20px; color: #666;" ng-click="close()">取消</div>
+		<div class="btn btn-default " style="float: right;border-radius: 20px;" ng-click="submit()">确定</div>
+	</div> -->
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

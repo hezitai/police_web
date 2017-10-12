@@ -1,0 +1,37 @@
+<!-- 警员管理 -->
+<div class="policeManagement">
+    <header-crumbs title="#/index/policeManagement:{{title}}"></header-crumbs>
+    <div class="main-block top cl">
+        <div class="title">警员管理</div>
+        <span>部门</span>
+        <select ng-model="policeManagement.select" ng-options="x.ds_name for x in policeManagement.allPolice" ng-change="changeSelect()"></select>
+        <div class="btn btn-blue fr" ng-click="addPolice()">添加警员</div>
+    </div>
+    <div class="main-block bottom grid">
+        <div class="title" ng-bind="policeManagement.select.ds_name"></div>
+        <table border="0" cellspacing="0" cellpadding="6">
+            <tr>
+                <th>警员号</th>
+                <th>姓名</th>
+                <th>所属部门</th>
+                <th>警员权限</th>
+                <th>管理</th>
+            </tr>
+            <!-- ng-repeat -->
+            <tr ng-repeat="x in policeMessageList">
+                <td ng-bind="x.policeNum"></td>
+                <td ng-bind="x.lastName + x.firstName"></td>
+                <td ng-bind="x.policeStation"></td>
+                <td class="cl">
+                    <div class="cl d_1"><em ng-class="x.role=='0'? 'checked' : ''"></em><span>局长</span></div>
+                    <div class="cl"><em ng-class="x.role=='1'? 'checked' : ''"></em><span>所长</span></div>
+                    <div class="cl"><em ng-class="x.role=='2'? 'checked' : ''"></em><span>警员</span></div>
+                </td>
+                <td>
+                    <img src="/police_web/img/updbtn.png" class="img_1" ng-click="amendPoliceMessage(x)">
+                    <img src="/police_web/img/delbtn2.png" ng-click="deletePoliceMessage(x)">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

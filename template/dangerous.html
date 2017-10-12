@@ -1,0 +1,20 @@
+<!--危爆物品管理-->
+<div class="dangerous">
+	<header-crumbs title="#/index/dangerous:{{title}}"></header-crumbs>
+
+	<div class="grid">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr class='thead'>						
+				<th width='15%'>序号</th>
+				<th width='70%'>行业场所</th>
+				<th width="15%">操作</th>					
+			</tr>
+			<tr class='tbody point' ng-repeat="item in dangerPublic">						
+				<td ng-bind="$index + 1"></td>
+				<td class="text-left" ng-bind="item.name">越海物流</td>
+				<td class="check" ng-click="stateGo('index.dangerousDetail',item.publicorderId)"><span>查看</span></td>
+			</tr>
+		</table>
+	</div>
+
+</div>

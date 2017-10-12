@@ -1,0 +1,17 @@
+<div class="pointNewReason">
+	<header-crumbs title="#/index/pointNewReason:{{title}}" usedlocalstorage='used' usedlevel="2"></header-crumbs>
+
+	<div class="map" >
+		<span class="loadingMap" style="color: #999; display: block; text-align: center; margin: 250px auto;">地图加载中,请稍等......</span>
+		<div class="maps" id="#main" style="position: absolute; top: 40px; left: 0; right: 0; bottom: 0;">
+			<select class="select" ng-model="options.year" ng-options="item for item in yearArray"> </select>
+			<select class="select" ng-model="options.month" ng-options="item for item in monthArray"> </select>
+			<span class="color" ng-click="getMonth()">按月查看</span>
+			<span class="color" ng-click="getYear()">按年查看</span>
+			
+
+			<pmap-set></pmap-set>
+		</div>
+	</div>
+	
+</div>

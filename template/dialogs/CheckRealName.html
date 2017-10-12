@@ -1,0 +1,43 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">实名制检查项</span>
+	</div>
+	<div class="new-body">
+		<div class="logisticsBox" style="padding:10px">
+			<div>
+				<input type="text" class="search_text_input" ng-model="option.searchText" placeholder="请输入要搜索的关键字...">
+				<span class="search_text_button" ng-click="search(option.searchText)" style="left: -73px">搜索</span>
+				
+			</div>
+			<ul >
+				<li ng-repeat="item in list">
+					<span class="imgbox" ng-click="show(item)"><img ng-src="{{item.isActive?'/police_web/img/evebtn.png':'/police_web/img/addbtn.png'}}"></span>
+					<span>单号区间</span>
+					<div class="realname_text">
+						<span class="ui_fc_light_blue" ng-bind="item.ds_orderstart"></span> —— <span class="ui_fc_light_blue" ng-bind="item.ds_orderend"></span>
+					</div>
+					<div class="waybill" ng-if="item.isActive">
+						<span class="logistics {{ readClassName(items) }}" ng-repeat="items in waybillList" ng-bind="items.ds_ordernum" ng-click="showDetail(items)" style="width: 180px!important"></span>
+						
+					</div>
+				</li>
+				<li>
+					<span class="imgbox" ng-click="showCustom()"><img ng-src="{{isActive?'/police_web/img/evebtn.png':'/police_web/img/addbtn.png'}}"></span>
+					<span>自定义单号</span>
+					<div class="waybill">
+						<span class="logistics {{ readClassName(items) }}" ng-repeat="items in customWaybillList" ng-bind="items.ds_ordernum" ng-click="showDetail(items)" style="width: 180px!important"></span>
+						
+					</div>
+					<paging-link page-nums=12></paging-link>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+
+	<div class="div-sub">
+		<div class="btn btn-default " ng-click="addDeductMark()">扣分项</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

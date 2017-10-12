@@ -1,0 +1,124 @@
+
+<div class="point-new">
+
+	<div class="popnewinfo">
+		<span class="addTitle">重点人口详情</span>
+	</div>
+	<div class="new-body">
+		<div class="formBox">
+			<label>姓名:</label><input type="text" ng-model="options.name">
+			<label class="right">联系电话:</label><input type="text" ng-model="options.phone">
+		</div>
+		<div class="formBox">
+			<label>身份证号:</label><input type="text" ng-model="options.idCard">
+			<label class="right">截止时间:</label><input id="cutOff"  ng-model="options.endTime" class="laydate-icon" onclick="laydate()">
+		</div>	
+		<div class="formBox">
+			<label>是否签到:</label>
+			<span class="selectBox" ng-click="options.isCheck = true">
+				<img ng-src="{{options.isCheck ?'img/icon/select.png':'img/icon/select1.png'}}" /><span>是</span>
+			</span>
+			<span class="selectBox" ng-click="options.isCheck = false">
+				<img ng-src="{{!options.isCheck ?'img/icon/select.png':'img/icon/select1.png'}}" /><span>否</span>
+			</span>			
+		</div>
+		<div class="formBox" ng-if="options.isCheck">
+			<label>签到频率:</label>
+			<span class="selectBox" ng-click="options.signtype = 100000000">
+				<img ng-src="{{options.signtype == 100000000 ?'img/icon/select.png':'img/icon/select1.png'}}" /><span>每月签到</span>
+			</span>
+			<span class="selectBox" ng-click="options.signtype = 100000001">
+				<img ng-src="{{options.signtype == 100000001?'img/icon/select.png':'img/icon/select1.png'}}" /><span>每周签到</span>
+			</span>
+			<span class="selectBox" ng-click="options.signtype = 100000002">
+				<img ng-src="{{options.signtype == 100000002?'img/icon/select.png':'img/icon/select1.png'}}"/><span>每日签到</span>
+			</span>	
+		</div>
+		<div class="formBox">
+			<div class="selectDate" ng-if="options.isCheck && options.signtype == 100000000" style="margin-right: 4%;">
+				<label >选择日期:</label><span>每月</span><input type="" id="" value="" style="width: 22%;margin: 0 4px;" ng-model="options.day"/><span >日签到</span>
+			</div>
+			<div class="selectDate" ng-if="options.isCheck && options.signtype == 100000001" style="margin-right: 4%;">
+				<label >选择日期:</label>
+				<select ng-model="options.week" style="width: 61%;color: #777;">
+					<option value="1" selected="options.week==1? selected : false">星期一</option>
+					<option value="2" selected="options.week==2? selected : false">星期二</option>
+					<option value="3" selected="options.week==3? selected : false">星期三</option>
+					<option value="4" selected="options.week==4? selected : false">星期四</option>
+					<option value="5" selected="options.week==5? selected : false">星期五</option>
+					<option value="6" selected="options.week==6? selected : false">星期六</option>
+					<option value="7" selected="options.week==7? selected : false">星期日</option>
+				</select>
+			</div>
+			<span ng-if="options.isCheck">
+				<label >签到时间:</label><input type="time" value="11:47" ng-model="options.time" >
+			</span>
+			
+		</div>	
+		<div class="formBox">
+			<span ng-if="options.getScope">
+				<label>监管范围:</label>
+				<select  ng-model="options.regulatoryScope" ng-options="x['ds_name'] for x in regulatory"></select>
+			</span>
+			<span ng-if="options.getCause">
+				<label class="right">监管原因:</label>
+				<select ng-model="options.regulatoryCause" ng-options="x['ds_name'] for x in cause"></select>
+			</span>
+		</div>
+		
+		<fieldset id="" ng-if="options.regulatoryCause['ds_name'] == '涉毒'">
+			<legend style="color: #13558B;">风险评估</legend>
+			<div class="riskBox">
+				<div class="ui_modal_content">
+
+			        <div ng-repeat="item in options.drugDangerOption" class="police-item">
+			            <span ng-bind="($index + 1) + '、' + item['ds_name']"></span>
+			            <div style="clear: both;"></div>
+			            <div class="ui_chooseBox">
+			              <div class="ui_radio ui_text_left" ng-click="item.isChoose = true;chooseEnd()">
+			               	<img ng-src="{{item.isChoose?'img/icon/select.png':'img/icon/select1.png'}}"/>
+			                <span class="ui_fc_blue">是</span>
+			              </div>
+			              <div class="ui_radio ui_text_left" ng-click="item.isChoose = false;chooseEnd()">
+			                <img ng-src="{{!item.isChoose?'img/icon/select.png':'img/icon/select1.png'}}"/>
+			                <span class="ui_fc_blue">否</span>
+			              </div>
+			            </div>
+			        </div>    
+					<div class="result">
+						<span>评估结果：</span>
+						<span class="ui_text_right" ng-class="options.drugDangerType == '高危' ? 'ui_fc_red' : (options.drugDangerType == '中危' ? 'ui_fc_orange' : 'ui_fc_blue')" style="margin: 0 10px;" ng-bind="options.drugDangerType"></span>
+					</div>
+			    </div>
+			 
+			</div>
+			
+		</fieldset>
+		<div class="formBox" ng-if="options.regulatoryCause['ds_name'] == '信访'">
+			<div class="ui_list_button ui_item_normal">
+				<span>风险评估 ( 信访 ) :</span>
+				
+				<span ng-bind="options.visitgradeDangerType" class="ui_text_right" ng-class="options.visitgradeDangerType == '高危' ? 'ui_fc_red' : (options.visitgradeDangerType == '中危' ? 'ui_fc_orange' : 'ui_fc_blue')" style="margin: 4.5%;"></span>
+				<select class="block" ng-model="options.visitgradeResult" ng-options="x.name for x in options.optionSides.visitgrade" ng-change="visitgradeResultChange(options.visitgradeResult)"></select>
+			</div>
+		</div>
+
+		<div class="formBox-big" ng-if="options.regulatoryCause['ds_name'] == '信访'">
+			<div class="ui_list_button ui_item_normal">
+				<span style="float: left;"> 简要描述 : </span>
+				<textarea class="ui_textarea" ng-model="options.visitgradeResultText"></textarea>
+			</div>
+		</div>
+		
+		
+	</div>
+
+	<div class="div-sub">
+		<div class="btn btn-default clo" >重点人口档案</div>
+		<div class="btn btn-default clo" ng-click="stateGo('index.pointNewReason')" ng-if="options.isCheck">签到记录</div>
+		<div class="btn btn-default " ng-click="submit()">提交</div>
+		
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>
+	

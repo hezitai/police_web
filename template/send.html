@@ -1,0 +1,121 @@
+<div class="send">
+    <header-crumbs title="#/index/send:{{title}}"></header-crumbs>
+    <div class="sendbox cl">
+        <div class="leftsendbox fl">
+            <div class="person">
+                <span class="fl">收件人</span>
+                <input type="text" ng-model="inputReceiverObj.show" disabled>
+            </div>
+            <div>
+                <span class="fl">正文</span>
+                <textarea placeholder="请输入消息正文..." ng-model="textSendMessage"></textarea>
+            </div>
+            <div class="btn btn-blue" ng-click="submit(inputReceiverObj.show , textSendMessage,inputReceiverObj)">发送</div>
+        </div>
+        <div class="rightsendbox fl pr">
+            <div class="title pr">通讯录<img src="/police_web/img/icon/search.gif"></div>
+            <input type="text" placeholder="查找联系人..." ng-model="sendServers.searchText" ng-change="changeShow()">
+            <!-- overflow -->
+            <div class="gundong" ng-if="!sendServers.searchText">
+                <!-- 一级标题 -->
+                <div class="allbranch">
+                    <div class="titleOne cl" ng-init="isShow = false">
+                        <div class="titleopen" ng-click="isShow = !isShow" ng-class="isShow? 'jian' : 'jia'"></div>
+                        <div class="name">全部派出所</div>
+                        <span ng-click="inputreceiver('全部派出所' , allPoliceList)">群发</span>
+                    </div>
+                    <!-- 二级标题 -->
+                    <div ng-if="isShow">
+                        <div ng-repeat="item in allPoliceList" ng-init="item.isShow = false">
+                            <div class="titleTwo cl">
+                                <div class="titleopen" ng-click="item.isShow = !item.isShow" ng-class="item.isShow? 'jian':'jia'"></div>
+                                <div class="name textOverflow" ng-bind="item.name"></div>
+                                <span ng-click="inputreceiver(item.name , allPoliceList)">群发</span>
+                            </div>
+                            <!-- 三级标题 -->
+                            <div>
+                                <div class="third" ng-if="item.isShow">
+                                    <div class="titleThree cl pointer" ng-repeat="x in item.list">
+                                        <div class="name" ng-bind="x.name" ng-click="inputreceiver(x.name , item.list)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 一级标题 -->
+                <div class=" allbranch">
+                    <div class="titleOne cl" ng-init="isShow2=false">
+                        <div class="titleopen" ng-click="isShow2=! isShow2" ng-class="isShow2? 'jian' : 'jia' "></div>
+                        <div class="name ">重点人口</div>
+                        <!-- <span ng-click="inputreceiver('重点人口' , importantPeopleList)">群发</span> -->
+                    </div>
+                    <!-- 二级标题 -->
+                    <div ng-if="isShow2">
+                        <div ng-repeat="item in importantPeopleList ">
+                            <div class="titleTwo cl pointer">
+                                <div class="name " ng-bind="item.importantName" ng-click="inputreceiver(item.importantName , importantPeopleList)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 一级标题 -->
+                <div class="allbranch">
+                    <div class="titleOne cl" ng-init="isShow3=false">
+                        <div class="titleopen" ng-click="isShow3=! isShow3" ng-class="isShow3? 'jian' : 'jia' "></div>
+                        <div class="name">行业场所</div>
+                        <!-- <span ng-click="inputreceiver('行业场所' , PublicList)">群发</span> -->
+                    </div>
+                    <!-- 二级标题 -->
+                    <div ng-if="isShow3">
+                        <div ng-repeat="item in PublicList">
+                            <div class="titleTwo cl pointer">
+                                <div class="name" ng-bind="item.publicName" ng-click="inputreceiver(item.publicName , PublicList)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- position -->
+            <div class="pos" ng-if="sendServers.searchText">
+                <div class="allbranch">
+                    <div class="titleOne cl" ng-init="isShow=true">
+                        <div class="titleopen " ng-click="isShow= !isShow" ng-class="isShow? 'jian' : 'jia'"></div>
+                        <div class="name ">全部派出所</div>
+                    </div>
+                    <div ng-if="isShow">
+                        <div class="titleTwo cl pointer" ng-repeat="item in searchPolicemanList | filter: sendServers.searchText track by $index">
+                            <div class="name" ng-bind="item.name + ' (' + item.teamName + ')'" ng-click="inputreceiver(item.name , searchPolicemanList)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="allbranch">
+                    <div class="titleOne cl" ng-init="isShow2=true">
+                        <div class="titleopen" ng-click="isShow2=!isShow2" ng-class="isShow2? 'jian' : 'jia' "></div>
+                        <div class="name ">重点人口</div>
+                    </div>
+                    <div ng-if="isShow2">
+                        <div ng-repeat="item in importantPeopleList | filter: sendServers.searchText track by $index">
+                            <div class="titleTwo cl pointer">
+                                <div class="name" ng-bind="item.importantName" ng-click="inputreceiver(item.importantName , importantPeopleList)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="allbranch">
+                    <div class="titleOne cl" ng-init="isShow3=true">
+                        <div class="titleopen" ng-click="isShow3=! isShow3" ng-class="isShow3? 'jian' : 'jia' "></div>
+                        <div class="name ">行业场所</div>
+                    </div>
+                    <div ng-if="isShow3">
+                        <div ng-repeat="item in PublicList | filter: sendServers.searchText track by $index">
+                            <div class="titleTwo cl pointer">
+                                <div class="name" ng-bind="item.publicName" ng-click="inputreceiver(item.publicName , PublicList)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<!--出租房屋管理-->
+<div class="house">
+    <header-crumbs title="#/index/house:{{title}}"></header-crumbs>
+    <div class="housebox">
+        <div class="addressbox">
+            <input type="text" placeholder="请输入地址关键字" ng-model="x">
+            <div class="btn btn-blue" ng-click="submit(x)">查询</div>
+        </div>
+        <ul>
+            <!--小区列表-->
+            <li ng-repeat="item in houseServers.showList" class="clearFix" ng-click="goHouseRoomMessage(item)">
+                <span class="addresstree" ng-bind="item.displayName" title="{{item.displayName}}"></span>
+                <span class="addressmore">查看详细信息&nbsp;&nbsp;></span>
+            </li>
+        </ul>
+    </div>
+</div>

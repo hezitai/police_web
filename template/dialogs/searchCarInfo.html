@@ -1,0 +1,55 @@
+<div class="dangers">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">车辆信息</span>
+	</div>
+	<div class="new-body">
+		<div class="Carowner">车主信息</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>姓名:</label><span ng-bind="driver.ds_name?driver.ds_name : ''"></span>		
+		</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>身份证号码:</label><span ng-bind="driver.ds_id? driver.ds_id:''"></span>		
+		</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>联系电话:</label><span ng-bind="driver.ds_phone?driver.ds_phone:''"></span>
+			
+		</div>
+		<div class="Carowner">驾驶员信息</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>姓名:</label><span ng-bind="master.ds_name?master.ds_name:''"></span>		
+		</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>身份证号码:</label><span ng-bind="master.ds_id ? master.ds_id :''"></span>
+			
+		</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>联系电话:</label><span ng-bind="master.ds_phone ? master.ds_phone:''"></span>			
+		</div>
+		<div class="Carowner">车辆信息</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>车辆型号:</label><span ng-bind="carInfo.ds_model ? carInfo.ds_model:''"></span>			
+		</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>车辆颜色:</label><span ng-bind="carInfo.ds_color ? carInfo.ds_color:''"></span>	
+			
+		</div>
+		<div class="formBox" style="padding-left: 30px;color: #888;">
+			<label>车牌号码:</label><span ng-bind="carInfo.ds_number ? carInfo.ds_number:''"></span>				
+		</div>
+		<div class="Carowner">车辆照片</div>
+		<div class="image" ng-repeat="item in img" style="width: 100px;display: inline-block;margin-left: 20px;">
+			<div class="image_box">
+				<img ng-src="{{item}}" alt="车辆照片" ng-click="changePic($event)" style="width: 100px;height: 100px;">
+			</div>
+		</div>
+	</div>
+	<div id="js-imgview-mask" class="imgview-mask" style="display: none;" ng-click="closePic()"> 
+	</div>  
+	<div id="js-imgview" class="show-img"> 
+	    <img id="bigimage">  
+	    <a ng-click="closePic()">X</a>  
+	</div>  
+
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

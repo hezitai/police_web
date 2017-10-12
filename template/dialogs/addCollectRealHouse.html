@@ -1,0 +1,51 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">实有房屋</span>
+	</div>
+	<div class="new-body addRealHouse">
+		<div class="formBox">
+			<label>警务责任区:</label><select class="ui_list_input" ng-model="detail.team" ng-options="x.name for x in team"></select>
+			<label class="right">责任区民警:</label><input id="" readonly="readonly" ng-model="detail['ds_dutypolice-ds_name']">
+		</div>
+		<div class="formBox">
+			<label>房屋地址:</label><input type="text" ng-model="detail.ds_address">
+			<label class="right">栋号:</label><input id="" ng-model="detail.ds_buildingnum">
+		</div>	
+		<div class="formBox">
+			<label>房间号:</label><input type="text" ng-model="detail.ds_roomfigure">
+			<label class="right">委组:</label><input type="text" ng-model="detail.ds_household">	
+		</div>
+		<div class="formBox">
+			<label>单元号:</label><input type="text" ng-model="detail.ds_unit">	
+			<label class="right">产权号:</label><input type="text" ng-model="detail.ds_property">	
+			
+		</div>
+		<div class="formBox">
+			<label>房屋结构:</label><input type="text" ng-model="detail.ds_structure">	
+			<label class="right">实际房屋:</label><input type="text" ng-model="detail.ds_realityroom">	
+			
+		</div>
+		<div class="formBox">
+			<label>安全状况:</label><input type="text" ng-model="detail.ds_securitytype">	
+			<label class="right">租赁类型:</label><select class="ui_list_input" ng-model="detail.ds_kind" ng-options="x.name for x in houseusertype"></select>
+			
+		</div>
+		<div class="formBox">
+			<label>出租时间:</label><input type="text" class="timeInput1 laydate-icon" onclick="laydate()" ng-model="detail['ds_date']">
+
+			<label class="right">出租面积:</label><input type="text" ng-model="detail.ds_usingarea">	
+			
+		</div>
+		<div class="formBox">
+			<label>出租间数:</label><input type="text" ng-model="detail.ds_rentroomnum">	
+			
+		</div>		
+	</div>
+
+	<div class="div-sub">
+		<div class="btn clo" ng-click="close()">取消</div>
+		<div class="btn btn-default " ng-click="addRealHouse()">提交</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

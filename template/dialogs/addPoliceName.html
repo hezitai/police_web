@@ -1,0 +1,24 @@
+<div class="dangers">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">添加警员</span>
+	</div>
+	<div class="new-body">
+		<div class="search_box">
+			<input type="text" class="search_text_input" ng-model="Police.inputSearchName">
+		</div>
+
+		<div class="policeBox">
+			<div class="ui_list" ng-repeat="police in Police.list | filter:Police.inputSearchName" ng-click="Police.setPeople(police)">
+				<div class="ui_list_button ui_item_small">
+					<span ng-bind="police.name + ' - ' + police.teamName"></span>
+					<img src="/police_web/img/icon/icon-right.png">
+				</div>
+			</div>
+
+		</div>
+					
+	</div>
+
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

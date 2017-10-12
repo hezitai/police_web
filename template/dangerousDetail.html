@@ -1,0 +1,23 @@
+<!--危爆物品-->
+<div class="dangerousDetail">
+	<header-crumbs title="#/index/dangerousDetail:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+
+	<div class="grid">
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr class='thead'>						
+				<th width='20%'>日期</th>
+				<th width='65%'>行业场所</th>
+				<th width="15%">操作</th>					
+			</tr>
+			<tr class='tbody point' ng-repeat="item in dangerList" ng-click="lookDangers(item)">						
+				<td ng-bind="item.time"></td>
+				<td class="text-left" ng-bind="item.ds_name"></td>
+				<td>
+					<div class="btn btn-small btn-light-red" ng-click="deleteDanger(item.id,$event)">×</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<span class="add" ng-click="addDangers()">添加</span>
+
+</div>

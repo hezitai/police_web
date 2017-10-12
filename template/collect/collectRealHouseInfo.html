@@ -1,0 +1,54 @@
+<div class="collect">
+	<header-crumbs title="#/index/collectRealHouseInfo:{{title}}" usedlocalstorage='used' usedlevel=3></header-crumbs>
+	
+	<div class="tit">
+		<span class="houseName" ng-bind="house.housename"></span>
+		<span class="btn btn-yellow right" ng-click="lookhouseInfo()">房屋信息</span>
+		<span class="btn btn-blue right" ng-click="lookUserInfo()">房主信息</span>
+	</div>
+	<div style="padding: 10px">
+		<div class="tit">
+			<span class="user">现居住人信息</span>
+			<span class="redRight" ng-click="addHousePerson(100000001)"> + 添加现居住人</span>			
+		</div>
+		<div class="grid">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr class='thead'>						
+					<th width='15%'>姓名</th>
+					<th width='30%'>居住时间</th>
+					<th width="45%">身份证号</th>
+					<th width="15%">操作</th>					
+				</tr>
+				<tr class='tbody point' ng-repeat="people in userList" ng-click="lookHousePerson(people)">						
+					<td ng-bind="people['ds_person_ref-ds_name']"></td>
+					<td ng-bind="people['date']"></td>
+					<td class="check"><span ng-bind="people['ds_person_ref-ds_id']"></span></td>
+					<td ><span class="del" ng-click="delete(people,$event)">删除</span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="padding: 10px">
+		<div class="tit">
+			<span class="lessee">承租人信息</span>
+			<span class="blueRight" ng-click="addHousePerson(100000002)"> + 添加承租人</span>
+		</div>
+		<div class="grid">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr class='thead'>						
+					<th width='15%'>姓名</th>
+					<th width='30%'>居住时间</th>
+					<th width="45%">身份证号</th>
+					<th width="15%">操作</th>				
+				</tr>
+				<tr class='tbody point' ng-repeat="person in LesseeList" ng-click="lookHousePerson(person)">						
+					<td ng-bind="person['ds_person_ref-ds_name']"></td>
+					<td ng-bind="person['date']"></td>
+					<td class="check"><span ng-bind="person['ds_person_ref-ds_id']"></span></td>
+					<td ><span class="del" ng-click="delete(person,$event)">删除</span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+		
+</div>

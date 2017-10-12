@@ -1,0 +1,69 @@
+<div class="judge" >
+	<header-crumbs title="#/index/judgePublic:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"行业场所","status":"#/index/judgePublic"}]'></header-crumbs>
+	
+	<span class="reload" ng-click="refreshData()">刷新</span>
+	<div class="main-block" >
+		<div class="title">筛选</div>
+		<div class="ChooseBox">
+			<span class="policeStation">选择派出所</span>
+			<select class="block ui_list_input" style="margin: 4px; width: 91%;" ng-model="study.team" ng-options="x.name for x in team" ng-change="refreshData()"></select>	
+		</div>
+		<div class="screenItem">
+			<div class="screen_button" ng-class="study.all.show ? 'active' : ''" ng-click="refreshMap(study.all)">全部</div>
+			<div class="screen_button" ng-class="study.red.show ? 'active' : ''" ng-click="refreshMap(study.red)"><span class="ui_point ui_fc_red" ></span>红色({{study.red.num}})</div>
+			<div class="screen_button" ng-class="study.orange.show ? 'active' : ''" ng-click="refreshMap(study.orange)"><span class="ui_point ui_fc_orange" ></span>橙色({{study.orange.num}})</div>
+			<div class="screen_button" ng-class="study.green.show ? 'active' : ''" ng-click="refreshMap(study.green)"><span class="ui_point ui_fc_green" ></span>绿色({{study.green.num}})</div>
+		</div>
+		<!--<div class="btn btn-blue class1" ng-click="chooseEnd()">查询</div>-->
+	</div>
+	
+		<div class="map" ng-if="study.show">
+			<span class="loadingMap">地图加载中,请稍等......</span>
+			<span class="list" style="padding: 0" ng-click="changeDisplayMode(false)"><img src="/police_web/img/icon/fun-b.png"/></span>
+			<div class="maps" id="main">
+				<jmap-set></jmap-set>
+			</div>
+		</div>
+		<div class="map" ng-if="!study.show">
+			<span class="list" ng-click="changeDisplayMode(true)"><img src="/police_web/img/map.png" style="width: 25px"></span>
+			<ul class="listBox">
+				<li class="haha"><img ng-src="{{!study.drug.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.drug.show = !study.drug.show"><span>涉毒 （{{study.drug.list.length}}）</span>
+					<ul class="listItem" ng-if="study.drug.show">
+						<li ng-repeat="item in study.drug.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>						
+					</ul>
+				</li>
+				<li class="haha"><img ng-src="{{!study.employee.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.employee.show = !study.employee.show"><span>从业人员不符 （{{study.employee.list.length}}）</span>
+					<ul class="listItem" ng-if="study.employee.show">
+						<li ng-repeat="item in study.employee.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>
+					</ul>
+				</li>
+				<li class="haha"><img ng-src="{{!study.prostitution.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.prostitution.show = !study.prostitution.show"><span>卖淫嫖娼 （{{study.prostitution.list.length}}）</span>
+					<ul class="listItem" ng-if="study.prostitution.show">
+						<li ng-repeat="item in study.prostitution.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>
+					</ul>
+				</li>
+				<li class="haha"><img ng-src="{{!study.case.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.case.show = !study.case.show"><span>发案 （{{study.case.list.length}}）</span>
+					<ul class="listItem" ng-if="study.case.show">
+						<li ng-repeat="item in study.case.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>
+					</ul>
+				</li>
+				<li class="haha"><img ng-src="{{!study.gamble.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.gamble.show = !study.gamble.show"><span>赌博 （{{study.gamble.list.length}}）</span>
+					<ul class="listItem" ng-if="study.gamble.show"> 
+						<li ng-repeat="item in study.gamble.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>
+					</ul>
+				</li>
+				<li class="haha"><img ng-src="{{!study.Other.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.Other.show = !study.Other.show"><span>其他 （{{study.Other.list.length}}）</span>
+					<ul class="listItem" ng-if="study.Other.show">
+						<li ng-repeat="item in study.Other.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>
+						
+					</ul>
+				</li>
+				<li class="haha"><img ng-src="{{!study.realName.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="study.realName.show = !study.realName.show"><span>实名制检查 （{{study.realName.list.length}}）</span>
+					<ul class="listItem" ng-if="study.realName.show">
+						<li ng-repeat="item in study.realName.list" ng-click="go(item)"><span ng-bind="item.name">越海物流</span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	
+</div>

@@ -1,0 +1,2755 @@
+/* 首页 */
+em{font-style: normal;}
+.fl{float: left;}
+.fr{float: right;}
+.pr{position: relative;}
+.homePage .person-info{border: 1px solid #ccc;overflow: hidden;margin: 15px;}
+.homePage .person-info .person-sign{display: inline-block;font-size: 20px;color: #1a629d;vertical-align: middle;padding: 10px;}
+.homePage .parameter{margin: 15px;min-width: 786px !important;}
+.homePage .parameter .box{width: 30%;height: 218px;border: 1px solid #ccc;float: left;margin-right: 1.6%;padding: 1%;}
+.homePage .parameter .box .title{color: #014886;}
+.homePage .parameter .box .place{margin-top: 28px;}
+.homePage .parameter .box .place>div{width: 85%;height: 5px;background-color: #f5f5f5;float: left;border-radius: 50px;margin-top: 8px;}
+.homePage .parameter .box .place span{float: left;margin-left: 3%;}
+.homePage .parameter .box .place>div>div{height: 5px;border-radius: 50px;display: block;width: 0;}
+.homePage .parameter .box .place .red,.homePage .parameter .box .important .state .red,.homePage .parameter .box .important .view .red{background-color: #fe0000;}
+.homePage .parameter .box .important .view .green,.homePage .parameter .box .important .state .green,.homePage .parameter .box .place .orange,.homePage .parameter .box .bot span.orange,.homePage .houseview .view .orange,.homePage .housebox .state .orange{background-color: #fe8a00;}
+.homePage .parameter .box .important .state .blue,.homePage .parameter .box .important .view .blue,.homePage .parameter .box .place .blue,.homePage .parameter .box .bot span.blue{background-color: #06b711;}
+.homePage .parameter .box .place .one{color: #fe0000;}
+.homePage .parameter .box .place .two{color: #fe8a00;}
+.homePage .parameter .box .place .three{color: #06b711;}
+.homePage .parameter .box .bot{margin-top: 24px;font-size: 12px;color: #5a5a5a;}
+.homePage .parameter .box .bot div{float: left;width: 33.33%;}
+.homePage .parameter .box .bot span{float: left;width: 6px;height: 6px;background-color: #fe0000;margin-top: 6px;margin-left: 4px;margin-right: 4px;}
+.homePage .parameter .box .important>div{float: left;height: 200px;}
+.homePage .parameter .box .important .view{width: 62%;}
+.homePage .parameter .box .important .view .border{height: 145px;width: 92%;border-bottom: 1px solid #ccc;border-left: 1px solid #ccc;margin-top: 24px;margin-left: 10px;}
+.homePage .parameter .box .important .view .border>div{width: 10%;float: left;position: absolute;bottom: 0;}
+.homePage .parameter .box .important .view .blue{left: 10%;}
+.homePage .parameter .box .important .view .green{left: 45%;}
+.homePage .parameter .box .important .view .red{left: 80%;}
+.homePage .parameter .box .important .view .border span{position: absolute;bottom: -20px;left: -8px;font-size: 12px;width: 40px;text-align: center;}
+.homePage .parameter .box .important .state{width: 38%;font-size: 12px;color: #5a5a5a;}
+.homePage .parameter .box .important .state span{width: 6px;height: 6px;float: left;margin-top: 8px;margin-right: 10px;}
+/*{background-color: #0678b7;}*/
+.homePage .houseview .view .green,.homePage .housebox .state .green{background-color: #06b711;}
+.homePage .parameter .housebox{margin-right: 0;}
+.homePage .houseview>div{float: left;height: 93px;margin-top: 23px;}
+.homePage .houseview .text{width: 15%;font-size: 12px;color: #014886;text-align: right;}
+.homePage .houseview .text span{margin-right: 5px;margin-top: 21px;display: block;}
+.homePage .houseview .view{width: 75%;border-bottom: 1px solid #ccc;border-left: 1px solid #ccc;}
+.homePage .houseview .view>div{height: 10px;margin-top: 26px;}
+.homePage .housebox .state{font-size: 12px;color: #5a5a5a;margin-top: 28px;margin-left: 45px;}
+.homePage .housebox .state>div{margin-bottom: 10px;}
+.homePage .housebox .state span{width: 6px;height: 6px;float: left;margin-top: 6px;margin-right: 5px;}
+.homePage .parameter .manage{width: 45%;min-height: 348px;border: 1px solid #ccc;float: left;margin-right: 1.4%;padding: 2%;}
+.homePage .parameter .policemanage{margin-right: 0;}
+.homePage .parameter .manage .title{height: 28px;border-bottom: 1px solid #ccc;color: #014886;}
+.homePage .parameter .manage .title span{color: #5a5a5a;}
+.homePage .parameter .manage .title em{color: #006ab8;margin-left: 5px;margin-right: 5px;}
+.homePage .parameter .management{margin-top: 17px;color: #5a5a5a;padding-left: 10px;padding-right: 10px;overflow-y: auto;height: 302px;}
+.homePage .parameter .management .case{line-height: 30px;}
+.homePage .parameter .management .case>div{float: left;white-space: nowrap;overflow: hidden;width: 79%;text-overflow: ellipsis;}
+.homePage .parameter .management .case>span{float: right;}
+.homePage .parameter .police{margin-top: 10px;color: #5a5a5a;}
+.homePage .parameter .police select{width: 50%;height: 26px;border: 1px solid #ddd;margin-left: 20px;color: #5a5a5a;text-indent: 14px;}
+.homePage .parameter .police>div{margin-left: 7px;line-height: 26px;}
+.homePage .parameter .policelist{color: #5a5a5a;padding-left: 12px;padding-right: 12px;padding-top: 13px;}
+.homePage .parameter .policelist .list{line-height: 30px;}
+.homePage .parameter .policelist .list>div{line-height: 30px;float: left;}
+.homePage .parameter .policelist .list span{display: block;line-height: 30px;}
+.homePage .parameter .policelist .show{text-align: center;padding-top: 100px;color: #1d82c6;}
+.homePage .left{width: 100px;}
+.homePage .gundong{overflow-y: auto;height: 283px;}
+.homePage .jiazai{text-align: center;margin-top: 83px;color: #0678b7;font-size: 20px;}
+.homePage .box_pab{width: 100%;height: 100%;position: absolute;left: 0;top: 0;background: #fff;text-align: center;line-height: 200px;color: #0678b7;}
+.homePage .box_pab2{line-height: 364px;}
+
+/*评分标准*/
+.scale .box {padding: 0 15px 0 15px;}
+.scale .box .title1 {width: 50%;height: 50px;text-align: center;color: #1a629c;line-height: 50px;font-size: 18px;border-bottom: 1px #1A629C solid;float: left;cursor: pointer;}
+.scale .box .title1:active {color: #656565;border-bottom-color: #e1e1e1;}
+.scale .box .title2 {width: 50%;height: 50px;text-align: center;color: #656565;line-height: 50px;font-size: 18px;border-bottom: 1px #e1e1e1 solid;float: left;cursor: pointer;}
+.scale .box .section1 .list {border-bottom: 1px dotted #e0e0e0;padding-bottom: 2px;}
+.scale .box .section1 .list p {font-size: 17px;display: inline-block;color: #656565;line-height: 47px;text-align: left;cursor: pointer;}
+.scale .box .section1 .list img {margin-right: 10px;}
+.scale .box .section1 .list ul {background: #f1f1f1;padding: 18px 20px 18px 78px;color: #888888;font-size: 14px;}
+.scale .box .section1 .list ul li {line-height: 33px;}
+/*消息中心*/
+.message .messagebox {padding: 15px;}
+.message .btnbox {width: 99%;height: 58px;line-height: 58px;border: 1px #dddddd solid;text-align: left;padding-left: 10px;}
+.message .messagebox .grid {margin: 0px !important;padding-top: 15px;position: relative;}
+.message .messagebox .grid .text-left {cursor: pointer;}
+.message .messagebox .grid .btnA {position: absolute;right: 20px;top: 61px;}
+.message .messagebox .grid .btnB {position: absolute;right: 20px;top: 101px;}
+.message .messagebox .grid .btnC {position: absolute;right: 20px;top: 140px;}
+.otherMessage .popnewinfo {border-bottom: 1px solid #ccc;height: 63px;vertical-align: middle;font-size: 20px;margin-bottom: 6px;}
+.otherMessage .popnewinfo span{margin-left: 1em;}
+.otherMessage .other-content {/* width: 300px; */height: 200px;text-indent: 2em;font-size: 16px;overflow: auto;line-height: 30px;}
+.otherMessage .divv {text-align: center!important;}
+.otherMessage .divv .clodiv {display: inline-block;}
+/*发送消息*/
+.send .sendbox{padding: 20px;color: #666;}
+.send .leftsendbox{width: 70%;position: relative;}
+.send .rightsendbox{border: 1px solid #ccc;height: 568px;width: 29%;}
+.send .leftsendbox>div>span{width: 10%;line-height: 28px;max-width: 60px;}
+.send .leftsendbox>div>input{border: 1px solid #ccc;height: 28px;width: 89%;text-indent: 10px;background: #fff;color: #1d82c6;}
+.send .leftsendbox textarea{border: 1px solid #ccc;width: 89%;height: 518px;resize: none;line-height: 35px;text-indent: 10px;}
+.send .leftsendbox .btn{position: absolute;bottom: -76px;left: 50%;margin-left: -32px;padding: 0 30px;}
+.send .leftsendbox .person{margin-bottom: 20px;}
+.send .rightsendbox .title{line-height: 50px;text-align: center;}
+.send .rightsendbox .title img{position: absolute;bottom: -24px;right: 5%;}
+.send .rightsendbox>input{border: 1px solid #ccc;height: 27px;width: 95%;margin-left: 2%;text-indent: 10px;margin-bottom: 13px;}
+.send .rightsendbox .allbranch{margin-left: 2%;margin-right: 2%;}
+.send .rightsendbox .titleOne{height: 31px;}
+.send .rightsendbox .titleTwo{height: 31px;margin-left: 29px;}
+.send .rightsendbox .titleThree{height: 31px;margin-left: 58px;}
+.send .rightsendbox .titleopen{width: 19px;height: 19px;float: left;margin-right: 10px;}
+.send .rightsendbox .jia{background: url(/police_web/img/icon/fold.png);}
+.send .rightsendbox .jian{background: url(/police_web/img/icon/fold-show.png);}
+.send .rightsendbox .name{float: left;}
+.send .rightsendbox .textOverflow{text-overflow:ellipsis;width:59%;white-space:nowrap;overflow:hidden;}
+.send .gundong{overflow-y: auto;height: 476px;}
+.send .pos{position: absolute;width: 100%;height: 476px;bottom: 0;left: 0;overflow-y: auto;}
+.send .rightsendbox span{float: right;border: 1px solid #ccc;color: #ccc;padding: 3px;font-size: 12px;margin-right: 5%;cursor: pointer;}
+.send .pointer{cursor: pointer;color:#aaa;}
+/*警员管理*/
+.policeManagement .top{padding: 40px 21px 16px 10px;margin-top: 35px;}
+.policeManagement .top>span{color: #5a5a5a;margin: 0 20px;}
+.policeManagement .top select{width: 30%;min-width: 284px;color: #aaa;height: 35px;}
+.policeManagement .top>.btn{margin: 0;}
+.policeManagement .bottom{margin-top: 51px;min-height: 483px;padding: 40px 20px;color: #5a5a5a;}
+.policeManagement .bottom .title{height: 25px;min-width: 100px;}
+.policeManagement td em{width: 12px;height: 13px;display: block;float: left;margin-top: 5px;background: url(/police_web/img/sel.png) no-repeat;margin-right: 10%;}
+.policeManagement td span{float: left;}
+.policeManagement td em.checked{background: url(/police_web/img/sel2.png);}
+.policeManagement td>div{float: left;width: 28%;}
+.policeManagement td>div.d_1{margin-left: 11%;}
+.policeManagement img.img_1{margin-right: 10%;}
+.ngdialog-addPoliceManagement .ngdialog-content{width: 600px !important;}
+.addPoliceManagement{color: #5a5a5a;}
+.addPoliceManagement .title{border-bottom: 1px solid #ccc;height: 35px;}
+.addPoliceManagement .box>div{float: left;width: 50%;margin-top: 10px;}
+.addPoliceManagement .box span{font-size: 14px;color: #aaa;line-height: 35px;float: left;width: 72px;}
+.addPoliceManagement .box input{float: left;border: 1px solid #ccc;height: 35px;width: 200px;text-indent: 10px;}
+.addPoliceManagement .box select{border: 1px solid #ccc;float: left;width: 200px;height: 35px;text-indent: 6px;}
+.addPoliceManagement .box>div>div{margin-top: 10px;}
+.addPoliceManagement .box .rightbox span{text-align: right;margin-left: 10px;}
+.addPoliceManagement .box2{padding-top: 10px;color: #aaa;font-size: 14px;line-height: 35px;}
+.addPoliceManagement .box2>span{width: 72px;float: left;}
+.addPoliceManagement .box2>div{float: left;line-height: 35px;width: 104px;text-align: right;}
+.addPoliceManagement .box2>div>span{float: right;}
+.addPoliceManagement .box2>div>span.checked{color: #2d4e8a;}
+.addPoliceManagement .box2 em{width: 17px;height: 18px;background: url(/police_web/img/sel4.png);float: right;margin-top: 9px;margin-right: 10px;}
+.addPoliceManagement .box2 em.checked{background: url(/police_web/img/sel3.png);}
+.addPoliceManagement .btn{margin: 0 auto;width: 74px;height: 37px;display: block;margin-top: 50px;}
+.addPoliceManagement .box .rightbox .inp_1{width: 60px;}
+.addPoliceManagement .box .rightbox .inp_2{width: 88px;}
+.addPoliceManagement .box .rightbox .spa_1{width: 40px;}
+
+
+/*工作清单*/
+.jobbox .main-block {padding: 35px;font-size: 14px;color: #666;}
+.jobbox .main-block input {margin-left: 10px;}
+.jobbox .main-block ul {margin-top: 15px;}
+.jobbox .main-block ul li {line-height: 30px;width: 50%;}
+.jobbox .main-block ul li .Progress {float: right;text-align: left;display: inline-block;width: 20%;}
+.jobbox .work {padding: 30px 10px;}
+.jobbox .main-block textarea {resize: none;border: 1px solid #DDDDDD;width: 98%;height: 150px;padding: 10px;font-size: 14px;color: #666;}
+.jobbox .btnBox {text-align: center;}
+
+/*联系我们*/
+.contactUs .contactUsBox {padding: 23px 15px;}
+.contactUs .contactUsBox .advise {color: #948686;font-size: 14px;line-height: 25px;}
+.contactUs .contactUsBox h4 {font-size: 17px;color: #42578c;margin-top: 55px;}
+.contactUs .contactUsBox .workTime {font-size: 13px;color: #a5a5a5;}
+.contactUs .contactUsBox .address,.path,.tel,.url,.mail {font-size: 14px;color: #656565;line-height: 24px;}
+
+/*行业场所*/
+.placeSearch .placeSearchBox .main-block {padding-top: 30px;padding-left: 35px;}
+.placeSearch .placeSearchBox .main-block span {font-size: 16px;color: #393939;}
+.placeSearch .placeSearchBox .placeName {margin-left: 38px;font-size: 14px!important;}
+.placeSearch .placeSearchBox .Name {font-size: 14px!important;}
+.placeSearch .placeSearchBox .btn {margin-left: 60px;}
+.placeSearch .placeSearchBox ul li {line-height: 35px;}
+.placeSearch .placeSearchBox ul {padding: 10px;}
+.ngdialog-content:after {display: block;clear: both;content: "";visibility: hidden;height: 0}
+.place .placeList {padding: 20px}
+.place .signin{margin: 20px}
+.place .signin li{border-bottom: 1px solid #ddd; line-height: 32px; font-size: 15px;}
+.place .signin li a{display: inline-block; float: right; background: #0168b7; color: white; border-radius: 15px; padding: 0 14px; height: 23px; line-height: 23px; margin-top: 4px; font-size: 14px; cursor: pointer;}
+.place .signin .tit{padding:5px;line-height: 30px;text-align: center;color: white;background: #0168b7;width: 100%;}
+.place .choosetime{line-height: 40px;}
+.place .choosetime select{border: 1px solid #bbb; width: 14%; margin-left: 9px;}
+.place .choosetime span{margin-left: 10px;}
+.place .choosetime .button{float: right; background: #0168b7; color: white; display: inline-block; line-height: 26px; padding: 0 20px; border-radius: 15px;  margin-top: 7px; cursor: pointer;}
+.leftSide{ width: 49%; display: inline-block; float: left;height: 400px;padding-right: 10px;overflow-y: auto;}
+.leftSide li{border-bottom: 1px solid #ddd;line-height: 42px;}
+.leftSide li .positionMark{float: right;display: inline-block;cursor: pointer;}
+.leftSide li .positionMark img{vertical-align: middle;}
+.rightSide{height: 400px;float: left;width: 50%;display: inline-block;position: relative;}
+
+.place .placeList li {border: 1px solid #ddd;width: 220px;height: 185px;margin-right: 15px;margin-bottom: 16px;display: inline-block;}
+.place .placeList li h4 {text-align: center;height: 45px;color: #666;line-height: 45px;padding-right: 24px;}
+.place .placeList li .grade {height: 45px;margin: 0 10px;border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;}
+.place .placeList li .detail {height: 40px;border-bottom: 1px solid #ddd;margin: 0 10px;}
+.place .placeList li .detail span {display: inline-block;line-height: 40px;height: 40px;color: #666;}
+.place .placeList li .detail .right {float: right;}
+.place .placeList li .grade span {color: #84020c;font-size: 18px;display: inline-block;width: 50%;line-height: 45px;text-align: center;}
+.place .placeList li .del {display: inline-block;float: right;color: #666;width: 50px;line-height: 45px;cursor: pointer;}
+
+.place .Bookkeeper {
+    line-height: 40px;
+    margin: 0 15%;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.place .operation li {
+    height: 70px;
+    border-bottom: 1px solid #ccc;
+    margin: 0 15%;
+    cursor: pointer;
+    position: relative;
+}
+
+.place .operation li:hover {
+    background: #eee;
+}
+
+.place .operation li img {
+    width: 55px;
+    float: left;
+    margin-top: 8px;
+}
+
+.place .operation li .tit {
+    display: inline-block;
+    width: 68%;
+    text-align: left;
+    font-size: 15px;
+    margin-top: 16px;
+    margin-left: 7%;
+}
+
+.operationBox {
+    border: none!important;
+}
+
+.place .operation li .contant img {
+    width: 20px;
+    float: right;
+    margin-right: 5px
+}
+
+.place .grid .small {
+    height: 35px!important
+}
+
+.place .grid .small .add {
+    border: 1px solid #fff;
+    border-radius: 7px;
+    color: 12px;
+    font-size: 14px;
+    float: right;
+    display: inline-block;
+    width: 45px;
+    cursor: pointer;
+}
+
+.place .grid .small-point {
+    cursor: pointer!important;
+    height: 35px!important
+}
+
+.dangers .formBox {
+    height: 40px;
+    color: #666;
+    font-size: 15px
+}
+
+.dangers .formBox label {
+    display: inline-block;
+    line-height: 40px;
+    text-align: left;
+    width: 23%;
+    font-size: 15px
+}
+
+.dangers .formBox input {
+    border: 1px solid #ccc;
+    width: 25%;
+    line-height: 23px;
+    padding: 0 5px;
+    color: #666;
+}
+
+.dangers .formBox .big {
+    width: 75%;
+}
+
+.dangers .formBox .right {
+    margin-left: 1.15%;
+}
+
+.dangers .formBox-big label {
+    display: inline-block;
+    line-height: 23px;
+    text-align: left;
+    width: 23%;
+    font-size: 15px;
+    color: #666;
+    float: left;
+}
+
+.dangers .formBox-big textarea {
+    resize: none;
+    border: 1px solid #ccc;
+    width: 75%;
+    height: 75px;
+    padding: 5px!important;
+    color: #666;
+    font-size: 15px;
+}
+
+.dangers .formBox .imgBox {
+    width: 57.4%;
+    height: 27px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dangers .formBox .Btn {
+    display: inline-block;
+    border: 1px solid #ccc;
+    height: 27px;
+    margin: 0px 0 0 -1px;
+    width: 9%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.dangers .div-sub .btn {
+    float: right;
+    border-radius: 25px
+}
+
+.dangers .div-sub .clo {
+    color: #1a629d;
+}
+
+.place .ui_radio {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    line-height: 40px;
+}
+
+.place .ui_radio img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.searchPublic {
+    z-index: 10000;
+    border: 1px solid #aaa;
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    left: 2%;
+    top: 10px;
+    width: 300px;
+    height: 38px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.searchPublic input {
+    height: 36px;
+    width: 82%;
+    padding: 0 10px;
+    margin: 1px;
+}
+
+.searchPublic span {
+    display: inline-block;
+    height: 30px;
+    padding: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+.searchPublic span img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.searchResultList {
+    z-index: 10000;
+    border: 1px solid #aaa;
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    left: 2%;
+    top: 10px;
+    width: 300px;
+    margin-left: 5px;
+    border-radius: 5px;
+    margin-top: 3px;
+    height: 260px;
+    overflow-y:auto;
+}
+
+.searchResultList li {
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.searchResultList li:hover {
+    background: #eee;
+}
+
+
+/*学生管理*/
+
+.school .tit {
+    height: 40px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    background: #0168b7;
+}
+
+.school .tit .add {
+    font-size: 12px;
+    float: right;
+    display: inline-block;
+    border: 1px solid #fff;
+    line-height: 20px;
+    padding: 2px 4px;
+    border-radius: 10px;
+    margin: 7px 4px 0 0;
+    cursor: pointer;
+}
+
+.school {
+    margin: 0 -0.5%;
+}
+
+.school li {
+    margin: 0.5%;
+    display: inline-block;
+    width: 23%;
+    height: 120px;
+    border: 1px solid #ddd;
+    text-align: center;
+    position: relative;
+}
+
+.school li .icon {
+    width: 60px;
+    height: 60px;
+    background: url(/police_web/img/build-icon.png);
+    margin: 10px auto 2px auto;
+}
+
+.school li .close {
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 2px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.school li .houseName {
+    font-size: 13px;
+}
+
+.dormitory .topside {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.dormitory .topside div {
+    display: inline-block;
+}
+
+.dormitory .topside .left {
+    width: 25%;
+    border-right: 1px solid #ddd;
+    line-height: 29px;
+}
+
+.dormitory .topside .left .imgbox {
+    display: inline-block;
+    width: 18%;
+    line-height: 29px;
+    text-align: center;
+    float: right;
+    cursor: pointer;
+}
+
+.dormitory .topside .right {
+    width: 73%;
+    line-height: 29px;
+}
+
+.dormitory .topside .right .addbtn {
+    display: inline-block;
+    float: right;
+    color: white;
+    cursor: pointer;
+    margin-top: 4px;
+    background: #0168b7;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.ngdialog-place .ngdialog-content {
+    width: 700px !important;
+}
+
+.dormitory .dormlist {
+    height: 350px;
+    display: block;
+    border-right: 1px solid #ddd;
+    font-size: 14px;
+    width: 25%;
+    display: inline-block;
+}
+
+.dormitory .dormlist li {
+    display: inline-block;
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+    width: 100%
+}
+
+.dormitory .dormlist li span {
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.dormitory .dormlist li img {
+    float: right;
+    margin: 7px 6px 0 0;
+    cursor: pointer;
+}
+
+.dormitory .contantBox {
+    width: 73%;
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+}
+
+.dormitory .contantBox li {
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    font-size: 15px;
+}
+
+.dormitory .contantBox label {
+    color: #666;
+    display: inline-block;
+    line-height: 35px;
+    width: 10%;
+}
+
+.dormitory .contantBox .btnbox {
+    float: right;
+    margin-top: 7px;
+}
+
+.dormitory .contantBox .btnbox span {
+    font-size: 13px;
+    color: white;
+    display: inline-block;
+    background: #0168b7;
+    padding: 3px 11px;
+    margin-right: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.dormitory .contantBox .btnbox .cancel {
+    font-size: 13px;
+    color: #aaa;
+    display: inline-block;
+    background: white;
+    padding: 2px 10px;
+    margin-right: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+}
+
+.dormitory .contantBox .gray {
+    background: #eee;
+    border: 1px solid #ddd;
+    width: 95%;
+    height: 100px;
+    margin: 5px auto;
+}
+
+.dormitory .contantBox .gray div {
+    height: 30px;
+}
+
+.dormitory .contantBox .gray input {
+    border: 1px solid #ddd;
+    width: 29%;
+    height: 24px;
+    padding: 0 2px;
+    font-size: 12px;
+}
+
+.dormitory .contantBox .gray label {
+    color: #666;
+    display: inline-block;
+    line-height: 35px;
+    width: 18%;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.dormitoryManage label {
+    font-size: 14px;
+    width: 14%!important
+}
+
+.dormitoryManage input {
+    border: 1px solid #ddd;
+    width: 20%;
+    margin-right: 5px;
+    padding: 0 5px;
+    height: 24px;
+}
+
+.addDormitoryHouse label {
+    font-size: 15px;
+    float: left;
+    width: 25%;
+}
+
+.addDormitoryHouse select {
+    width: 75%;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.addDormitoryHouse .addresTree {
+    display: inline-block;
+    float: right;
+    width: 75%;
+}
+
+.addDormitoryHouse .addresBox:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+}
+
+.addDormitoryHouse .housename {
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 56.4%;
+    float: left;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+
+
+/*检查项*/
+
+.grade {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-bottom: 1px dashed #ddd;
+}
+
+.grade span {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.grade .red {
+    color: red;
+}
+
+.grade .deduct {
+    margin-left: 10%;
+}
+
+.check li {
+    border-bottom: 1px dashed #ddd;
+    height: 35px;
+    padding: 0 10px;
+    line-height: 35px;
+}
+
+.check img {
+    float: right;
+    width: 30px;
+}
+
+.addCheckItem .checkSelect {
+    width: 95%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px;
+}
+
+.addCheckItem textarea {
+    resize: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 95%;
+    height: 100px;
+    border: 1px solid #ddd;
+    margin: 0px 10px 10px 10px;
+}
+
+.deductgrade span {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.deductgrade input {
+    border-bottom: 1px solid #ddd;
+    width: 25%;
+    padding: 0 4px;
+}
+
+.deductgrade {
+    margin-bottom: 20px;
+}
+
+
+/*消防检查*/
+
+.CheckFire .form {
+    width: 98%;
+    border: 1px solid #ddd;
+    margin: 10px auto;
+}
+
+.CheckFire .form .ui_list {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.CheckFire .form .ui_list_button {
+    border-bottom: 1px solid #ddd;
+    height: 35px;
+    line-height: 35px;
+}
+
+.CheckFire .form .ui_list span {
+    display: inline-block;
+    width: 18%;
+}
+
+.CheckFire .form .ui_list input {
+    height: 30px;
+    font-size: 15px;
+}
+
+.fireChoice {
+    width: 98%;
+    border: 1px solid #ddd;
+    margin: 0px auto;
+    font-size: 15px;
+    padding: 5px 15px;
+}
+
+.fireChoice .short {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.fireChoice .middle {
+    display: inline-block;
+    width: 195px;
+    margin-bottom: 5px;
+}
+
+.fireChoice .long {
+    margin-bottom: 5px;
+}
+
+.fireChoice img {
+    width: 17px;
+    margin-right: 5px;
+}
+
+.CheckFire .new-body {
+    height: 550px;
+    overflow-y: auto;
+}
+
+.fireCheck_title {
+    padding: 5px 10px;
+}
+
+.options {
+    padding: 3px 25px;
+}
+
+.options input {
+    border-bottom: 1px solid #ddd;
+    width: 150px;
+    padding: 0 5px;
+    margin-bottom: 5px;
+}
+
+.fireCheck_list {
+    border-bottom: 1px solid #ddd;
+}
+
+.ui_textarea {
+    padding: 5px;
+    margin: 10px;
+    resize: none;
+    border: 1px solid #ddd;
+    width: 422px;
+    height: 100px;
+}
+
+
+/*从业人员检查*/
+
+.new-body {
+    font-size: 15px;
+}
+
+.pepNum {
+    height: 30px;
+    margin: 5px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.pepNum input {
+    border: 1px solid #ddd;
+    width: 100px;
+    height: 25px;
+    margin-right: 5px;
+    padding: 0 5px;
+}
+
+.pepNum span {
+    display: inline-block;
+    width: 125px;
+}
+
+.desc span {
+    float: left;
+    margin-left: 10px
+}
+
+.desc textarea {
+    resize: none;
+    width: 90%;
+    height: 115px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.desc {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+.form-box {
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+}
+
+.form-box label {
+    line-height: 28px;
+    display: inline-block;
+    width: 26%;
+}
+
+.form-box .itemBox {
+    width: 49%;
+    display: inline-block;
+}
+
+.white {
+    background: white;
+    border-radius: 5px;
+    padding: 0 3px;
+    display: inline-block;
+    width: 63%;
+}
+
+
+/*卖淫嫖娼*/
+
+.prostitutionCheck .tit {
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #ddd;
+}
+
+.prostitutionCheck label {
+    width: 105px;
+    display: inline-block;
+    line-height: 35px;
+}
+
+.prostitutionCheck .layout:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+}
+
+.prostitutionCheck input {
+    border-radius: 5px;
+    height: 20px;
+    padding: 0 5px;
+}
+
+.noMore {
+    text-align: center;
+    color: #aaa;
+    line-height: 33px;
+}
+
+
+/*发案检查*/
+
+.caseCheck .formBox {
+    height: 35px;
+    line-height: 35px;
+}
+
+.caseCheck label {
+    width: 12%;
+    display: inline-block;
+}
+
+.caseCheck .formBox select {
+    width: 85%;
+    height: 28px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.caseCheck .formBox input {
+    width: 99%;
+    height: 28px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.caseCheck .formBox .timeBox {
+    display: inline-block;
+    width: 86%;
+}
+
+.updateAddress {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+}
+
+.new-body:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+}
+
+.caseCheck:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+}
+
+.ui_button {
+    float: left;
+    display: inline-block;
+    width: 12%;
+    background: #0168b7;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    padding: 2px 5px;
+    margin-top: 5px;
+    margin-right: 14px;
+}
+.caseName{
+    display: inline-block;
+    line-height: 28px;
+    float: left;
+}
+.caseItem{
+    width: 90%;
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+}
+
+
+/*实名制*/
+
+.addLogistics {
+    color: #0168b7;
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    border: 1px solid #0168b7;
+    border-radius: 15px;
+    font-size: 14px;
+    padding: 3px 25px;
+    cursor: pointer;
+}
+
+.logisticsBox {
+    padding: 20px;
+}
+
+.search_text_input {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #666;
+    border: 1px solid #ddd;
+    width: 400px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.search_text_button {
+    display: inline-block;
+    width: 69px;
+    border: 1px solid #ddd;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    top: 0;
+    left: -76px;
+    border-radius: 20px;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+}
+
+.logisticsBox ul {
+    padding: 20px;
+    color: #666;
+}
+
+.logisticsBox ul li {
+    border-bottom: 1px dashed #ddd;
+    line-height: 40px;
+}
+
+.logisticsBox ul li .imgbox {
+    line-height: 40px;
+    margin-right: 10px;
+}
+
+.realname_text {
+    display: inline-block;
+    margin-left: 30px;
+    color: #0168b7;
+}
+
+.waybill {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.waybill span {
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ddd;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.waybill .red {
+    color: red;
+    border: 1px solid red;
+}
+
+.waybill .opacity {
+    color: #aaa;
+    border: 1px solid #aaa;
+}
+
+.waybillInfo .formBox input {
+    width: 75%;
+}
+
+.long {
+    width: 75%!important;
+}
+
+.searchResult .blue {
+    margin-right: 100px;
+    color: #0168b7;
+}
+
+.emptyBox {
+    height: 200px;
+    text-align: center;
+}
+
+.dateBox input {
+    width: 20%;
+    border: 1px solid #ddd;
+    height: 30px;
+    border-radius: 8px;
+    padding: 0 5px;
+    margin: 0 10px;
+}
+
+.dateBox {
+    color: #666;
+}
+
+.dateBox span {
+    color: #fff;
+    background: #0168b7;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 4px 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+input[readonly] {
+    background: #fafafa;
+    color: #888!important;
+}
+
+.search_box {
+    padding: 10px 20px;
+}
+
+.policeBox {
+    padding: 0 10px;
+}
+
+.policeBox .ui_list {
+    height: 35px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.policeBox img {
+    float: right;
+    width: 30px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.policeBox .ui_list .ui_item_small {
+    line-height: 35px;
+}
+
+.formBox-biger .ui_item_small {
+    margin: 0 10px;
+    margin: 0 20px;
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/*新增行业场所*/
+
+.addPublic .ui_item_normal {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.addPublic {
+    color: #666;
+}
+
+.addPublic input {
+    border-radius: 5px;
+    height: 28px;
+    line-height: 28px;
+    width: 440px;
+}
+
+.addPublic .ui_item_normal span {
+    display: inline-block;
+    width: 15%;
+}
+
+.addPublic .ui_item_small span {
+    display: inline-block;
+    width: 13%;
+}
+
+.addPublic .ui_item_small {
+    margin-left: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.addPublic .choosePlace {
+    width: 90px;
+    cursor: pointer;
+    color: white;
+    background: #0168b7;
+    border-radius: 15px;
+    padding: 3px 15px;
+    font-size: 14px;
+}
+
+.alert .alert-body p {
+    line-height: 40px!important;
+}
+
+.icon-right {
+    width: 35px;
+    vertical-align: middle;
+    float: right;
+}
+
+
+/*信息查询*/
+
+.searchBox select,
+input {
+    width: 50%;
+}
+
+#createdisputeinputinfo{width: 130px;height: 26px; border: 1px solid #1A629D;background: #fff;border-radius: 50px;text-align: center; color: #1A629D;font-size: 15px;cursor: pointer;}
+.adddisputeinputpersonbody{margin-top: 20px;}
+.adddisputeinputpersoninput{width: 70%;height: 30px;border: 1px solid #ccc;font-size: 16px; }
+.adddisputeinputpersonfont{width: 100px;height: 30px;text-align: left;display: inline-block;}
+span{cursor: default;}
+.repeatinfo{height: 30px;
+    width: 370px;
+    border-bottom: 1px dashed #ccc;
+    line-height: 30px;
+    color: #666;margin: 10px 0 10px 0;}
+.searchBox .bttn {
+    padding: 0 35px;
+}
+
+.searchBox .main1 {
+    padding: 37px;
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+    top: 255px;
+}
+
+.searchBox .select {
+    display: inline-block;
+    margin-right: 40px;
+    line-height: 50px;
+}
+
+.searchBox .select span {
+    color: #383838;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.searchBox .select i {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.btn-white {
+    color: #1a629d;
+    border-color: #1a629d;
+}
+
+.btn-gray {
+    color: #aaa;
+    border-color: #aaa;
+    background: white;
+}
+
+.searchBtnBox {
+    margin: 10px 20px;
+}
+
+.searchResultBox {
+    position: absolute;
+    top: 30px;
+    left: 37px;
+    right: 37px;
+    bottom: 35px;
+    overflow-y: auto;
+}
+
+.searchResultBox li {
+    color: #393939;
+    font-size: 16px;
+    line-height: 35px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.searchResultBox li:hover {
+    background: #eaeaea;
+}
+
+.searchResultBox .iconRight {
+    float: right;
+    display: inline-block;
+    height: 35px;
+}
+
+.searchResultBox .iconRight img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+.emptyTip {
+    color: #aaa;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 80px;
+    display: none;
+}
+
+.searchItem {
+    color: #999;
+    display: inline-block;
+    width: 47%;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.searchItem .searchTit {
+    display: inline-block;
+    width: 18%;
+}
+
+.searchItem .searchResult {
+    display: inline-block;
+    width: 75%;
+}
+
+.searchItem-big {
+    color: #999;
+    display: inline-block;
+    width: 50%;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.searchItem-big .searchTit {
+    display: inline-block;
+    width: 21%;
+}
+
+.idImg {
+    text-align: center;
+}
+
+.idImg img {
+    width: 260px;
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.searchHouseInfo {
+    border-top: 2px solid #1a629d;
+    width: 92%;
+    margin: 0 auto;
+    color: #999;
+}
+
+.searchHouseInfo legend {
+    color: #1a629d;
+    font-size: 18px;
+    padding: 3px 10px;
+}
+
+.searchHouseInfo .houseNum {
+    width: 80%;
+    margin: 10px auto;
+    border-bottom: 1px dashed #aaa;
+}
+
+.searchHouseInfo li {
+    line-height: 30px;
+}
+
+.searchHouseInfo .houseNum:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.houseitem {
+    width: 95px;
+    display: inline-block;
+}
+
+.emptyMessage {
+    padding: 15px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.Carowner {
+    padding: 10px
+}
+
+.imgview-mask {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999998;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: .75;
+    filter: alpha(opacity=75);
+    display: none;
+}
+
+.show-img {
+    position: fixed;
+    width: 200px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -100px;
+    background: #fff;
+    z-index: 999999;
+    width: 900px;
+    height: 666px;
+    margin-left: -450px;
+    margin-top: -333px;
+    display: none;
+}
+
+.show-img img {
+    width: 900px;
+    height: 666px;
+}
+
+.show-img a {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: -40px;
+    top: -40px;
+}
+
+.show-img a:hover {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: -40px;
+    top: -40px;
+}
+
+.formBox .block {
+    width: 548px;
+    clear: none;
+    display: inline-block;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 28px;
+    border-radius: 5px;
+    padding: 0 5px;
+    height: 28px;
+    vertical-align: middle;
+}
+
+
+/* 任务发布 */
+
+.release .release-box {
+    width: 100%;
+}
+
+.release .release-box .tack-style li {
+    display: inline-block;
+    width: 25%;
+}
+
+.release .release-box .tack-style .class1 {
+    width: 80%;
+    border-radius: 3px;
+    margin: 0!important;
+}
+
+.release .release-box .tack-style .class2 {
+    display: inline-block;
+    font-size: 16px;
+    text-indent: 2em;
+    border-radius: 3px;
+    margin-bottom: 3%;
+}
+
+.release .release-box textarea {
+    width: 99%;
+    height: 180px;
+    border: 1px #DDDDDD solid;
+    resize: none;
+    overflow: auto;
+}
+
+.release .release-box .participants {
+    width: 80%;
+    border: 1px solid #ccc;
+}
+
+.release .release-box .select1 {
+    border: 1px solid #dddddd;
+    height: 35px;
+    line-height: 35px;
+    /* margin-top: -4px; */
+    margin-left: -10px;
+    border-left: 0px!important;
+    width: 12%;
+    border-radius: 0;
+}
+
+.release .release-box .class3 {
+    display: inline-block;
+    font-size: 16px;
+    text-indent: 2em;
+    border-radius: 3px;
+    margin: 2% 0;
+}
+
+
+/* 重点人口 */
+
+.point .point1 {
+    min-width: 1007px!important;
+}
+
+.point .speci-people li {
+    display: inline-block;
+    margin-right: 2%;
+    width: 25%;
+}
+
+.point .speci-people select {
+    width: 68%;
+}
+
+.point .speci-people li .class2 {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.point .speci-people li .class1 {
+    background-color: #1F82C5;
+    color: white;
+    margin-right: 5px;
+}
+
+.point .speci-people li .class3 {
+    margin-right: 5px;
+}
+
+.point .result {
+    position: absolute;
+    bottom: 20px;
+    top: 160px;
+    left: 0;
+    right: 0;
+}
+
+.point .map {
+    position: absolute;
+    border: 1px solid #ddd;
+    top: 30px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.point .map .loadingMap {
+    width: 100%;
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 30%;
+    line-height: 20px;
+    color: #aaa;
+}
+
+.point .empty {
+    text-align: center;
+    margin: 5% auto;
+}
+
+.point .empty .emptyValue {
+    color: #999;
+    display: block;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.point table {
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.point table th {
+    color: #666;
+    height: 30px;
+    background: #F2F2F2;
+}
+
+.point table td {
+    color: #777;
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+    background: #f9f9f9;
+}
+
+
+/* 重点人口新增 */
+
+.point-new .new-body {
+    background: white;
+}
+
+.point-new .new-body .formBox {
+    font-size: 15px;
+    color: #888;
+    height: 40px;
+}
+
+.point-new .new-body .formBox label {
+    display: inline-block;
+    line-height: 40px;
+    text-align: left;
+    width: 17%;
+}
+
+.point-new .new-body .formBox .right {
+    margin-left: 5%;
+}
+
+.point-new .new-body .formBox input {
+    border: 1px solid #ddd;
+    width: 29%;
+    line-height: 23px;
+    padding: 0 5px;
+    color: #666;
+}
+
+.point-new .new-body .formBox .selectDate {
+    display: inline-block;
+    width: 47%;
+}
+
+.point-new .new-body .formBox .selectDate label {
+    width: 35%;
+}
+
+.point-new .new-body .formBox select {
+    width: 28%;
+    border: 1px solid #ddd;
+    height: 25px;
+}
+
+.point-new .new-body .formBox .selectBox {
+    display: inline-block;
+    width: 25%;
+}
+
+.point-new .new-body .formBox .selectBox img {
+    display: inline-block;
+    width: 15%;
+    vertical-align: middle;
+}
+
+.point-new .new-body .formBox .selectBox span {
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 5px;
+}
+
+.point-new .new-body .formBox .updata {
+    display: inline-block;
+    padding: 4px 13px;
+    float: right;
+    background: #13558b;
+    color: white;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.point-new .new-body .formBox .block {
+    border: 1px solid #ddd;
+    width: 50%;
+    height: 25px;
+}
+
+.point-new .new-body .formBox-big textarea {
+    padding: 7px;
+    margin: 0 0 20px 10px;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 79%;
+    height: 100px;
+    color: #777;
+    overflow: auto;
+}
+
+.ui_fc_red {
+    color: red!important;
+}
+
+.ui_fc_orange {
+    color: orange!important;
+}
+
+.ui_fc_blue {
+    color: #13558b!important;
+}
+
+.point-new .new-body fieldset {
+    font-size: 15px;
+    color: #888;
+    border: 1px solid #ddd;
+    width: 98%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.point-new .new-body fieldset .ui_radio {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    width: 21%;
+}
+
+.point-new .new-body fieldset .ui_chooseBox {
+    height: 30px;
+    padding: 0 25px;
+}
+
+.point-new .new-body fieldset .ui_chooseBox img {
+    display: inline-block;
+    width: 22%;
+    vertical-align: middle;
+}
+
+.point-new .new-body fieldset .ui_chooseBox span {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.point-new .new-body fieldset .result {
+    text-align: center;
+    font-size: 17px;
+    line-height: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.point-new .new-body .ui_item_normal {
+    font-size: 15px;
+    color: #777;
+}
+
+.point-new .addTitle {
+    color: #666;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 28px;
+    text-align: center;
+}
+
+.ngdialog-content {
+    background: white!important;
+}
+
+.popnewinfo {
+    border-bottom: 1px solid #ddd;
+}
+
+.point-new .div-sub {
+    text-align: right;
+}
+
+.point-new .div-sub div {
+    border-radius: 14px;
+    width: 86px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.point-new .div-sub .clo {
+    background-color: white;
+    color: #13558b;
+    border-color: #13558b;
+    width: 120px;
+    font-size: 13px;
+}
+
+.pointNewReason .select {
+    z-index: 10000;
+    border: 1px solid #aaa;
+    background: rgba(255, 255, 255, 0.6);
+    position: relative;
+    left: 75%;
+    top: 10px;
+    width: 65px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.pointNewReason .color {
+    z-index: 100000;
+    display: inline-block;
+    border: 1px solid rgba(19, 85, 135, 0.8);
+    position: relative;
+    font-size: 12px;
+    color: white;
+    background: rgba(19, 85, 135, 0.85);
+    padding: 2px 7px;
+    border-radius: 5px;
+    top: 10px;
+    left: 76%;
+    cursor: pointer;
+}
+
+
+/* 车辆信息采集   */
+
+.collect .car-sub {
+    text-align: center;
+}
+
+.collect .carbox {
+    min-width: 980px!important;
+}
+
+.collect .car-collect {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.collect .car-collect li {
+    display: inline-block;
+    width: 49.5%;
+    margin-top: 6px;
+}
+
+.collect .car-collect li .car-class1 {
+    display: inline-block;
+    font-size: 16px;
+    text-align: left;
+    text-indent: 1em;
+    width: 20%;
+    /* min-width: 116px; */
+}
+
+.collect .car-collect .ui_list_button {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 15px;
+    font-size: 16px;
+}
+
+.collect .car-collect .choosePlace {
+    display: inline-block;
+    background: #0168b7;
+    color: white;
+    padding: 2px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.collect .car-collect li .car-class2 {
+    display: inline-block;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px;
+    width: 75%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.collect .car-collect .div1 .car-class3 {
+    width: 86.1%;
+    height: 98px;
+    border: 1px #DDDDDD solid;
+    overflow: hidden;
+    resize: none;
+    margin-left: 9px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.collect .car-collect .div1 {
+    margin-top: 10px;
+}
+
+.collect .car-collect .car-class4 {
+    display: inline-block;
+    font-size: 16px;
+    text-align: left;
+    text-indent: 1em;
+    width: 10%;
+    /* min-width: 116px; */
+}
+
+.collect .car-collect .div2 .car-class5 {
+    width: 87.1%;
+    /* height: 130px; */
+    border: 1px #DDDDDD solid;
+    overflow: hidden;
+    resize: none;
+    margin-left: 9px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    display: inline-block;
+    /* overflow: auto; */
+}
+
+.collect .car-collect .div2 {
+    margin-top: 12px;
+}
+
+.collect .picdiv {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 10px 8px;
+}
+
+.collect .car-collect .div2 .car-class5 .imagecar {
+    display: inline-block;
+}
+
+.collect .car-collect .div2 .car-class5 .pic1 {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute;
+}
+
+.collect .car-collect .div2 .car-class5 .img-close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 1px;
+}
+
+
+/*车辆信息*/
+
+.collect .collectPeople {
+    height: 300px;
+}
+
+.collect .main-block {
+    padding: 20px;
+}
+
+.collect .main-block .option {
+    width: 48%;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.collect .option .block {
+    border: 1px solid #ccc;
+    line-height: 30px;
+    border-radius: 5px;
+    width: 65%;
+    color: #6380b8;
+    margin: 9px 5px;
+    height: 33px;
+    padding: 0px 1%;
+    background: #fff;
+}
+
+.collect .main-block .option span {
+    color: #666;
+    font-size: 16px;
+    display: inline-block;
+    width: 20%;
+}
+
+.collect .main-block .option input {
+    width: 65%;
+    border-radius: 5px;
+}
+
+.collect .collectPeople .right {
+    margin-left: 40px;
+}
+
+.collect .btnBox {
+    text-align: center;
+}
+
+
+/*地址数管理*/
+
+.collectAddress {
+    padding: 20px;
+    zoom: 1;
+    width: 100%;
+}
+
+.collectAddress:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.collectAddress span {
+    float: left;
+    color: #666;
+    font-size: 18px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.collectAddress ul {
+    float: left;
+}
+
+.collectAddress select {
+    border: 1px solid #999999;
+    width: 73%;
+    height: 35px;
+    margin-top: 20px;
+    vertical-align: middle;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.collectAddress ul li img {
+    width: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.collectAddress ul li i {
+    margin: 0 3px;
+}
+
+.addTree {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    height: 80px;
+    width: 69%;
+    border-radius: 5px;
+    background: #fafafa;
+    padding: 10px;
+    color: #666;
+}
+
+.collectAddress .close {
+    display: inline-block;
+    color: #666;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 2px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.collectAddress .submit {
+    display: inline-block;
+    color: white;
+    background: #0168b7;
+    border: 1px solid #0168b7;
+    padding: 2px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+/*三实信息*/
+
+.collect .houseBlock {
+    position: absolute;
+    top: 195px;
+    left: 0px;
+    bottom: 20px;
+    right: 0px;
+}
+
+.collect .houseBlock .houseBox {
+    position: absolute;
+    border: 1px solid #ddd;
+    top: 25px;
+    left: 20px;
+    right: 20px;
+    bottom: 55px;
+    overflow-y: auto;
+}
+
+.collect .houseBlock .btn-yellow {
+    position: absolute;
+    bottom: 4px;
+    right: 20px;
+}
+
+.collect .houseBlock .houseBox .house {
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #bbb;
+    width: 17%;
+    height: 130px;
+    cursor: pointer;
+}
+
+.collect .houseBlock .houseBox .house .houseIcon {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.collect .houseBlock .houseBox .house .houseName {
+    text-align: center;
+    color: #666;
+}
+
+.dangers .addRealHouse label {
+    width: 18%!important;
+}
+
+.dangers .addRealHouse select {
+    width: 28%;
+    border: 1px solid #ccc;
+    height: 27px;
+    border-radius: 5px;
+}
+
+.dangers .addRealHouse input {
+    width: 28%;
+    line-height: 27px;
+    border-radius: 5px;
+    height: 27px;
+}
+.dangers .addRealHouse .right {
+    width: 3.15%;
+}
+
+.collect .tit {
+    border-bottom: 1px dashed #bbb;
+    margin: 10px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.collect .tit .right {
+    float: right;
+}
+
+.collect .tit .houseName {
+    font-size: 20px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.tit .user {
+    display: inline-block;
+    background: #a53435;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    width: 130px;
+    text-align: center;
+}
+
+.tit .redRight {
+    float: right;
+    color: #a53435;
+    border: 1px solid #a53435;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 15px;
+    width: 140px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.tit .lessee {
+    display: inline-block;
+    background: #0168b7;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    width: 130px;
+    text-align: center;
+}
+
+.tit .blueRight {
+    float: right;
+    color: #0168b7;
+    border: 1px solid #0168b7;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 15px;
+    width: 140px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.grid .del {
+    color: #a53435;
+    display: inline-block;
+    width: 90px;
+    height: 26px;
+}
+
+.collect fieldset {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 15px 20px;
+    color: #999;
+    font-size: 15px;
+}
+
+.collect fieldset li {
+    display: inline-block;
+    width: 30%;
+    margin-left: 25px;
+    line-height: 30px;
+}
+
+
+/*巡逻防控*/
+
+.patrolBox .blue {
+    color: #0068B7;
+    margin-left: 10px;
+}
+
+.patrolbtn {
+    margin-left: 150px;
+}
+
+.patrolBox .work {
+    padding: 30px 10px;
+}
+
+.patrolBox .main-block textarea {
+    resize: none;
+    border: 1px solid #DDDDDD;
+    width: 98%;
+    height: 130px;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.ui_image-updata {
+    margin: 0 -1%;
+    padding: 8px;
+}
+
+.ui_image-updata .image {
+    width: 100px;
+    margin: 3px 1% 3px 0;
+    border: 1px solid #ccc;
+    position: relative;
+    float: left;
+}
+
+.ui_image-updata .image_block img {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.ui_image-updata .image_box {
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+    display: block;
+}
+
+.ui_image-updata .image_box img {
+    max-height: 100%;
+    min-width: 100%;
+}
+
+.patrolBox .btnBox {
+    text-align: center;
+}
+
+
+/*工作任务*/
+
+.missionBox {
+    padding: 15px;
+}
+
+.missionBox .btnbox {
+    width: 99%;
+    height: 58px;
+    line-height: 58px;
+    border: 1px #dddddd solid;
+    text-align: left;
+    padding-left: 10px;
+}
+
+
+/*.ui_jobs_progress { width: 100%; height: 11px; margin: 0 0 20px 0; position: relative; }
+.ui_jobs_progress .bg { height: 11px; width: 100%; border-radius: 50px; position: relative; }
+.ui_jobs_progress .bg .number { position: absolute; top: 25px; right: 0px; font-size: 14px; line-height: 14px; }
+
+.ui_jobs_progress.red .bg{ background: #f00; }
+.ui_jobs_progress.red .bg .number,.ui_jobs_progress.red .bg .number span { color: #f00; }
+
+.ui_jobs_progress.green .bg{ background: #34b249; }
+.ui_jobs_progress.green .bg .number,.ui_jobs_progress.green .bg .number span { color: #34b249; }
+
+
+.ui_jobs_progress.yellow .bg{ background: #feb711; }
+.ui_jobs_progress.yellow .bg .number,.ui_jobs_progress.yellow .bg .number span { color: #feb711; }*/
+
+.ui_jobs_progress {
+    width: 100%;
+    height: 11px;
+    margin: 0 0 20px 0;
+    position: relative;
+}
+
+.ui_jobs_progress .bg {
+    height: 11px;
+    width: 100%;
+    border-radius: 50px;
+    position: relative;
+}
+
+.ui_jobs_progress .bg .number {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.ui_jobs_progress .mask {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+.ui_jobs_progress .mask .mask_img {
+    background: url(../img/icon/progress.png);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 5;
+    height: 20px;
+}
+
+.ui_jobs_progress.red .bg {
+    background: #f00;
+}
+
+.ui_jobs_progress.red .bg .number,
+.ui_jobs_progress.red .bg .number span {
+    color: #f00;
+}
+
+.ui_jobs_progress.red .mask {
+    border: 1px solid #c81a1a;
+}
+
+.ui_jobs_progress.green .bg {
+    background: #34b249;
+}
+
+.ui_jobs_progress.green .bg .number,
+.ui_jobs_progress.green .bg .number span {
+    color: #34b249;
+}
+
+.ui_jobs_progress.green .mask {
+    border: 1px solid #198d2b;
+}
+
+.ui_jobs_progress.yellow .bg {
+    background: #feb711;
+}
+
+.ui_jobs_progress.yellow .bg .number,
+.ui_jobs_progress.yellow .bg .number span {
+    color: #feb711;
+}
+
+.ui_jobs_progress.yellow .mask {
+    border: 1px solid #c18902;
+}
+
+
+/*民警定位*/
+
+.policeLocation .ChooseBox {
+    display: inline-block;
+    width: 30%;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.policeLocation .ChooseBox select {
+    width: 70%;
+    margin-left: 8px;
+}
+
+.policeLocation .class1 {
+    float: right;
+    margin-right: 20px;
+}
+
+.policeLocation #map {
+    border: 1px solid #ddd;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    top: 180px;
+}
+
+.policeLocation #map .loadingMap {
+    width: 100%;
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 30%;
+    line-height: 20px;
+    color: #aaa;
+}
+
+#allMap {
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.amap-marker-label .blue {
+    background: #3b93f8!important;
+}
+
+
+/*危爆物品管理*/
+
+.thead,
+.tbody {
+    height: 35px;
+    color: #666;
+}
+
+.point {
+    cursor: pointer;
+}
+
+.dangerousDetail .add {
+    color: white;
+    display: inline-block;
+    padding: 5px 12px;
+    background: #0168b7;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/*信息研判*/
+
+.judge .items li {
+    display: inline-block;
+    width: 15%;
+    background: white;
+    text-align: center;
+    padding: 20px 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 15px;
+    cursor: pointer;
+    float: left;
+}
+
+.judge .items li img {
+    width: 47%;
+}
+
+.judge .items li div {
+    color: #666;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.judge .items {
+    padding: 20px;
+    background: #f0f0f0;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.judge .screen_button {
+    display: inline-block;
+    height: 40px;
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.judge .ui_fc_red {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: red;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+
+.judge .ui_fc_orange {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: orange;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+
+.judge .ui_fc_green {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: green;
+    margin-right: 7px;
+    vertical-align: middle;}
+.judge .active {background: #f0f0f0!important;}
+.judge .ChooseBox { margin:15px;}
+.judge .map {position: absolute;top: 225px;left: 20px;right: 20px;bottom: 20px;border: 1px solid #ccc;}
+.amap-marker-label .red {background: #c10715!important;}
+.amap-marker-label .green {background: #009944!important;}
+.amap-marker-label .orange {background: #eb6100!important;}
+.map .loadingMap {width: 100%;position: absolute;display: block;text-align: center;top: 30%;line-height: 20px;color: #aaa;}
+.map .list {float: right;background: white;z-index: 999;cursor: pointer;position: relative;padding: 8px}
+.map .list img {float: right;width: 50px;}
+.map .listBox {padding: 25px;color: #666;position: absolute;top: 0;left: 0;right: 20px;bottom: 20px;overflow-y: auto;}
+.map .listItem {color: #888;padding: 10px 25px;}
+.map .listBox img {vertical-align: middle;margin-right: 7px;cursor: pointer;}
+.map .listItem li {line-height: 28px;cursor: pointer;}
+.map .listItem li:hover {background: #f0f0f0;}
+.map .listBox .haha {margin-bottom: 10px;}
+.judge .reload {position: absolute;top: 5px;right: 10px;background: #0168b7;color: white;padding: 4px 20px;border-radius: 10px;cursor: pointer;}
+.unsteadiness {height: 50px;}
+.judge .option {padding: 0 10px;}
+.judge .option span {display: inline-block;width: 100px;}
+.judge .ui_radio {display: inline-block;}
+.judge .chooseItem{width: 45%;display: inline-block;}
+.judge .chooseItem .policeStation{display: inline-block;width: 90px; }
+.judge .chooseItem input{border-radius: 5px;width: 250px;}
+.judge .ChooseBox .button{text-align: right;padding-right: 30px;}
+.searchResultList .policestation{border: 1px solid #bbb;border-radius: 4px;width: 285px;margin: 4px 7px;height: 28px;}
+.searchResultList .star{width: 257px; margin: 2px 7px; height: 28px; border-radius: 4px; padding-left: 5px;}
+.searchResultList .block{float: left;border: 1px solid #bbb;border-radius: 4px;width: 122px;height: 28px;margin: 2px 7px 7px;}
+.searchResultList:after{display: block;clear: both;content: "";visibility: hidden;height: 0}
+.skew{display: inline-block;float: right; background:#0168b7; z-index: 999; position: relative; color: white;-webkit-transform: skewX(-45deg);padding: 2px 11px;
+    margin-right: 10px;}
+.skew .num{-webkit-transform: skewX(45deg);color: white;display: block; font-size: 14px;}
+.chooseCaseItem{display: inline-block;width: 460px;}
+.chooseCaseItem .policeStation{display: inline-block;width: 100px;}
+.chooseCaseItem input{width: 230px;border-radius: 5px;}
+.chooseCaseItem select{width: 240px;}
+.listcase{border: 1px solid #bbb; position: absolute; left:20px; right:20px; bottom: 20px; top:305px;}
+.listcase .list{float:right;padding:10px;cursor:pointer;}
+.listcase ul{ position: absolute; top: 50px; left: 15px; right: 20px; bottom: 20px; overflow-y: auto;}
+.listcase ul li span{display: inline-block;width: 85%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.listcase ul li{line-height: 25px;cursor: pointer;}
+.listcase ul li:hover {background: #f0f0f0;}
+
+/*出租房屋管理*/
+.fr{float: right;}
+.house .housebox{padding: 15px;}
+.house .addressbox{width: 967px;margin-left: 0.5%;padding: 15px;}
+.house .addressbox input{width: 45%;min-width: 488px;height: 34px;border: 1px solid #ccc;text-indent: 18px;margin-right: 5%;font-size: 16px;}
+.house .addressbox .btn{padding: 0 40px;}
+.house ul{padding: 15px;}
+.house li{padding: 12px 0;border-top: 1px solid #ccc;}
+.house li span{cursor: pointer;}
+.house li span.addresstree{display: block;float: left;width: 550px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.house li span.addressmore{float: right;}
+.houseRoom .houseroommessage{border: 1px solid #ccc;margin: 20px;height: 58px;}
+.houseRoom .houseroommessage .btn{margin: 10.5px;margin-right: 0;}
+.houseRoom h2{font-weight: normal;}
+.houseRoom .main-block .messagebox>div,.houseRoom .personmessage>div{float: left;width: 50%;margin-bottom: 20px;}
+.houseRoom .main-block .messagebox span{width: 115px;height: 35px;float: left;line-height: 35px;}
+.houseRoom .main-block .messagebox input{width: 70%;float: left;background-color: #fff;}
+.houseRoom .main-block .messagebox select{width: 70%;float: left;height: 35px;margin: 5px;font-size: 16px;color: #5b5b5b;border-radius: inherit;}
+.houseRoom .personmessage{padding: 0 20px;}
+.houseRoom .personmessage em{font-style: normal;color: #1a629d;cursor: pointer;}
+.houseRoom .personmessage>div>div{border: none;border-bottom: 1px solid #ccc;width: 70%;height: 35px;text-align: left;max-width: 300px;text-indent: 10px;padding-right: 10px;}
+.houseRoom .personmessage>div span,.houseRoom .personmessage em,.houseRoom .personmessage>div>div,.houseRoom .IdCard span{float: left;line-height: 35px;}
+.houseRoom .houseroommessage .opacity{opacity: 0.5;filter: Alpha(opacity=50);}
+
+/* 警务排班 */
+.dutybox{width: 100%;height: 100%;}
+.dutysearchbox{margin: 10px;/* width: 100%; */border: 1px solid #ccc;height: 90px;margin-top: 30px;margin-right: 20px;margin-left: 20px;}
+.dutylist{border: 1px solid #ccc;margin-top: 40px;margin-right: 20px;margin-left: 20px;position: relative;min-height: 500px;}
+.listtitle{width: 110px;height: 30px; font-size: 16px;color: #fff; background:#1A629D;text-align: center;line-height: 30px;position: absolute;top: -15px;left: 10px;z-index: 999;}
+#searchselect{width: 490px;height: 39px;border: 1px solid #ccc;margin-top: 25px; margin-left: 20px; text-indent: 8px;font-size: 16px;}
+#searchselect option{font-size: 16px;text-indent: 8px;}
+.dutystarttime{height: 60px;width: 770px;border-bottom:1px dashed #ccc;margin: 15px;margin-left: 30px; color: #666666;}
+.dutystarttime p{line-height: 60px; font-size: 16px;}
+.dutyclass{width: 770px;border-bottom:1px dashed #ccc;margin: 15px;margin-left: 30px;color: #666666;padding-bottom: 25px;}
+.dutyclass i{font-style:normal; display: inline-block;/* margin-left: 15px;margin: 8px; */}
+.dutyclass p{display: inline;width: 100px;margin: 8px;height: 20px;}
+.dutyclass .doc{text-align: right;width: 90px;display: inline-block;}
+
+.dutyclass .dom_block{display: inline-block;vertical-align: top;}
+.dutyclass .dom_li{width: 300px; display: inline-block;}
+.dutyclass .inlink_block{display: inline-block;margin: 3px;width: 57px;}
+
+.houseRoom i{font-style: normal;color: #f00;float: left;line-height: 35px;}
+.houseRoom .IdCard .imgurl{width: 300px;min-width: 200px;display: block;float: left;}
+.houseRoom .IdCard span{width: 150px;height: 35px;}
+.houseLivingNowMessage{font-size: 16px;}
+.houseLivingNowMessage .title{text-align: center;border-bottom: 1px solid #ccc;height: 35px;width: 700px;}
+.houseLivingNowMessage .messagebox{margin-top: 15px;width: 740px;}
+.houseLivingNowMessage span{float: left;width: 130px;height: 35px;line-height: 35px;}
+.houseLivingNowMessage .messagebox div,.houseLivingNowMessage .messagebox select{float: left;width: 210px;height: 35px;border: 1px solid #ccc;border-radius: 4px;line-height: 35px;font-size: 14px;text-indent: 10px;}
+.houseLivingNowMessage .messagebox div.marginright,.houseLivingNowMessage .messagebox select.marginright{margin-right: 20px;}
+.houseMessagedialog .ngdialog-content{width: 740px !important;}
+.houseLivingNowMessage .address{margin-top: 15px;width: 740px;}
+.houseLivingNowMessage .address div{float: left;border: 1px solid #ccc;width: 570px;height: 35px;border-radius: 4px;line-height: 35px;font-size: 14px;text-indent: 10px;}
+.houseLivingNowMessage img{min-width: 200px;max-width: 300px;}
+/* 信息研判 --> 案件录入 */
+.caseInput .main-block{width: 70%;}
+.caseInput .main-block .cl>div>span{line-height: 33px;padding-left: 10px;cursor: pointer;}
+.caseInput .main-block>div{margin-bottom: 10px;}
+.caseInput .main-block>div>span{padding-left: 17px;padding-right: 10px;line-height: 35px;float: left;}
+.caseInput .main-block>div>input,.caseInput .main-block>div>select,.caseInput .main-block>div>em{float: left;}
+.caseInput .main-block>div>em{padding-left: 10px;padding-right: 5px;line-height: 33px;color: #aaa;}
+.caseInput .main-block>div>select{margin-left: 5px;width: 65%;border-radius: 0;}
+.caseInput .main-block>div>select.s1{width: 30.5%;}
+.caseInput .main-block>div>input{width: 65%;}
+.caseInput .main-block .laydate-icon{width: 62%;float: left;margin-left: 5px;height: 33px;}
+.caseInput .main-block .btnBox .btn{margin-left: 71%;}
+.caseInput .main-block .boxselect{position: absolute;top: 20px;left: 0;background: #fff;width: 100%;height: 96%;}
+.caseInput .main-block .boxselect .btn{margin-left: 100px;padding: 0 100px;margin-bottom: 50px;display: block;}
+.caseInput .main-block .boxselect>div{float: left;}
+.caseInput .main-block .onlyread{border: 1px solid #ccc;float: left;margin-left: 5px;line-height: 33px;height: 33px;text-indent: 10px;width: 65%;}
+.caseInput .map{position: absolute;left: 0;top: 40px;width: 100%;height: 107%;}
+
+/* 查询记录 */
+#querylog .search{min-width: 980px;max-width:90%;height: 94px;border: 1px solid #DDDDDD;margin-top: 33px;margin-left: 16px;}
+#querylog .result{min-width: 980px;max-width:90% ;min-height: 490px;border: 1px solid #DDDDDD;margin-top: 50px;margin-left: 16px;}
+#querylog .search_title{display: block;width: 112px;height: 30px;background:#1A629D;color: #fff;line-height: 30px;text-align: center;font-size:18px;position: relative;top: -13px;left: 10px;}
+#querylog .result_title{display: block;width: 112px;height: 30px;background:#1A629D;color: #fff;line-height: 30px;text-align: center;font-size:18px;position: relative;top: -13px;left: 10px;}
+#querylog .search_body{width: 100%;}
+#querylog .select{width: 20%;float: left;font-size:14px; margin-top: 5px;color: #666666;}
+#querylog .select select{min-width: 120px;max-width:160px;height: 28px;border: 1px solid #DEDEDE;display: inline-block;color: #A9A9A9;}
+#querylog .searchbtn{float: right;margin-right: 23px;}
+#querylog .select p{display: inline-block;}
+#querylog .searchbtn button{width: 80px;height: 36px;border-radius: 5px;color:#fff;font-size:14px;background:#1F82C5;line-height: 36px;text-align: center;cursor: pointer;}
+#querylog .marginleft{margin-left: 25px;}
+#querylog .result_list{width: 93%;margin-left:29px;padding-bottom: 20px;}
+#querylog .result_list li{width: 100%;height: 30px;border-bottom: 1px dashed #A9A9A9;font-size: 16px;color:#999999;margin-top:10px;margin-bottom:10px;}
+#querylog .result_list p{display: inline-block;width: 90px;text-align: right;line-height: 30px;}
+#querylog .result_list span{display: inline-block;width: 140px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom: -4px;}
+#querylog .result_list a{display: inline-block;float: right;margin-right: 30px;color: #0C518F;cursor: pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

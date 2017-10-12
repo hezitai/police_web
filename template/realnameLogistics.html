@@ -1,0 +1,38 @@
+<div class="logistics">
+	<header-crumbs title="#/index/realnameLogistics:{{title}}" usedlocalstorage='used' usedlevel=3 ></header-crumbs>
+
+	
+	<div class="logisticsBox" >
+		<span class="addLogistics" ng-click="addWaybill()"> + 添加</span>
+		<div>
+			<input type="text" class="search_text_input" ng-model="option.searchText" placeholder="请输入要搜索的单号...">
+			<span class="search_text_button" ng-click="search()">搜索</span>
+			
+		</div>
+		<ul >
+			<li ng-repeat="item in list">
+				<span class="imgbox" ng-click="show(item)"><img ng-src="{{item.isActive?'/police_web/img/evebtn.png':'/police_web/img/addbtn.png'}}"></span>
+				<span>单号区间</span>
+				<div class="realname_text">
+					<span class="ui_fc_light_blue" ng-bind="item.ds_orderstart"></span> —— <span class="ui_fc_light_blue" ng-bind="item.ds_orderend"></span>
+				</div>
+				<div class="waybill" ng-if="item.isActive">
+					<span class="logistics {{ readClassName(items) }}" ng-repeat="items in waybillList" ng-bind="items.ds_ordernum" ng-click="showDetail(items)"></span>
+					
+				</div>
+			</li>
+			<li>
+				<span class="imgbox" ng-click="showCustom()"><img ng-src="{{isActive?'/police_web/img/evebtn.png':'/police_web/img/addbtn.png'}}"></span>
+				<span>自定义单号</span>
+				<div class="waybill">
+					<span class="logistics {{ readClassName(items) }}" ng-repeat="items in customWaybillList" ng-bind="items.ds_ordernum" ng-click="showDetail(items)"></span>
+					
+				</div>
+				<paging-link page-nums=12></paging-link>
+			</li>
+		</ul>
+		
+	</div>
+</div>	
+	
+

@@ -1,0 +1,11 @@
+<div class="otherMessage">
+    <div class="popnewinfo">
+        <span ng-bind="'发件人: '+message.sender"></span>
+        <br>
+        <span ng-bind="'时间: '+message.createdon"></span>
+    </div>
+    <div type="text" ng-bind="message.ds_content" class="other-content"></div>
+    <div class="divv">
+        <div class="btn btn-default sub clodiv" ng-click="stopLook()">确定</div>
+    </div>
+</div>

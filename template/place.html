@@ -1,0 +1,19 @@
+<div class="place">
+    <header-crumbs title="#/index/place:{{title}}"></header-crumbs>
+
+	<div class="map" style="position: absolute; top: 55px; left: 20px; right: 20px; bottom: 20px; border: 1px solid #ddd;">
+		<span class="loadingMap" style="color: #999; display: block; text-align: center; margin: 250px auto;">地图加载中,请稍等......</span>
+		<div class="searchPublic">
+			<input type="" name="" ng-model="public.inputSearchName" ng-change="change()">
+			<span><img src="/police_web/img/icon/search.gif"></span>
+		</div>
+		<div class="searchResultList" ng-if="public.show">
+			<ul>
+				<li ng-repeat="public in publicList | filter:public.inputSearchName"><span ng-bind="public['title']" ng-click="publicDetail(public)" style="display: block;"></span></li>
+			</ul>
+		</div>
+		<public-map></public-map>
+	</div>
+	
+	<paging-link page-nums=15 ng-if="flag"></paging-link>
+</div>

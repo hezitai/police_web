@@ -1,0 +1,32 @@
+<div class="message">
+	<header-crumbs title="#/index/message:{{title}}"></header-crumbs>
+	<div class="messagebox">
+		<div class="btnbox"> 
+			<div class="btn btn-yellow" ng-click="activeAll(messageList.showList,isAllActive(messageList.showList))"">选择全部</div>
+			<div class="btn btn-blue"  ng-click="readByActive(messageList.showList)">标记为已读</div>
+			<div class="btn btn-red" ng-click="delByActive(messageList.showList)">批量删除</div>	
+		</div>
+		
+		<div class="grid">
+			<table border="0" cellspacing="0" cellpadding="6">
+				<tr>
+					<th width="5%" ng-click="activeAll(messageList.showList,isAllActive(messageList.showList))"><span class="click" ng-class="isAllActive(messageList.showList)?'active':'' "></span></th>
+					<th width="15%">日期</th>
+					<th width="60%">信息内容</th>
+					<th width="10%">操作</th>
+				</tr>
+				<tr ng-repeat="item in messageList.showList" ng-class="item.ds_isread == 'True' ? 'unread' : 'read'">
+					<td ng-click="item.isActive = !item.isActive"><span class="click" ng-class="item.isActive?'active':'' "></span></td>
+					<td ng-bind="item.createdon"></td>
+					<td class="text-left" ng-bind="item.ds_content" ng-click="messageDetail(item)"></td>
+					<td>
+						<div class="btn btn-small btn-light-red" ng-click="delOne(item)">×</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	
+	<paging-link page-nums=2></paging-link>
+</div>

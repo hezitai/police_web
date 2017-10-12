@@ -1,0 +1,47 @@
+<div class="point-manage">
+	<header-crumbs title="#/index/point:{{title}}"></header-crumbs>
+
+	
+	<div class="main-block">
+		
+		<ul >
+			<li><div class="btn btn-yellow"  ng-click="newPoint()">新增</div></li>
+			<li><div class="btn btn-red" ng-click="newReason()">新增监管原因</div></li>	
+		</ul>
+	</div>
+	<div class="grid">
+			<table border="0" cellspacing="0" cellpadding="6">
+				<tr>
+					<th >姓名</th>
+					<th >身份证号</th>
+					<th >监管原因</th>
+					<th >监管范围</th>
+					<th >截止日期</th>
+					<th >签到时间</th>
+				</tr>
+				<tr ng-repeat="item in pointList"  ng-click="editPoint(item)">
+					
+					<td ng-bind="item['ds_person-ds_name']">姓名</td>
+					<td ng-bind="item['ds_person-ds_id']">身份证号</td>
+					<td ng-bind="item['ds_regulatoryreason-ds_name']">监管原因</td>
+					<td ng-bind="item['ds_regulatoryscope-ds_name']">监管范围</td>
+					<td ng-bind="item['ds_enddate']">截止日期</td>
+					<td ng-bind="item['ds_signdate']">签到时间</td>
+					
+				</tr>
+			</table>
+	</div>
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+</div>

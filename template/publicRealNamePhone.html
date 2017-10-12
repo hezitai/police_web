@@ -1,0 +1,24 @@
+<div class="logistics">
+	<header-crumbs title="#/index/publicRealNamePhone:{{title}}" usedlocalstorage='used' usedlevel=3 ></header-crumbs>
+
+	
+	<div class="logisticsBox" >
+		<span class="addLogistics" ng-click="addPhone()"> + 添加</span>
+		<div class="dateBox">
+			<input type="" name="" class="laydate-icon" onclick="laydate()" ng-model="option.starTime">——<input type="" name="" class="laydate-icon" onclick="laydate()" ng-model="option.endTime"><span ng-click="getMessageByPageNum(1)">搜索</span>
+		</div>
+		<ul>
+			<li ng-repeat="item in list" ng-click="showInfo(item)">
+				<div style="display: inline-block;width: 15%">
+					<span>姓名：</span><span ng-bind="item['ds_person-ds_name']"></span>
+				</div>
+					
+				<span style="margin-left: 8%;">物品名称：</span><span ng-bind="item.ds_brand"></span>
+				<span class="imgbox" style="float: right; width: 20px; cursor: pointer;" ng-click="delete(item.id,$event)"><img src="/police_web/img/delbtn2.png"></span>
+			</li>
+			<paging-link page-nums=2></paging-link>
+		</ul>
+			
+		
+	</div>
+</div>	

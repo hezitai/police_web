@@ -1,0 +1,115 @@
+<div class="place">
+	<header-crumbs title="#/index/addPublic:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+
+	<div class="main-block addPublic">
+		<div class="title">场所信息</div>
+			<div class="ui_list">
+					<div class="ui_list_button ui_item_normal">
+						<span>场所类别 : </span>
+						<select ng-model="options.businesskind"  class="ui_list_input" ng-options="x.name for x in businesskind" style="background: #fff;height: 29px;width: 442px;margin:5px"></select>
+					</div>
+				</div>	
+				<div class="ui_list">
+					<div class="ui_list_button ui_item_normal">
+						<span>场所地址 : </span>
+						<div class="ui_text_right" ng-click="showAddressTree()" style="display: inline-block;">
+							<span ng-bind="options.addressName" style="width: 800px;margin: 5px;">选择地址</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui_list">
+					<div class="ui_list_button ui_item_normal">
+						<span>单位名称 : </span>
+						<input type="text" ng-model="options.ds_name" class="ui_list_input"/>
+					</div>
+				</div>
+
+
+				<div class="ui_list">
+					<div class="ui_list_button" style="border-bottom: 1px solid #ddd;">
+						<div style="line-height: 40px">
+							<span style="width: 15%; display: inline-block;">详细地址 : </span>
+							<div class="ui_text_right" ng-click="choosePosition()" style="display: inline-block; margin: 5px;">
+								<span class="choosePlace" >选择地点</span>
+							</div>
+						</div>							
+						<textarea ng-if="case.address" style="padding: 10px; margin: 0px 0 20px 16%; height: 60px;" class="ui_textarea" ng-model="case.address"></textarea>
+					</div>
+				</div>
+
+				<div class="ui_list" ng-if="options.businesskind.value == '100000017'">
+					<div class="ui_list_button ui_item_normal">
+						<span>添加寝室楼 : </span>
+						<div ng-click="showDormitory()" style="display: inline-block; background: #0168b7; font-size: 14px; cursor: pointer; color: white; border-radius: 12px; text-align: center; padding: 3px 29px; margin: 5px; margin-right: 14px;">添加</div>
+					</div>
+					<div class="ui_list" ng-repeat="item in dormitoryList">
+						<div class="ui_list_button ui_item_small" style="height: 35px;line-height: 35px;">
+							<span ng-bind="item.name">姓名 : </span>
+							<img src="/police_web/img/icon/icon-right.png" class="icon-right">
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="ui_list">
+					<div class="ui_list_button ui_item_normal">
+						<span>法人代表信息 : </span>
+					</div>
+					<div class="ui_list">
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">姓名 : </span>
+							<input type="text" ng-model="ds_owner_ref.ds_name" class="ui_list_input"/>
+						</div>
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">联系电话 : </span>
+							<input type="text" ng-model="ds_owner_ref.ds_phone" class="ui_list_input"/>
+						</div>
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">公民身份证号 : </span>
+							<input type="text" ng-model="ds_owner_ref.ds_id" class="ui_list_input"/>
+						</div>
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">家庭住址 : </span>
+							<input type="text" ng-model="ds_owner_ref.ds_address" class="ui_list_input"/>
+						</div>
+					</div>
+				</div>
+				<div class="ui_list">
+					<div class="ui_list_button ui_item_normal">
+						<span>治安防卫负责人信息 : </span>
+					</div>
+					<div class="ui_list">
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">姓名 : </span>
+							<input type="text" ng-model="ds_securityowner_ref.ds_name" class="ui_list_input"/>
+						</div>
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">联系电话 : </span>
+							<input type="text" ng-model="ds_securityowner_ref.ds_phone" class="ui_list_input"/>
+						</div>
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">公民身份证号 : </span>
+							<input type="text" ng-model="ds_securityowner_ref.ds_id" class="ui_list_input"/>
+						</div>
+						<div class="ui_list_button ui_item_small">
+							<span style="line-height: 40px;">家庭住址 : </span>
+							<input type="text" ng-model="ds_securityowner_ref.ds_address" class="ui_list_input"/>
+						</div>
+					</div>
+				</div>
+				<div class="ui_list">
+					<div class="ui_list_button ui_item_normal">
+						<span>治安防卫负责人电话 : </span>
+						<input type="text" ng-model="ds_securityowner_ref.ds_phone2" class="ui_list_input"/>
+					</div>
+				</div>
+	</div>
+	<div class="sub" style="text-align: center;">
+		<div class="btn btn-blue sub" ng-click="submit()">提交</div>
+	</div>
+
+
+</div>

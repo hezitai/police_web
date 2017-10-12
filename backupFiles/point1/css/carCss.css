@@ -1,0 +1,31 @@
+.car .car-find{
+	margin-left:30px;
+	margin-top: 10px;
+	margin-bottom: 26px;
+
+}
+			
+.car .car-find .car-id{
+    font-size: 16px;
+    color: #B7B7B7;
+    line-height: 30px;
+    width: 40%;
+    border: 1px solid #D5D5D5;
+    margin-right: 40px;
+    border-radius: 2px;
+    height: 30px;
+   
+}
+.car .main-block.car-box{
+	margin-top:50px;
+}
+.car .car-info{
+	margin-top: 20px;
+	margin-left: 20px;
+
+}
+.car .car-info li{
+	line-height: 36px;
+	font-size: 16px;
+	color: #383838;
+}

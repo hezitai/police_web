@@ -1,0 +1,64 @@
+<div class="dormitory">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">学生管理</span>
+	</div>
+	<div class="new-body">
+		<div class="topside">
+			<div class="left"><span>寝室列表</span><span class="imgbox" ng-click="addDormitory()"><img src="/police_web/img/putbtn.png" ></span></div>
+			<div class="right" ng-if="isShow.showAddStu"><span class="dormName"><span ng-bind="items.floor"></span>楼<span ng-bind="items.dormitory"></span>寝</span><span class="addbtn" ng-click="addStudent()">+ 添加人员</span></div>
+		</div>
+		<div class="bottomSide">
+			<ul class="dormlist">
+				<li ng-repeat="item in dormitoryHouse" ng-click="getStudent(item)"><span ng-bind="item['ds_floor']"></span>楼<span ng-bind="item['ds_roomfigure']"></span>寝<img src="/police_web/img/delbtn1.png" ng-click="deleteDormitory(item['id'],$event)"></li>
+				
+			</ul>
+			<div class="contantBox">
+				<ul ng-init="flag=0" ng-if="isShow.showStudent" >
+					<li ng-repeat="item in studentList">
+						<label>姓名：</label><span ng-bind="item['ds_person_ref-ds_name']">张三</span>
+						<span class="btnbox"><span ng-click="lookstudentInfo(item)">查看</span><span ng-click="deleteStudent(item,$event)">删除</span></span>
+						<div class="gray" ng-if="item.isActive">
+							<div>
+								<label>姓名：</label><input type="text" name="" ng-model="stuMessage.peopleMessage['ds_name']">
+								<label>身份证号：</label><input type="text" name="" readonly="readonly" ng-model="stuMessage.peopleMessage['ds_id']">
+							</div>
+							<div>
+								<label>户籍地址：</label><input type="text" name="" ng-model="stuMessage.peopleMessage['ds_nativeplace']">
+								<label>联系电话：</label><input type="text" name="" ng-model="stuMessage.peopleMessage['ds_phone']">
+							</div>
+							<div>
+								<span class="btnbox"><span ng-click="upDataStudent(item['ds_person_ref-ds_personid'])">提交</span><span class="cancel" ng-click="cancel(item)">取消</span></span>
+							</div>
+						</div>
+					</li>					
+				</ul>
+				<div class="gray" ng-if="isShow.addStu">
+					<div>
+						<label>姓名：</label><input type="text" name="" ng-model="addstudent['ds_name']">
+						<label>身份证号：</label><input type="text" name="" ng-model="addstudent['ds_id']">
+					</div>
+					<div>
+						<label>户籍地址：</label><input type="text" name="" ng-model="addstudent['ds_nativeplace']">
+						<label>联系电话：</label><input type="text" name="" ng-model="addstudent['ds_phone']">
+					</div>
+					<div>
+						<span class="btnbox"><span ng-click="submit()">提交</span><span class="cancel">取消</span></span>
+					</div>
+				</div>
+				<div class="dormitoryManage" style="font-size: 14px" ng-if="isShow.showdorm">
+					<div>
+						<label>楼层：</label><input type="text" name="" ng-model="options.floor">楼
+					</div>
+					<label>寝室号：</label><input type="text" name="" ng-model="options.roomfigure">寝
+					<div>
+						<span class="btnbox"><span ng-click="submitdormitory()">创建</span></span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	
+</div>

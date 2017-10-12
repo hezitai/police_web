@@ -1,0 +1,103 @@
+<div class="search" >
+	<header-crumbs title="#/index/search:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+	<div class="searchBox" >
+		<div class="main-block">
+			<div class="title">查询结果</div>
+			<ul>
+				<li class="searchItem" ><span class="searchTit">姓名：</span><span class="searchResult" ng-bind="detail.person['ds_name'] ? detail.person['ds_name'] :''"></span></li>
+				<li class="searchItem"><span class="searchTit">曾用名：</span><span class="searchResult" ng-bind="detail.person['ds_oldname'] ? detail.person['ds_oldname'] :''"></span></li>
+				<li class="searchItem"><span class="searchTit">性别：</span><span class="searchResult" ng-bind="detail.person.sex"></span></li>
+				<li class="searchItem"><span class="searchTit">民族：</span><span class="searchResult" ng-bind="detail.person['ds_nation']"></span></li>
+				<li class="searchItem"><span class="searchTit">籍贯：</span><span class="searchResult" ng-bind="detail.person['ds_nativeplace']?detail.person['ds_nativeplace']:''"></span></li>
+				<li class="searchItem"><span class="searchTit">政治面貌：</span><span class="searchResult" ng-bind="detail.person['ds_politics'] ? detail.person['ds_politics'] :''"></span></li>
+				<li class="searchItem"><span class="searchTit">文化程度：</span><span class="searchResult" ng-bind="detail.person['ds_education']"></span></li>
+				<li class="searchItem"><span class="searchTit">出生日期：</span><span class="searchResult" ng-bind="detail.person.birth"></span></li>
+				<li class="searchItem"><span class="searchTit">身份证号：</span><span class="searchResult" ng-bind="detail.person['ds_id'] ? detail.person['ds_id'] :''"></span></li>
+				<li class="searchItem"><span class="searchTit">身高：</span><span class="searchResult" ng-bind="detail.person['ds_height'] ? detail.person['ds_height'] :''"></span></li>
+				<li class="searchItem"><span class="searchTit">血型：</span><span class="searchResult" ng-bind="detail.person['ds_bloodtype']"></span></li>
+				<li class="searchItem"><span class="searchTit">QQ：</span><span class="searchResult" ng-bind="detail.person['ds_qq'] ? detail.person['ds_qq']:''"></span></li>
+				<li class="searchItem"><span class="searchTit">微信：</span><span class="searchResult" ng-bind="detail.person['ds_wechat'] ? detail.person['ds_wechat']:''"></span></li>
+				<li class="searchItem"><span class="searchTit">固定电话：</span><span class="searchResult" ng-bind="detail.person['ds_telephone'] ? detail.person['ds_telephone']:''"></span></li>
+				<li class="searchItem"><span class="searchTit">手机号1：</span><span class="searchResult" ng-bind="detail.person['ds_phone'] ? detail.person['ds_phone']:''"></span></li>
+				<li class="searchItem"><span class="searchTit">手机号2：</span><span class="searchResult" ng-bind="detail.person['ds_phone2'] ? detail.person['ds_phone2']:''"></span></li>
+				<li class="searchItem-big"><span class="searchTit">户籍地址：</span><span ng-bind="detail.person['ds_placeaddress'] ? detail.person['ds_placeaddress']:''"></span></li>
+				<li class="searchItem-big"><span class="searchTit">现居住地址：</span><span ng-bind="detail.person['ds_address'] ? detail.person['ds_address']:''"></span></li>
+				<li class="searchItem-big"><span >身份证正反面照片：</span></li>
+				<div class="idImg"><img ng-src="{{detail.person.headimg}}" class="searchPhoto"><img ng-src="{{detail.person.backimg}}" class="searchPhoto"></div>
+				
+			</ul>
+
+			<fieldset class="searchHouseInfo">
+				<legend>房屋信息</legend>
+				<div class="emptyMessage" ng-if="detail.haveHouse">暂无房屋</div>
+				<ul class="houseNum" ng-repeat="house in detail.house">
+					<li style="color:#666;">房屋{{$index + 1}}</li>
+					<li><span class="houseitem">产权号：</span><span ng-bind="house['ds_property'] ? house['ds_property']:''"></span></li>
+					<li><span class="houseitem">房屋地址：</span><span ng-bind="house['ds_address'] ? house['ds_address']:''"></span></li>
+					<li><span class="houseitem">房屋面积：</span><span ng-bind="house['ds_area'] ? house['ds_area']:''"></span></li>
+					<li><span class="houseitem">房屋用途：</span><span ng-bind="house['ds_kind']"></span></li>
+					<li ng-if="house['ds_kind']!='自用'">
+						<span style="float: left;" class="houseitem">承租人：</span>
+						<ul style="float: left;">
+							<li style="color:#1a629d;cursor: pointer;" ng-repeat="person in house.lesseeList" ng-click="peopleInfo(person)"><span ng-bind="person['lesseeName']+'：'"></span><span ng-bind="person['lesseeIdNum']"></span></li>
+							
+						</ul>
+					</li>
+				</ul>
+			</fieldset>
+			
+			<fieldset class="searchHouseInfo">
+				<legend>车辆信息</legend>
+				<div class="emptyMessage" ng-if="detail.haveCar">暂无车辆</div>
+				<ul class="houseNum" ng-repeat="car in detail.car">
+					<li style="color:#666;">{{car['createdon'] +'车辆采集记录'}}</li>
+					<li><span class="houseitem">车辆型号：</span><span ng-bind="car['ds_model'] ? car['ds_model']:''"></span></li>
+					<li><span class="houseitem">车辆颜色：</span><span ng-bind="car['ds_color']?car['ds_color']:''"></span></li>
+					<li><span class="houseitem">车牌号码：</span><span ng-bind="car['ds_number'] ? car['ds_number']:''"></span></li>
+					<li style="color:#1a629d;cursor: pointer;"><span ng-click="carInfo(car)">更多信息</span></li>
+				</ul>
+			</fieldset>	
+			
+			<fieldset class="searchHouseInfo">
+				<legend>前科劣迹</legend>
+				<div class="emptyMessage" ng-if="detail.haveCase">暂无前科劣迹</div>
+				<ul class="houseNum" ng-repeat="case in detail.case">
+					<li><span class="houseitem">案件名称：</span><span ng-bind="case['ds_name'] ? case['ds_name']:''"></span></li>
+					<li><span class="houseitem">发案时间：</span><span ng-bind="case['ds_happendate'] ? case['ds_happendate']:''"></span></li>
+					<li><span class="houseitem">简要案情：</span><span ng-bind="case['ds_description'] ? case['ds_description']:''"></span></li>
+					<li style="color:#1a629d;cursor: pointer;"><span ng-click="caseInfo(case)">更多信息</span></li>
+				</ul>
+				
+			</fieldset>	
+
+			<fieldset class="searchHouseInfo">
+				<legend>视频信息</legend>
+				<div class="emptyMessage">暂无信息</div>
+				
+			</fieldset>	
+		</div>
+		
+	</div>	
+	<!-- <div class="searchResult" style="display: none;">
+		<div class="main-block">
+			<div class="title">查询结果</div>
+			<ul>
+				<li><span>姓名：</span>刘子薇</li>
+				<li><span>性别：</span>女</li>
+				<li><span>年龄：</span>27</li>
+				<li><span>身份证号：</span>22010219761234</li>
+				<li><span>手机号：</span>19846475595</li>
+				<li><span>手机号1：</span>13644441234</li>
+				<li><span>手机号2：</span>15526661314</li>
+				<li><span>人口类型：</span>暂住人口</li>
+				<li><span>家庭住址：</span>双阳区-辽宁大街-上东国际4栋3门702</li>
+				<li><span>车辆信息：</span>吉A-AA666，白色，马自达</li>
+				<li><span>以往住址：</span>双阳区-台北大街-台北花园1栋1门205</li>
+				<li><span>微信：</span>wangerni0510</li>
+				<li><span>QQ：</span>286546152</li>
+				<li><span>前科劣迹：</span>无</li>
+				<li><span>视频信息：</span>无</li>	
+			</ul>
+		</div>
+	</div> -->
+</div>

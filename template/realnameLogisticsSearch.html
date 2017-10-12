@@ -1,0 +1,25 @@
+<div class="logistics">
+	<header-crumbs title="#/index/realnameLogisticsSearch:{{title}}" usedlocalstorage='used' usedlevel=4 ></header-crumbs>
+
+	
+	<div class="logisticsBox" >
+		
+		<div class="searchResult">
+			<ul>
+				<li ng-repeat="item in searchList" ng-click="showDetail(item)">
+					<label>名称：</label><span class="blue" ng-bind="item['ds_name']"></span>
+					<label>单号：</label><span class="blue" ng-bind="item['ds_ordernum']"></span>
+				</li>
+			</ul>
+			<paging-link page-nums=12></paging-link>
+		</div>
+		<div class="emptyBox" id="empty" ng-if="emptyShow">
+			<img src="/police_web/img/empty.png" class="Icon">
+			<span style="display: block; color: #888;">暂无数据</span>
+		</div>
+		
+	</div>
+
+	
+
+</div>

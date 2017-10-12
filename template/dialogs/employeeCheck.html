@@ -1,0 +1,120 @@
+<div class="employeeCheck">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">从业人员检查项</span>
+	</div>
+	<div class="new-body">
+		<div class="pepNum">
+			<span>未登记人数：</span><input type="" name="" ng-model="options.ds_numberofpeople" >人
+		</div>
+		<div class="pepNum">
+			<span>未登不在岗人数：</span><input type="" name="" ng-model="options.ds_offlinepersonnum" >人
+		</div>
+		<div class="desc">
+			<span >描述：</span>
+			<textarea placeholder="请输入扣分原因..." ng-model="options.ds_description"></textarea>
+		</div>
+		<div class="form-box" ng-repeat="people in peopleList" >
+			<label style="display: inline;" >姓名 : </label>
+			<span ng-bind="people['ds_employee-ds_name']"></span>
+			
+			<span class="btn btn-blue btn-small btn-r" style="margin-top: 1px; border-radius: 15px; " ng-click="People.show(people)">查看</span>
+			
+			<div class="layout" style="background: #eaeaea;" ng-if="people.isActive">
+				<div class="form-box">
+					<div class="itemBox">
+						<label>姓名 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_name']"></span>
+					</div>
+					<div class="itemBox">
+						<label>身份证号 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_id']"></span>
+					</div>		
+				</div>
+				<div class="form-box">
+					<div class="itemBox">
+						<label>出生日期 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_birth']"></span>
+					</div>
+					<div class="itemBox">	
+						<label>职务 : </label>
+						<span class="white" ng-bind="People.detail['ds_position']"></span>
+					</div>
+				</div>
+				<div class="form-box">
+					<div class="itemBox">
+						<label>性别 : </label>
+						<span class="white" ng-bind="(People.detail['ds_employee-ds_gender'] == '1' ? '男' : '女')"></span>
+					</div>
+					<div class="itemBox">
+						<label>文化程度 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_education'].split(':')[1]"></span>
+					</div>
+				</div>
+				<div class="form-box">
+					<div class="itemBox">
+						<label>民族 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_nation'].split(':')[1]"></span>
+					</div>
+					<div class="itemBox">
+						<label>婚姻状态 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_marriage'].split(':')[1]"></span>
+					</div>
+				</div>
+				<div class="form-box">
+					<div class="itemBox">
+						<label>户口类别 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_account'].split(':')[1]"></span>
+					</div>
+					<div class="itemBox">
+						<label>血型 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_bloodtype'].split(':')[1]"></span>
+					</div>
+				</div>				
+				<div class="form-box">
+					<div class="itemBox">
+						<label>联系电话 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_phone']"></span>
+					</div>	
+					<div class="itemBox">
+						<label>QQ : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_qq']"></span>
+					</div>	
+				</div>
+				<div class="form-box">
+					<div class="itemBox">
+						<label>微信 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_wechat']"></span>
+					</div>
+					<div class="itemBox">
+						<label>身高 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_height']"></span>
+					</div>
+				</div>	
+				<div class="form-box">
+					<div class="itemBox">
+						<label>现住址 : </label>
+						<span class="white" ng-bind="People.detail['ds_employee-ds_address']"></span>
+					</div>
+				</div>
+				<div class="form-box" ng-init="show=false">
+					<label>身份证正面照片 : </label>
+					<span class="btn btn-blue btn-small" style=" border-radius: 15px;margin-top: 3px;" ng-click="show=!show">查看</span>
+					<div>
+						<img ng-src="{{People.detail.img}}" style="max-width: 100%" ng-if="show">
+					</div>
+						
+				</div>
+
+			</div>
+		</div>
+
+		
+	</div>
+
+	<!-- <div class="div-sub">
+		<div class="btn clo" style="float: right;border-radius: 20px; color: #666;" ng-click="close()">取消</div>
+		<div class="btn btn-default " style="float: right;border-radius: 20px;" ng-click="submit()">确定</div>
+	</div> -->
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

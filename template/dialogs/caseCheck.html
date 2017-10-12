@@ -1,0 +1,141 @@
+<div class="caseCheck">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">发案检查项</span>
+	</div>
+	<div class="new-body" style="padding: 10px">
+		<div ng-if="formType == 'create' && !showForm">
+			<div class="ui_block cl" ng-repeat="item in CaseType" >
+				<div class="ui_block_title ui_fs_18 ui_fc_blue caseName" ng-bind="item.name"></div>
+				<div class="ui_block_contant cl caseItem">
+					<div class="ui_button" ng-repeat="subItem in item.subSet" ng-click="getType(item,subItem)" ng-bind="subItem.name"></div>
+				</div>
+			</div>
+		</div>
+		<div>
+
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>案件类别 : </label>
+					<select class="block" style="width: 30%; clear: none;" ng-model="case.Type" ng-options="x.name for x in CaseType" ng-change="changeCaseType()"></select>
+					<span>&nbsp; - &nbsp;</span>
+					<select class="block" style="width: 31.3%; clear: none;" ng-model="case.SubType" ng-options="x.name for x in case.Type.subSet" ng-change="changeCaseSubSetType()"></select>
+					
+					
+				</div>
+			</div>
+
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>接警时间 : </label>
+					<div class="timeBox">
+						<div class="date" style="display: inline-block;">						
+							<input type="date" ng-model="case.ReceptionDay" ng-change="getDay(case.ReceptionDay,'showReceptionDay', 'saveReceptionDay')">
+						</div>
+						<div class="time" style="display: inline-block;">							
+							<input type="time" ng-model="case.ReceptionTime" ng-change="getTime(case.ReceptionTime,'showReceptionTime', 'saveReceptionTime')">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="formBox-big">
+				<div class="ui_list_button ui_item_normal">
+					<label style="float: left;">案件名称 : </label>
+					<textarea class="ui_textarea" ng-model="case.name" style="padding: 5px; margin: 0 0 10px 5px; height: 80px; border-radius: 5px; width: 85%;"></textarea>
+				</div>
+			</div>
+
+			<div class="formBox-big">
+				<div class="ui_list_button ui_item_normal">
+					<div style="height: 35px;line-height: 35px;">
+						<label>详细地址 : </label>
+						<!-- <div class="updateAddress ui_text_right" ng-click="showCaseMap()">
+							<img src="/police_web/img/mark_b.png" style="vertical-align: middle;">
+							<span style="margin-right: 15px;">手动选择</span>
+							
+						</div> -->
+					</div>						
+					<textarea class="ui_textarea" ng-model="case.address" style="padding: 5px; margin: 0 0 20px 0; height: 70px; width: 85%; margin-left: 13%; border-radius: 5px;"></textarea> 
+				</div>
+			</div>
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label >发案时间 : </label>
+					<div class="timeBox">
+						<div class="date" style="display: inline-block;">
+							<!-- <span ng-bind="case.showStartDay"></span> -->
+							<input type="date" ng-model="case.StartDay" ng-change="getDay(case.StartDay,'showStartDay', 'saveStartDay')">
+						</div>
+						<div class="time" style="display: inline-block;">
+							<!-- <span ng-bind="case.showStartTime"></span> -->
+							<input type="time" ng-model="case.StartTime" ng-change="getTime(case.StartTime,'showStartTime', 'saveStartTime')">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>发案部位 : </label>
+					<select class="block" ng-model="case.caseposition" ng-options="x.name for x in caseposition"></select>
+				</div>
+			</div>
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>发案地区 : </label>
+					<input type="text" class="ui_list_input" style="width: 85%;" value="双阳区" readonly="readonly">
+				</div>
+			</div>
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>案件状态 : </label>
+					<select class="block" ng-model="case.CaseCourseType" ng-options="x.name for x in CaseCourseType"></select>
+				</div>
+			</div>
+
+			<div class="formBox-biger">
+				<div class="ui_list_button ui_item_normal" style="line-height: 35px">
+					<label>办案民警 : </label>
+					<!-- <div class="ui_button" style="float: right;" ng-click="Police.add()">+ 添加</div> -->
+				</div>
+
+				<div class="formBoxs" ng-repeat="police in Police.UsedList">
+					<div class="ui_list_button ui_item_small">
+						<span ng-bind="'姓名 : ' + police.name"></span>
+						<!-- <span class="ui_fc_red" style="float: right; margin: 0 0 0 10px;" ng-click="Police.delete(police,$event,$index)">删除</span> -->
+					</div>
+				</div>
+
+			</div>
+
+			<div class="formBox-biger">
+				<div class="ui_list_button ui_item_normal" style="line-height: 35px">
+					<label>涉案人员 : </label>
+					<!-- <div class="ui_button" style="float: right;" ng-click="People.add()">+ 添加</div> -->
+				</div>
+
+				<div class="formBoxs" ng-repeat="people in PeopleList" ng-click="People.show(people)">
+					<div class="ui_list_button ui_item_small">
+						<span ng-bind="'姓名 : ' + people['ds_name']"></span>
+						<!-- <span class="ui_fc_red" style="float: right; margin: 0 0 0 10px;cursor: pointer;" ng-click="People.delete(people,$event,$index)">删除</span> -->
+						<span class="ui_fc_light_blue" style="float: right; cursor: pointer;" ng-click="People.show(people)">查看</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="formBox-big" style="margin-top: 10px;">
+				<div class="ui_list_button ui_item_normal">
+					<label style="float: left;"> 简要案情 : </label>
+					<textarea class="ui_textarea" style="padding: 5px; margin: 0 0 20px 0; width: 85%; border-radius: 5px;" ng-model="case.ds_description"></textarea>
+				</div>
+			</div>
+		
+	</div>
+
+	<!-- <div class="div-sub">
+		<div class="btn clo" style="float: right;border-radius: 20px; color: #666;" ng-click="close()">取消</div>
+		<div class="btn btn-default " style="float: right;border-radius: 20px;" ng-click="submit()">确定</div>
+	</div> -->
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

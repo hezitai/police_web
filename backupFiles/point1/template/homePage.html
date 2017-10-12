@@ -1,0 +1,15 @@
+<div class="homePage">
+	<header-crumbs title="#/index/homePage:{{title}}"></header-crumbs>
+	<div class="person-info">
+		<div class="person-sign">{{userManage.policeNum ? userManage.policeNum + '号警员:': ''}} 欢迎登录本系统</div>
+		<div class="btn btn-default sign"  ng-click="sign()" style="background-color:{{isChecked?'':'#B8B8B8'}}; border-color: {{isChecked?'':'#B8B8B8'}};" ng-bind="isChecked ? '签到':'已签到'">查询中</div>
+	</div>
+	<div class="undone"></div>
+	<div class="bottom-box">
+		<div class="new-news"></div>
+		<sign-link></sign-link>
+	</div>
+</div>
+
+
+

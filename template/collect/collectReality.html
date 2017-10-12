@@ -1,0 +1,36 @@
+<div class="collect">
+	<header-crumbs title="#/index/collect:{{title}}" usedlocalstorage="list" list='[{"startName":"信息采集","status":"#/index/collect"},{"startName":"三实信息","status":"#/index/collectReality"}]'></header-crumbs>
+
+	<div class="main-block" >
+		<div class="title">地址树选择</div>
+		<div class="addressTree cl">
+			
+			<select style="width: 15%;font-size: 15px;" ng-init="address.result[0] = address.list[0][address.index[0]]" ng-model="address.result[0]" class="block" ng-options="x['name'] for x in address.list[0]" ng-change="address.change('0')"></select>
+			<select style="width: 15%;font-size: 15px;" ng-init="address.result[1] = address.list[1][address.index[1]]" ng-model="address.result[1]" class="block" ng-options="x['name'] for x in address.list[1]" ng-change="address.change('1')"></select>
+			<select style="width: 15%;font-size: 15px;" ng-init="address.result[2] = address.list[2][address.index[2]]" ng-model="address.result[2]" class="block" ng-options="x['name'] for x in address.list[2]" ng-change="address.change('2')"></select>
+			<select style="width: 15%;font-size: 15px;" ng-init="address.result[3] = address.list[3][0]" ng-model="address.result[3]" class="block" ng-options="x['name'] for x in address.list[3]" ng-change="address.change('3')"></select>
+			
+			<div class="btn btn-blue search" ng-click="submit()"><i></i>查询</div>
+		</div>
+
+	</div>
+
+	<div class="main-block houseBlock" >
+		<div class="title">查询结果</div>
+		<div class="houseBox" ng-if="houseShow">
+			<div class="house" ng-repeat="item in list" ng-click="goRealName(item)">
+				<div class="houseIcon"><img src="/police_web/img/build-icon.png"></div>
+				<div class="houseName" ng-bind="item.ds_address"></div>
+			</div>
+		</div>
+
+		<div class="emptyBox" id="empty" style="margin-top: 100px;" ng-if="empty">
+			<img src="/police_web/img/empty.png" class="Icon">
+			<span style="display: block; color: #888;">暂无数据</span>
+		</div>
+
+		<div class="btn btn-yellow" ng-click="addRealHouse()" ng-if="showbtn">添加</div>
+	</div>
+
+
+</div>

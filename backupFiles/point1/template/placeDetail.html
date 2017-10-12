@@ -1,0 +1,100 @@
+<div class="place">
+	<header-crumbs title="#/index/place:{{title}}" usedlocalstorage='used' usedlevel=3></header-crumbs>
+
+	<div class="layout">
+		<div class="cl">
+			<div class="treeMessage">
+				<span>双阳区</span> - <span>临河街道</span> - <span>第六排</span> - <span>凯悦时尚宾馆</span>
+			</div>
+			<div class="belongs">
+				所属派出所 : <span>临河派出所</span>  所属民警 : <span>刘紫薇</span> 
+			</div>
+		</div>
+	</div>
+
+	<div class="layout cl">
+		<div class="tables" style="width: 49.5%; float: left;">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<th colspan="5">吉林省公安机关行业场所基本情况登记表</th>
+				</tr>
+				<tr>
+					<td>单位名称</td>
+					<td colspan="4" ng-bind="placeMessage.ds_name"></td>
+				</tr>
+				<tr>
+					<td>单位地址</td>
+					<td colspan="4" ng-bind="placeMessage.ds_address"></td>
+				</tr>
+				<tr>
+					<td>负责人</td>
+					<td>法定负责人</td>
+					<td colspan="2">治安保卫负责人</td>
+				</tr>
+				<tr>
+					<td>姓名</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_name']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_name']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>公民身份证号</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_id']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_id']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>联系电话</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_phone']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_phone']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>家庭住址</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_address']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_address']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>注册资金</td>
+					<td ng-bind="placeMessage.ds_asset.split('.')[0] + '万'"></td>
+					<td>净资产</td>
+					<td ng-bind="placeMessage.ds_fund.split('.')[0] + '万'"></td>
+				</tr>
+				<tr>
+					<td>单位类别</td>
+					<td colspan="4" ng-bind="placeMessage.ds_businesskind.split(':')[1]"></td>
+				</tr>
+				<tr>
+					<td>从业人员数</td>
+					<td colspan="4" ng-bind="placeMessage.ds_employeenum"></td>
+				</tr>
+				<tr>
+					<td>治安保卫负责人联系电话</td>
+					<td colspan="4" ng-bind="placeMessage['ds_securityowner_ref-ds_phone2']"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="tables" style="width:  49.5%; float: right;">
+			<div class="table-title">
+				扣分情况
+				<div class="btn-r showDialogBtn" ng-if="isControl" ng-click="showPenaltyRoReward($event)">
+					<span>操作</span>
+					<div class="is-show-penalty-ro-reward" ng-if="isShowPenaltyRoReward">
+						<div ng-click="penalty();hidePenaltyRoReward($event)">扣分</div>
+						<div ng-click="penalty();hidePenaltyRoReward($event)">加分</div>
+					</div>
+				</div>
+			</div>
+			<div class="table-body min"></div>
+		</div>
+	</div>
+	<div class="layout cl">
+		<div class="tables">
+			<div class="table-title cl">已上传的档案附件<span class="btn-r showDialogBtn" ng-if="isControl">选择</span></div>
+			<div class="table-body">
+				<div class="emptyList" ng-if="placeDocuments.ownerDetailId == undefined">
+					未上传任何附件
+				</div>
+				<div class="documents" ng-repeat="(key, value) in placeDocuments" ng-if="value != '00000000-0000-0000-0000-000000000000' && value.length != 0 && key != 'ds_publicorderId'" ng-bind="documentNames[key].name" ng-click="lookDocuments(documentNames[key],value)">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

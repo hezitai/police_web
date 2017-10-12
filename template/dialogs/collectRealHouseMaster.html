@@ -1,0 +1,53 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">房主信息</span>
+	</div>
+	<div class="new-body addRealHouse">
+		<div class="formBox">
+			<label>姓名:</label><input type="text" ng-model="detail['ds_name']">	
+			<label class="right">身份证号:</label><input id="" ng-model="detail['ds_id']" ng-change="changeIdCard()" ng-readonly="!options.isCreate">
+		</div>
+		<div class="formBox">
+			<label>出生日期:</label><input type="text" ng-model="detail.birth" readonly="readonly">
+			<label class="right">性别:</label><input id="" ng-model="detail.sex" readonly="readonly">
+		</div>	
+		<div class="formBox">
+			<label>文化程度:</label><select class="ui_list_input" ng-model="detail['ds_education']" ng-options="x.name for x in options.education" ng-change="changeSelect(detail['ds_education'], options.education)"></select>	
+			<label class="right">民族:</label><select class="ui_list_input" ng-model="detail['ds_nation']" ng-options="x.name for x in options.nation" ng-change="changeSelect(detail['ds_education'], options.education)"></select>	
+			
+		</div>
+		<div class="formBox">
+			<label>婚姻状态:</label><select class="ui_list_input" ng-model="detail['ds_marriage']" ng-options="x.name for x in options.marriage" ng-change="changeSelect(detail['ds_marriage'], options.marriage)"></select>
+			<label class="right">户口类别:</label><select class="ui_list_input" ng-model="detail['ds_account']" ng-options="x.name for x in options.familyregister" ng-change="changeSelect(detail['ds_account'], options.familyregister)"></select>
+			
+		</div>
+		<div class="formBox">
+			<label>血型:</label><select class="ui_list_input" ng-model="detail['ds_bloodtype']" ng-options="x.name for x in options.bloodtype" ng-change="changeSelect(detail['ds_bloodtype'], options.bloodtype)"></select>
+			<label class="right">联系电话1:</label><input type="text" ng-model="detail['ds_phone']">	
+			
+		</div>
+		<div class="formBox">
+			<label>联系电话2 :</label><input type="text" ng-model="detail['ds_phone2']">	
+			<label class="right">QQ :</label><input type="text" ng-model="detail['ds_qq']">	
+			
+		</div>
+		<div class="formBox">
+			<label>微信:</label><input type="text" ng-model="detail['ds_wechat']">
+			<label class="right">身高:</label><input type="text" ng-model="detail['ds_height']">	
+			
+		</div>
+		<div class="formBox">
+			<label>现住址:</label><input type="text" ng-model="detail['ds_address']" style="width: 75.6%;">			
+		</div>	
+		<div class="formBox">			
+			<label>身份证照片：</label><div class="imgBox fileName" data-fileid="" ng-bind="detail.aheadpic"></div><span class="Btn look" ng-click="lookImg()">查看</span><span class="Btn updataImage" ng-click="updataImage()">上传</span>
+		</div>
+	</div>
+
+	<div class="div-sub">
+		<div class="btn clo" ng-click="close()">取消</div>
+		<div class="btn btn-default " ng-click="submit()">提交</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

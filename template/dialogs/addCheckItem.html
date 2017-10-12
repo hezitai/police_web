@@ -1,0 +1,30 @@
+<div class="addCheckItem">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">编辑检查项</span>
+	</div>
+	<div class="new-body">
+		<div>
+			<select class="checkSelect" ng-init="detail.select='0'" ng-model="detail.select" ng-change="editCheckItem()">
+				<option value="0">-请选择检查项-</option>
+				<option value="1">消防检查</option>
+				<option value="2">从业人员检查</option>
+				<option value="3" ng-if="businesskind != 100000018">卖淫嫖娼</option>
+				<option value="4" ng-if="businesskind != 100000018" >赌博</option>
+				<option value="5" ng-if="businesskind != 100000018" >涉毒</option>
+				<option value="6" ng-if="businesskind != 100000018" >发案</option>
+				<option value="7" ng-if="businesskind == 100000018">实名登记</option>
+				<option value="8" ng-if="businesskind != 100000018" >其他</option>
+			</select>
+			<textarea placeholder="备注"></textarea>
+			<div class="deductgrade"><span>总扣除分数：</span><input type="" name=""></div>
+		</div>
+		
+	</div>
+
+	<!-- <div class="div-sub">
+		<div class="btn clo" style="float: right;border-radius: 20px; color: #666;" ng-click="close()">取消</div>
+		<div class="btn btn-default " style="float: right;border-radius: 20px;" ng-click="create()">确定</div>
+	</div> -->
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

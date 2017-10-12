@@ -1,0 +1,27 @@
+<div class="collect">
+	<header-crumbs title="#/index/collectRealHouseInfo:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+	
+	<div class="tit">
+		
+		<span class="btn btn-blue right" ng-click="lookDormitoryInfo()">寝室信息</span>
+	</div>
+	<div style="padding: 10px">
+		<div class="tit">
+			<span class="lessee">寝室学生信息</span>
+						
+		</div>
+		<div class="grid">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr class='thead'>						
+					<th width='20%'>姓名</th>
+					<th width="80%">身份证号</th>										
+				</tr>
+				<tr class='tbody point' ng-repeat="people in studentlist" ng-click="lookStudent(people['ds_person_ref-ds_personid'])">						
+					<td ng-bind="people['ds_person_ref-ds_name']"></td>					
+					<td class="check"><span ng-bind="people['ds_person_ref-ds_id']"></span></td>					
+				</tr>
+			</table>
+		</div>
+	</div>
+		
+</div>

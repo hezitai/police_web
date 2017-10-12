@@ -1,0 +1,49 @@
+<div class="send">
+	<header-crumbs title="#/index/send:{{title}}"></header-crumbs>
+	<div class="sendbox">
+		<div class="leftside">
+			<div class="recipient">
+				<div class="inputBox">
+					<span>收件人</span>
+					<div class="small-box" >
+						<input type="text" class="small" placeholder="请输入搜索条件" ng-change="changeInput()" ng-model="searchValue">
+						<move-bar html='<div class="receive-person" ng-repeat="item in show.searchList"><span ng-bind="item.name"></span><span class="xx" ng-click="deleteItem($index,show.searchList)">x</span><span class="st">;</span></div>'></move-bar>
+
+						<div class="searchMoreList">
+								
+								<ul ng-if = "show.searchMoreList.person.length>0">
+									<li class="wh">警员：</li>
+									<div class="wh1">
+											<li ng-repeat = "item in show.searchMoreList.person"><span class="click"  ></span><span  class="class1" ng-bind = "item.name"  ng-click="joinArr(item)"></span></li>
+									</div>   
+								</ul>
+
+								<ul  ng-if="show.searchMoreList.place.length>0">
+									<li class="wh">行业场所：</li>
+									<div class="wh1">
+										<li ng-repeat = "item in show.searchMoreList.place"><span class="click"  ></span><span class="class1" ng-bind = "item.name" ng-click="joinArr(item)"></span></li>
+									</div>
+										
+								</ul>
+						</div>
+					</div>
+					<select ng-init="jude.name = jude.nameArray[0]" ng-model="jude.name" ng-options="x.name for x in jude.nameArray" ng-change="chooseSelect()">
+						
+					</select>
+				</div>		
+			</div>
+			<div class="content">
+				<span>正文</span>
+				<textarea name="" rows="40" cols="100" ng-model = "textAreas"></textarea>
+
+			</div>
+		</div>
+		<div class="sub">
+			<div class="btn btn-blue sub" ng-click = "sendMessage()">发送</div>
+		</div>
+	</div>
+	
+</div>
+
+
+

@@ -1,0 +1,31 @@
+
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">查询结果</span>
+	</div>
+	<div class="new-body">
+		<div class="logisticsBox" >
+		
+			<div class="searchResult">
+				<ul>
+					<li ng-repeat="item in searchList" ng-click="showDetail(item)">
+						<label>名称：</label><span class="blue" ng-bind="item['ds_name']"></span>
+						<label>单号：</label><span class="blue" ng-bind="item['ds_ordernum']"></span>
+					</li>
+				</ul>
+				<paging-link page-nums=12></paging-link>
+			</div>
+			<div class="emptyBox" id="empty" ng-if="emptyShow">
+				<img src="/police_web/img/empty.png" class="Icon">
+				<span style="display: block;color: #888;">暂无数据</span>
+			</div>
+		</div>		
+	</div>
+
+	<!-- <div class="div-sub">
+		<div class="btn clo" ng-click="close()">取消</div>
+		<div class="btn btn-default " ng-click="submit()">提交</div>
+	</div> -->
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

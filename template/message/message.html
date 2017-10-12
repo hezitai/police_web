@@ -1,0 +1,40 @@
+<div class="message">
+    <header-crumbs title="#/index/message:{{title}}"></header-crumbs>
+    <div class="messagebox">
+        <div class="btnbox">
+            <div class="btn btn-yellow" ng-click="allItemIsActive(true)">选择全部</div>
+            <div class="btn btn-blue" ng-click="ReadByActive(true)">标记为已读</div>
+            <div class="btn btn-red" ng-click="DeleteByActive(true)">批量删除</div>
+        </div>
+        <div class="grid">
+            <table border="0" cellspacing="0" cellpadding="6">
+                <tr>
+                    <th width="5%" ng-click="allItemIsActive()">
+                        <span class="click" ng-class="isAllActive?'active':''"></span>
+                    </th>
+                    <th width="15%">日期</th>
+                    <th width="60%">信息内容</th>
+                    <th width="10%">操作</th>
+                </tr>
+                <tr ng-repeat="item in messageList.showList" ng-init="item.isActive = false" ng-class="item.ds_isread == 'True' ? 'unread' : 'read'">
+                    <td ng-click="changeItemIsActive(item)">
+                        <span class="click" ng-class="item.isActive?'active':'' "></span>
+                    </td>
+                    <td ng-bind="item.createdon"></td>
+                    <td class="text-left" ng-bind="item.ds_content" ng-click="messageLook(item)"></td>
+                    <td>
+                        <div class="btn btn-small btn-light-red" ng-click="delOne($index)">x</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="paging2 clearFix">
+        <div class="paging2_Btn fl" ng-click="changePages('pre')" ng-class="btnUp ? 'stopuse' : ''">上一页</div>
+        <div class="fl pageNum">跳转到
+            <select name="" ng-model="messageList.index" ng-options="item for item in messageList.pageArray" ng-change="changePages(messageList.index)">
+			</select>页
+        </div>
+        <div class="paging2_Btn fl" ng-click="changePages('next')" ng-class="btnDown ? 'stopuse' : ''">下一页</div>
+    </div>
+</div>

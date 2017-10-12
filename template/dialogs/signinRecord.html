@@ -1,0 +1,23 @@
+<div class="dangers">
+	<div class="popnewinfo">
+		<span class="addTitle">签到记录</span>
+	</div>
+	<div class="leftSide">
+		<ul>
+	      	<li ng-repeat="item in list">
+	      		<span ng-bind="formatDate(item.checkintime)"></span>
+	      		<span ng-click="lookMap(item)" class="positionMark" ng-if="item.latitude && item.longitude"><img src="/police_web/img/mark_b.png"></span>
+	      	</li>
+	      	
+		</ul>
+	</div>
+	<div class="rightSide" ng-if="showmap">
+		<div class="map" style="top: 0px;">
+			<span class="loadingMap">地图加载中,请稍等......</span>
+			<div class="maps" id="#main" ng-if="isShow">
+				<show-position></show-position>
+			</div>
+		</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

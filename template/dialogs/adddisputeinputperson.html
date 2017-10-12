@@ -1,0 +1,23 @@
+<div class="adddisputeinput">
+	<div class="popnewinfo">
+		<span class="addTitle">添加涉及人员</span>
+	</div>
+	<div class="new-body adddisputeinputpersonbody">
+		<div style="margin-top: 10px;">
+			<label class="adddisputeinputpersonfont">姓名:</label><input type="text" class="ui_list_input adddisputeinputpersoninput" ng-model="People.detail['ds_name']"/>
+		</div>
+		<div style="margin-top: 10px;">
+			<label class="adddisputeinputpersonfont">身份证号:</label><input type="text" class="ui_list_input adddisputeinputpersoninput" ng-model="People.detail['ds_id']"/>			
+		</div>
+		<div style="margin-top: 10px;">
+			<label class="adddisputeinputpersonfont">联系电话:</label><input type="text" class="ui_list_input adddisputeinputpersoninput"  ng-model="People.detail['ds_phone']"/>
+		</div>
+		<div style="margin-top: 10px;">
+			<label class="adddisputeinputpersonfont">住址:</label><input type="text" class="ui_list_input adddisputeinputpersoninput"  ng-model="People.detail['ds_address']"/>
+		</div>
+	</div>
+	<div class="div-sub" style="margin-top: 20px;">
+		<div class="btn btn-default " ng-click="submitadd()">提交</div>
+		<div class="btn clo" ng-click="People.modal.hide()" style="color: #ccc;">取消</div>
+	</div>
+</div>

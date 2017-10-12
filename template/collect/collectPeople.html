@@ -1,0 +1,31 @@
+<div class="collect">
+	<header-crumbs title="#/index/collect:{{title}}" usedlocalstorage="list" list='[{"startName":"信息采集","status":"#/index/collect"},{"startName":"人员盘查","status":"#/index/collectPeople"}]'></header-crumbs>
+	<div class="main-block collectPeople">
+		<div class="title">人员信息</div>
+		<div class="option">
+			<span>姓名：</span>
+			<input type="" name="" id="" value="" ng-model="people.name"/>
+		</div>
+		
+		<div class="option">
+			<span>民族：</span>
+			<select class="block" ng-model="people.nation" ng-options="x.name for x in nations"></select>
+		</div>
+		<div class="option">
+			<span>手机号：</span>
+			<input type="" name="" id="" value="" ng-model="people.phone"/>
+		</div>
+		<div class="option">
+			<span>身份证号：</span>
+			<input type="" name="" id="" value="" ng-model="people.idCard"/>
+		</div>
+		<div class="option">
+			<span>住址：</span>
+			<input type="" name="" id="" value="" ng-model="people.address"/>
+		</div>
+		
+	</div>
+	<div class="btnBox">
+		<div class="btn btn-blue bttn" ng-click="submit()">提交</div>
+	</div>
+</div>

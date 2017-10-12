@@ -1,0 +1,72 @@
+<div class="search" >
+	<header-crumbs title="#/index/search:{{title}}"></header-crumbs>
+	<div class="searchBox" >
+		<div class="main-block">
+			<div class="title">查询</div>
+			<div class="searchBtnBox">
+				<div ng-class="search.choosetype==0? 'btn btn-default':'btn btn-white'" ng-click="search.choosetype=0">人口信息查询</div>
+				<div ng-class="search.choosetype==1? 'btn btn-default':'btn btn-white'" ng-click="search.choosetype=1">车辆信息查询</div>
+				<div ng-class="search.choosetype==2? 'btn btn-default':'btn btn-white'" ng-click="search.choosetype=2">案件查询</div>
+				<div ng-class="search.choosetype==3? 'btn btn-default':'btn btn-white'" ng-click="search.choosetype=3">行业场所</div>
+				<div ng-class="search.choosetype==4? 'btn btn-default':'btn btn-white'" ng-click="search.choosetype=4">房屋信息查询</div>
+				<div class="btn btn-gray">社会资源信息查询</div>
+			</div>
+			<input type="text" name="" id="" value="" style=" margin: 20px 25px 18px 25px;" placeholder="请输入您要查询的内容" ng-model="search.text"/>
+			<div class="select" ng-click="search.dimSearch=true">
+				<i><img ng-src="{{search.dimSearch==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>模糊查询</span>
+			</div>
+			<div class="select" ng-click="search.dimSearch=false">
+				<i><img ng-src="{{search.dimSearch==false?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>精确查询</span>
+			</div>
+			<div class="btn btn-blue bttn" ng-click="submit()">查询</div>
+		</div>
+		<div class="main-block main1" ng-init="flag=true">
+			<div class="title">查询结果</div>
+			<div class="emptyTip">未找到相关信息</div>
+			<ul class="searchResultBox" ng-if="search.choosetype==0">
+				<li ng-repeat="person in search.list" ng-click="peopleInfo(person['ds_personid'])"><span ng-bind="person['ds_name']"></span><span class="iconRight"><img src="/police_web/img/icon/icon-right.png"></span></li>
+
+			</ul>
+			<ul class="searchResultBox" ng-if="search.choosetype==1">
+				<li ng-repeat="car in search.list" ng-click="carInfo(car)"><span ng-bind="car['ds_number']"></span><span class="iconRight"><img src="/police_web/img/icon/icon-right.png"></span></li>
+
+			</ul>
+			<ul class="searchResultBox" ng-if="search.choosetype==2">
+				<li ng-repeat="case in search.list" ng-click="caseInfo(case)"><span ng-bind="case['ds_name']"></span><span class="iconRight"><img src="/police_web/img/icon/icon-right.png"></span></li>
+
+			</ul>
+			<ul class="searchResultBox" ng-if="search.choosetype==3">
+				<li ng-repeat="public in search.list"><span ng-bind="public['ds_name']"></span><span class="iconRight"><img src="/police_web/img/icon/icon-right.png"></span></li>
+
+			</ul>
+			<ul class="searchResultBox" ng-if="search.choosetype==4">
+				<li ng-repeat="house in search.list" ng-click="houseInfo(house)"><span ng-bind="house['ds_address']"></span><span class="iconRight"><img src="/police_web/img/icon/icon-right.png"></span></li>
+
+			</ul>
+		</div>
+	</div>	
+	<!-- <div class="searchResult" style="display: none;">
+		<div class="main-block">
+			<div class="title">查询结果</div>
+			<ul>
+				<li><span>姓名：</span>刘子薇</li>
+				<li><span>性别：</span>女</li>
+				<li><span>年龄：</span>27</li>
+				<li><span>身份证号：</span>22010219761234</li>
+				<li><span>手机号：</span>19846475595</li>
+				<li><span>手机号1：</span>13644441234</li>
+				<li><span>手机号2：</span>15526661314</li>
+				<li><span>人口类型：</span>暂住人口</li>
+				<li><span>家庭住址：</span>双阳区-辽宁大街-上东国际4栋3门702</li>
+				<li><span>车辆信息：</span>吉A-AA666，白色，马自达</li>
+				<li><span>以往住址：</span>双阳区-台北大街-台北花园1栋1门205</li>
+				<li><span>微信：</span>wangerni0510</li>
+				<li><span>QQ：</span>286546152</li>
+				<li><span>前科劣迹：</span>无</li>
+				<li><span>视频信息：</span>无</li>	
+			</ul>
+		</div>
+	</div> -->
+</div>

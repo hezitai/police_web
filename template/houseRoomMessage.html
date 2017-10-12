@@ -1,0 +1,79 @@
+<div class="houseRoom" ng-init="Tabs">
+    <header-crumbs title="#/index/house:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+    <div class="houseroommessage">
+        <div class="btn btn-yellow" ng-click="tabControl('houseRoom')" ng-class="Tabs == 'houseRoom' ? '' : 'opacity'">房屋信息</div>
+        <div class="btn btn-blue" ng-click="tabControl('houseOwner')" ng-class="Tabs == 'houseOwner' ? '' : 'opacity'">房主信息</div>
+        <div class="btn btn-red" ng-click="tabControl('houseLivingNow')" ng-class="Tabs == 'houseLivingNow' ? '' : 'opacity'">现居住人信息</div>
+        <div class="btn btn-light-red" ng-click="tabControl('houseLessee')" ng-class="Tabs == 'houseLessee'? '' : 'opacity'">承租人信息</div>
+        <!-- <div class="btn btn-default">提交</div> -->
+    </div>
+    <div class="main-block clearFix">
+        <!-- 房屋信息 -->
+        <div ng-if="Tabs == 'houseRoom'">
+            <h2 class="title">房屋信息</h2>
+            <div class="messagebox fl">
+                <div><span><i>*</i>警务责任区：</span><select ng-model="houseList.index" ng-options="item.ds_name for item in houseList" ng-disabled="houseList.index"></select></div>
+                <div><span><i>*</i>责任区民警：</span><input type="text" ng-model="houseServers['ds_dutypolice-ds_name']" ng-disabled="houseServers['ds_dutypolice-ds_name']"></div>
+                <div><span><i>*</i>栋号：</span><input type="text" ng-model="houseServers.ds_buildingnum" ng-disabled="houseServers.ds_buildingnum"></div>
+                <div><span><i>*</i>单元号：</span><input type="text" ng-model="houseServers.ds_unit" ng-disabled="houseServers.ds_unit"></div>
+                <div><span><i>*</i>房屋别名：</span><input type="text" ng-model="houseServers.ds_address" ng-disabled="houseServers.ds_address"></div>
+                <div><span><i>*</i>房屋类型：</span><select ng-model="options.index" ng-options="item.name for item in options.houseusertype" ng-disabled="options.index"></select></div>
+                <div><span><i style="color:#fff">*</i>房间号：</span><input type="text" ng-model="houseServers.ds_roomfigure" ng-disabled="houseServers.ds_roomfigure"></div>
+                <div><span><i style="color:#fff">*</i>委组：</span><input type="text" ng-model="houseServers.ds_household" ng-disabled="houseServers.ds_household"></div>
+                <div><span><i style="color:#fff">*</i>产权号：</span><input type="text" ng-model="houseServers.ds_property" ng-disabled="houseServers.ds_property"></div>
+                <div><span><i style="color:#fff">*</i>房屋结构：</span><input type="text" ng-model="houseServers.ds_structure" ng-disabled="houseServers.ds_structure"></div>
+                <div><span><i style="color:#fff">*</i>实际房屋：</span><input type="text" ng-model="houseServers.ds_realityroom" ng-disabled="houseServers.ds_realityroom"></div>
+                <div><span><i style="color:#fff">*</i>安全状况：</span><input type="text" ng-model="houseServers.ds_securitytype" ng-disabled="houseServers.ds_securitytype"></div>
+                <div><span><i style="color:#fff">*</i>出租面积：</span><input type="text" ng-model="houseServers.ds_usingarea" ng-disabled="houseServers.ds_usingarea"></div>
+                <div><span><i style="color:#fff">*</i>出租间数：</span><input type="text" ng-model="houseServers.ds_rentroomnum" ng-disabled="houseServers.ds_rentroomnum"></div>
+            </div>
+        </div>
+        <!-- 房主信息 -->
+        <div ng-if="Tabs == 'houseOwner'">
+            <h2 class="title">房主信息</h2>
+            <div class="messagebox fl">
+                <div><span>姓名：</span><input type="text" ng-model="houseOwner.ds_name" ng-disabled="houseOwner.ds_name"></div>
+                <div><span>身份证号：</span><input type="text" ng-model="houseOwner.ds_id" ng-disabled="houseOwner.ds_id"></div>
+                <div><span>出生日期：</span><input type="text" ng-model="houseOwner.birth" ng-disabled="houseOwner.birth"></div>
+                <div><span>性别：</span><input type="text" ng-model="houseOwner.sex" ng-disabled="houseOwner.sex"></div>
+                <div><span>文化程度：</span><select ng-model="houseOwner.ds_education" ng-options="item.name for item in options.education" ng-disabled="houseOwner.ds_education"></select></div>
+                <div><span>民族：</span><select ng-model="houseOwner.ds_nation" ng-options="item.name for item in options.nation" ng-disabled="houseOwner.ds_nation"></select></div>
+                <div><span>婚姻状况：</span><select ng-model="houseOwner.ds_marriage" ng-options="item.name for item in options.marriage" ng-disabled="houseOwner.ds_marriage"></select></div>
+                <div><span>户口类别：</span><select ng-model="houseOwner.ds_account" ng-options="item.name for item in options.familyregister" ng-disabled="houseOwner.ds_account"></select></div>
+                <div><span>血型：</span><select ng-model="houseOwner.ds_bloodtype" ng-options="item.name for item in options.bloodtype" ng-disabled="houseOwner.ds_bloodtype"></select></div>
+                <div><span>联系电话1：</span><input type="text" ng-model="houseOwner.ds_phone" ng-disabled="houseOwner.ds_phone"></div>
+                <div><span>联系电话2：</span><input type="text" ng-model="houseOwner.ds_phone2" ng-disabled="houseOwner.ds_phone2"></div>
+                <div><span>QQ号：</span><input type="text" ng-model="houseOwner.ds_qq" ng-disabled="houseOwner.ds_qq"></div>
+                <div><span>微信号：</span><input type="text" ng-model="houseOwner.ds_wechat" ng-disabled="houseOwner.ds_wechat"></div>
+                <div><span>身高：</span><input type="text" ng-model="houseOwner.ds_height" ng-disabled="houseOwner.ds_height"></div>
+                <div><span>现住址：</span><input type="text" ng-model="houseOwner.ds_address" ng-disabled="houseOwner.ds_address"></div>
+            </div>
+            <div class="IdCard">
+                <span>身份证正面照片：</span>
+                <img class="imgurl" ng-src="{{houseOwner.img}}">
+            </div>
+        </div>
+        <!-- 现居住人 -->
+        <div ng-if="Tabs == 'houseLivingNow'">
+            <h2 class="title">现居住人</h2>
+            <div class="personmessage clearFix">
+                <div ng-repeat="item in houselivingNewList">
+                    <span>姓名：</span>
+                    <div ng-bind="item['ds_person_ref-ds_name']+'&nbsp;&nbsp;&nbsp;&nbsp;'+item['ds_person_ref-ds_id']"></div>
+                    <em ng-click="messageLook(item)">查看</em>
+                </div>
+            </div>
+        </div>
+        <!-- 承租人 -->
+        <div ng-if="Tabs == 'houseLessee'">
+            <h2 class="title">承租人</h2>
+            <div class="personmessage clearFix">
+                <div ng-repeat="item in houseLessee">
+                    <span>姓名：</span>
+                    <div ng-bind="item['ds_person_ref-ds_name']+'&nbsp;&nbsp;&nbsp;&nbsp;'+item['ds_person_ref-ds_id']"></div>
+                    <em ng-click="messageLook(item)">查看</em>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

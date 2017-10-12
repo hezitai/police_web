@@ -1,0 +1,414 @@
+<div class="document-dialog">
+	<input type="file" id="updataDocument" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div ng-if="message.type == 'image'" class="image cl">
+		<div class="title" ng-bind="message.name"></div>
+		<img ng-src="{{message.Url}}" alt="">
+		<div></div>
+		<div ng-if="isControl">
+			<div class="btn btn-dialog btn-blue btn-r" ng-click="download()">下载</div>
+			<div class="btn btn-dialog btn-blue btn-r" ng-click="updata()">上传</div>
+			<div class="btn btn-dialog btn-blue btn-r" ng-click="delete()">删除</div>
+		</div>
+	</div>
+	<div ng-if="message.type == 'doc'" class="doc cl">
+		<div class="title" ng-bind="message.name"></div>
+		<img ng-src="/manage/img/icon/file-doc.png" alt="">
+		<p ng-bind="message.name"></p>
+		<div ng-if="isControl">
+			<div class="btn btn-dialog btn-blue btn-r" ng-click="download()">下载</div>
+			<div class="btn btn-dialog btn-blue btn-r" ng-click="updata()">上传</div>
+			<div class="btn btn-dialog btn-blue btn-r" ng-click="delete()">删除</div>
+		</div>
+	</div>
+	<div ng-if="message.type == 'recreation'">
+		<div class="title" ng-bind="message.name"></div>
+		<div class="layout">
+			<div class="form-box">
+				<label>单位名称 : </label>
+				<span ng-if="!isControl" ng-bind="message.placeMessage['ds_name']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.placeMessage['ds_name']" readonly="readonly" />
+			</div>
+			<div class="form-box">
+				<label>单位地址 : </label>
+				<span ng-if="!isControl" ng-bind="message.placeMessage['ds_address']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.placeMessage['ds_address']" readonly="readonly" />
+			</div>
+			<div class="form-box">
+				<label>法人代表 : </label>
+				<span ng-if="!isControl" ng-bind="message.placeMessage['ds_owner_ref-ds_name']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.placeMessage['ds_owner_ref-ds_name']" readonly="readonly" />
+			</div>
+			<div class="form-box">
+				<label>经营负责人 : </label>
+				<span ng-if="!isControl" ng-bind="message.placeMessage['ds_owner_ref-ds_name']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.placeMessage['ds_owner_ref-ds_name']" readonly="readonly" />
+			</div>
+			<div class="form-box">
+				<label>从业人员数 : </label>
+				<span ng-if="!isControl" ng-bind="message.placeMessage['ds_employeenum']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.placeMessage['ds_employeenum']" readonly="readonly" />
+			</div>	
+			<div class="form-box">
+				<label>经营面积 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_area'] | number : 2"></span><span ng-if="!isControl">平方米</span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_area']" /><span ng-if="isControl">平方米</span>
+			</div>
+			<div class="form-box">
+				<label>经济性质 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_businessoperation_kind'].split(':')[1]"></span>
+				<select ng-if="isControl" ng-model="message.detail['ds_businessoperation_kind']">
+					<option ng-if="message.detail['ds_businessoperation_kind'] == 1" value="1" selected>请选择</option>
+					<option ng-repeat="item in optionSite[0]" value="{{item.value}}" ng-bind="item.name"></option>
+				</select>
+			</div>
+			<div class="form-box">
+				<label>场所具体类别 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_filetypeofplaces'].split(':')[1]"></span>
+				<select ng-if="isControl" ng-model="message.detail['ds_filetypeofplaces']">
+					<option ng-if="message.detail['ds_filetypeofplaces'] == 1" value="1" selected>请选择</option>
+					<option ng-repeat="item in optionSite[1]" value="{{item.value}}" ng-bind="item.name"></option>
+				</select>
+			</div>	
+			<div class="form-box">
+				<label>开业时间 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_startdt'].split(' ')[0]"></span>
+				<input ng-if="isControl" id="ds_startdt" type="text" value="{{message.detail['ds_startdt']}}" ng-click="chooseDate('ds_startdt')" />
+			</div>
+			<div class="form-box">
+				<label>保安员人数 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_safeguard_count']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_safeguard_count']" />
+			</div>	
+			<div class="form-box">
+				<label>主营范围 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_majorbusiness']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_majorbusiness']" />
+			</div>				
+			<div class="form-box">
+				<label>兼营范围 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_minorbusiness']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_minorbusiness']" />
+			</div>	
+			<div class="form-box">
+				<label>有无消防鉴定 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_fireidentified'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_fireidentified" value="True" ng-model="message.detail['ds_fireidentified']" />有
+					<input type="radio" name="ds_fireidentified" value="False" ng-model="message.detail['ds_fireidentified']" />无
+				</div>
+				<!-- <input ng-if="isControl" type="text" ng-model="message.detail['ds_fireidentified']" /> -->
+			</div>	
+			<div class="form-box" ng-if="message.detail['ds_fireidentified'] == 'True'">
+				<label>消防鉴定时间 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_fireidentified_dt'].split(' ')[0]"></span>
+				<input ng-if="isControl" type="text" id="ds_fireidentified_dt" value="{{message.detail['ds_fireidentified_dt']}}" ng-click="chooseDate('ds_fireidentified_dt')" />
+			</div>	
+			<div class="form-box">
+				<label>有无房屋鉴定 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_placeidentified'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_placeidentified" value="True" ng-model="message.detail['ds_placeidentified']" />有
+					<input type="radio" name="ds_placeidentified" value="False" ng-model="message.detail['ds_placeidentified']" />无
+				</div>
+			</div>	
+			<div class="form-box" ng-if="message.detail['ds_placeidentified'] == 'True'">
+				<label>房屋鉴定时间 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_placeidentified_dt'].split(' ')[0]"></span>
+				<input ng-if="isControl" id="ds_placeidentified_dt" type="text" value="{{message.detail['ds_placeidentified_dt']}}" ng-click="chooseDate('ds_placeidentified_dt')" />
+			</div>
+		</div>
+		<div class="title">公共娱乐场所格局设施情况</div>
+		<div class="layout">
+			<div class="form-box">
+				<label>安全门 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_safedoor']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_safedoor']" /><span ng-if="isControl">扇</span>
+			</div>
+			<div class="form-box">
+				<label>通道 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_safepass']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_safepass']" /><span ng-if="isControl">个</span>
+			</div>
+			<div class="form-box">
+				<label>应急灯 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_emergencylight']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_emergencylight']" /><span ng-if="isControl">盏</span>
+			</div>
+			<div class="form-box">
+				<label>标志灯 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_guidelight']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_guidelight']" /><span ng-if="isControl">盏</span>
+			</div>
+			<div class="form-box">
+				<label>包房数量 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_roomcount']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_roomcount']" /><span ng-if="isControl">个</span>
+			</div>
+			<div class="form-box">
+				<label>门窗透明度 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_doorwindow_trans']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_doorwindow_trans']" />
+			</div>
+			<div class="form-box">
+				<label>有无内锁 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_innerlock'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_innerlock" value="True" ng-model="message.detail['ds_innerlock']" />有
+					<input type="radio" name="ds_innerlock" value="False" ng-model="message.detail['ds_innerlock']" />无
+				</div>
+			</div>
+			<div class="form-box">
+				<label>有无从业人员名簿 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_employeelist'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_employeelist" value="True" ng-model="message.detail['ds_employeelist']" />有
+					<input type="radio" name="ds_employeelist" value="False" ng-model="message.detail['ds_employeelist']" />无
+				</div>
+			</div>
+			<div class="form-box">
+				<label>有无营业日志 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_operationlog'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_operationlog" value="True" ng-model="message.detail['ds_operationlog']" />有
+					<input type="radio" name="ds_operationlog" value="False" ng-model="message.detail['ds_operationlog']" />无
+				</div>
+			</div>
+			<div class="form-box">
+				<label>有无警示标志 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_alarmsign'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_alarmsign" value="True" ng-model="message.detail['ds_alarmsign']" />有
+					<input type="radio" name="ds_alarmsign" value="False" ng-model="message.detail['ds_alarmsign']" />无
+				</div>
+			</div>
+			<div class="form-box">
+				<label>有无电视监控设备 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_cctv'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_cctv" value="True" ng-model="message.detail['ds_cctv']" />有
+					<input type="radio" name="ds_cctv" value="False" ng-model="message.detail['ds_cctv']" />无
+				</div>
+			</div>
+			<div class="form-box">
+				<label>有无安全检查设备 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_safe_equipment'] == 'True' ? '有' : '无'"></span>
+				<div class="radio" ng-if="isControl">
+					<input type="radio" name="ds_safe_equipment" value="True" ng-model="message.detail['ds_safe_equipment']" />有
+					<input type="radio" name="ds_safe_equipment" value="False" ng-model="message.detail['ds_safe_equipment']" />无
+				</div>
+			</div>
+			<div class="form-box">
+				<label>定    员 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_customer_quota']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_customer_quota']" />
+			</div>
+			<div class="form-box">
+				<label>游戏机数量 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_gamecount']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_gamecount']" />
+			</div>
+			<div class="form-box">
+				<label>台球桌数 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_billiardcount']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_billiardcount']" />
+			</div>
+			<div class="form-box">
+				<label>舞池面积 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_dancearea'] | number : 2"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_dancearea']" />
+			</div>
+			<div class="form-box">
+				<label>等级 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_class']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_class']" />
+			</div>
+			<div class="form-box">
+				<label>其他事项 : </label>
+				<span ng-if="!isControl" ng-bind="message.detail['ds_others']"></span>
+				<input ng-if="isControl" type="text" ng-model="message.detail['ds_others']" />
+			</div>
+		</div>
+			<div ng-if="isControl" class="cl" style="margin: 10px 0 0 0;">
+				<div class="btn btn-dialog btn-white btn-r" ng-click="cancel()">取消</div>
+				<div class="btn btn-dialog btn-blue btn-r" ng-click="delete()">删除</div>
+				<div class="btn btn-dialog btn-blue btn-r" ng-click="updata()">提交</div>
+			</div>
+	</div>
+	<div ng-if="message.type == 'videocamera'">
+		<div class="title" ng-bind="message.name"></div>
+		<div class="form-box big-font-size">
+			我叫<span ng-bind="message.placeMessage['ds_owner_ref-ds_name']"></span>是<span ng-bind="message.placeMessage['ds_name']"></span>的法人，我自愿安装视频监控系统，现已安装<span ng-bind="message.detail['ds_name']"></span>的<span ng-bind="message.detail['ds_resolution'] | number : '0'"></span>万像素摄像头<span ng-bind="message.detail['ds_count'] | number : '0'"></span>个，硬盘存储空间<span ng-bind="message.detail['ds_disksize'] | number : '0'"></span>T，可存储视频监控<span ng-bind="message.detail['ds_daycount'] | number : '0'"></span>天，保证监控系统可24小时正常运行。
+		</div>
+	</div>
+	<div ng-if="message.type == 'floorPlans'">
+		<div class="title" ng-bind="message.name"></div>
+		<!-- <div class="btn btn-dialog btn-gray" style="margin: 5px; height: 30px; line-height: 28px;">+ 添加场所平面图</div> -->
+		<div class="floorPlans cl" ng-repeat="item in message.detail">
+			<div class="cl">
+				<div class="item-small">
+					<label> 楼层 : </label>
+					<span ng-bind="item.ds_floor | number : '0'"></span> 层
+				</div>
+				<div class="item-small">
+					<label> 面积 : </label>
+					<span ng-bind="item.ds_area | number : '2'"></span> 平方米
+				</div>
+				<div class="item-small" ng-click="lookDocuments(item.ds_picture)">
+					<div class="btn btn-blue btn-dialog btn-r">查看平面图</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="message.type == 'owner'">
+		<div class="title" ng-bind="message.name"></div>
+		<div class="form-box">
+			<label>姓名 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_name']"></span>
+		</div>
+		<div class="form-box">
+			<label>年龄 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_id'] | idCardNum : 'age'"></span>
+		</div>
+		<div class="form-box">
+			<label>性别 : </label>
+			<span ng-bind="(message.detail['ds_owner_ref-ds_id'] | idCardNum : 'sex') == '1' ? '男' : '女'"></span>
+		</div>
+		<div class="form-box">
+			<label>民族 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_nation'].split(':')[1]"></span>
+		</div>
+		<div class="form-box">
+			<label>学历 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_education'].split(':')[1]"></span>
+		</div>
+		<div class="form-box">
+			<label>职位 : </label>
+			<span ng-bind="message.detail['ds_owner_position']"></span>
+		</div>	
+		<div class="form-box">
+			<label>身份证号 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_id']"></span>
+		</div>
+		<div class="form-box">
+			<label>手机号 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_phone']"></span>
+		</div>
+		<div class="form-box">
+			<label>现住址 : </label>
+			<span ng-bind="message.detail['ds_owner_ref-ds_address']"></span>
+		</div>
+		<div class="form-box">
+			<label>个人简历 : </label>
+		</div>
+		<div class="form-box" ng-repeat="item in message.backgrounds">
+			<span style="width: 2em;display: inline-block;"></span>
+			<span ng-bind="item['ds_begin'].split(' ')[0]" style="width: 90px;display: inline-block; text-align: center;"></span> 至
+			<span ng-bind="item['ds_end'].split(' ')[0]" style="width: 90px;display: inline-block; text-align: center;"></span> 
+			<span ng-bind="item['ds_location']" style="width: 300px;display: inline-block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;vertical-align: top;" ></span> 
+		</div>
+		<div class="form-box">
+			<label>身份证正面照片 : </label>
+			<span class="btn btn-blue btn-small" ng-click="lookDocuments(message.detail['ds_owner_ref-ds_idaheadpic'])">查看</span>
+		</div>
+		<div class="form-box">
+			<label>身份证背面照片 : </label>
+			<span class="btn btn-blue btn-small" ng-click="lookDocuments(message.detail['ds_owner_ref-ds_idbackpic'])">查看</span>
+		</div>
+
+	</div>
+	<div ng-if="message.type == 'security'">
+		<div class="title" ng-bind="message.name"></div>
+		<div class="form-box">
+			<label>姓名 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_name']"></span>
+		</div>
+		<div class="form-box">
+			<label>年龄 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_id'] | idCardNum : 'age'"></span>
+		</div>
+		<div class="form-box">
+			<label>性别 : </label>
+			<span ng-bind="(message.detail['ds_securityowner_ref-ds_id'] | idCardNum : 'sex') == '1' ? '男' : '女'"></span>
+		</div>
+		<div class="form-box">
+			<label>民族 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_nation'].split(':')[1]"></span>
+		</div>
+		<div class="form-box">
+			<label>学历 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_education'].split(':')[1]"></span>
+		</div>
+		<div class="form-box">
+			<label>职位 : </label>
+			<span ng-bind="message.detail['ds_publicowner_position']"></span>
+		</div>		
+		<div class="form-box">
+			<label>身份证号 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_id']"></span>
+		</div>
+		<div class="form-box">
+			<label>手机号 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_phone']"></span>
+		</div>
+		<div class="form-box">
+			<label>现住址 : </label>
+			<span ng-bind="message.detail['ds_securityowner_ref-ds_address']"></span>
+		</div>
+		<div class="form-box">
+			<label>个人简历 : </label>
+		</div>
+		<div class="form-box" ng-repeat="item in message.backgrounds">
+			<span style="width: 2em;display: inline-block;"></span>
+			<span ng-bind="item['ds_begin'].split(' ')[0]" style="width: 90px;display: inline-block; text-align: center;"></span> 至
+			<span ng-bind="item['ds_end'].split(' ')[0]" style="width: 90px;display: inline-block; text-align: center;"></span> 
+			<span ng-bind="item['ds_location']" style="width: 300px;display: inline-block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;vertical-align: top;" ></span> 
+		</div>
+		<div class="form-box">
+			<label>身份证正面照片 : </label>
+			<span class="btn btn-blue btn-small" ng-click="lookDocuments(message.detail['ds_securityowner_ref-ds_idaheadpic'])">查看</span>
+		</div>
+		<div class="form-box">
+			<label>身份证背面照片 : </label>
+			<span class="btn btn-blue btn-small" ng-click="lookDocuments(message.detail['ds_securityowner_ref-ds_idbackpic'])">查看</span>
+		</div>
+	</div>
+	
+	<div ng-if="message.type == 'otherpeople'" class="otherPeople">
+		<div class="title" ng-bind="message.name"></div>
+		<div class="form-box" ng-repeat="item in message.detail">
+			<label style="display: inline;">姓名 : </label>
+			<span ng-bind="item['ds_employee-ds_name']"></span>
+			<span class="btn btn-blue btn-small btn-r" style="margin-top:-4px; " ng-click="lookPeoples(item)">查看</span>
+			<div class="layout" style="background: #eaeaea" ng-if="item.isActive">
+				<div class="form-box">
+					<label>姓名 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_name']"></span>
+				</div>
+				<div class="form-box">
+					<label>性别 : </label>
+					<span ng-bind="(message.peopleMessage['ds_employee-ds_id'] | idCardNum : 'sex') == '1' ? '男' : '女'"></span>
+				</div>
+				<div class="form-box">
+					<label>年龄 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_id'] | idCardNum : 'age'"></span>
+				</div>
+				<div class="form-box">
+					<label>职务 : </label>
+					<span ng-bind="message.peopleMessage['ds_position']"></span>
+				</div>
+				<div class="form-box">
+					<label>身份证号 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_id']"></span>
+				</div>
+				<div class="form-box">
+					<label>联系电话 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_phone']"></span>
+				</div>
+				<div class="form-box">
+					<label>身份证正面照片 : </label>
+					<span class="btn btn-blue btn-small" ng-click="lookDocuments(message.peopleMessage['ds_employee-ds_idaheadpic'])">查看</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

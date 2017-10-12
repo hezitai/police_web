@@ -1,0 +1,50 @@
+<div class="document-dialog">
+	<input type="file" id="updataDocument" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	
+	<div class="otherPeople">
+		<div class="title">从业人员基本情况登记表</div>
+		<div class="form-box" ng-repeat="item in message.detail">
+			<label style="display: inline;">姓名 : </label>
+			<span ng-bind="item['ds_employee-ds_name']"></span>
+			
+			<span class="btn btn-blue btn-small btn-r" style="margin-top:-4px; " ng-click="lookPeoples(item)">查看</span>
+			
+			<div class="layout" style="background: #eaeaea" ng-if="item.isActive">
+				<div class="form-box">
+					<label>姓名 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_name']"></span>
+				</div>
+				<div class="form-box">
+					<label>性别 : </label>
+					<span ng-bind="(message.peopleMessage['ds_employee-ds_id'] | idCardNum : 'sex') == '1' ? '男' : '女'"></span>
+				</div>
+				<div class="form-box">
+					<label>年龄 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_id'] | idCardNum : 'age'"></span>
+				</div>
+				<div class="form-box">
+					<label>职务 : </label>
+					<span ng-bind="message.peopleMessage['ds_position']"></span>
+				</div>
+				<div class="form-box">
+					<label>身份证号 : </label>
+					<span style="color: #1a629d" ng-bind="message.peopleMessage['ds_employee-ds_id']" ng-click=""></span>
+				</div>
+				<div class="form-box">
+					<label>联系电话 : </label>
+					<span ng-bind="message.peopleMessage['ds_employee-ds_phone']"></span>
+				</div>
+				<div class="form-box">
+					<label>身份证正面照片 : </label>
+					<span class="btn btn-blue btn-small" ng-click="lookDocuments()">查看</span>
+				</div>
+
+			</div>
+		</div>
+		<div class="emptyBox" id="empty" ng-if="emptyShow" style="margin-top:70px;">
+			<img src="/police_web/img/empty.png" class="Icon">
+			<span style="display: block;color: #888;">暂无数据</span>
+		</div>
+		
+	</div>
+</div>

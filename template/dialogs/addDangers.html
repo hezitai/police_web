@@ -1,0 +1,45 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">物品信息</span>
+	</div>
+	<div class="new-body">
+		<div class="formBox">
+			<label><span style="color: red;margin-right: 3px;margin-left: -7px;">*</span>危爆物品名称:</label><input type="text" ng-model="dangermessage.name">
+			<label class="right"><span style="color: red;margin-right: 3px;margin-left: -7px;">*</span>危爆物品负责人:</label><input type="text" ng-model="dangermessage.person">
+		</div>
+		<div class="formBox">
+			<label><span style="color: red;margin-right: 3px;margin-left: -7px;">*</span>负责人电话:</label><input id="" ng-model="dangermessage.phone">
+			<label class="right"><span style="color: red;margin-right: 3px;margin-left: -7px;">*</span>负责人身份证号:</label><input type="text" ng-model="dangermessage.id">
+		</div>	
+		<div class="formBox">			
+			<label><span style="color: red;margin-right: 3px;margin-left: -7px;">*</span>危爆物品类型:</label><input type="text" ng-model="dangermessage.type">
+			<label class="right"><span style="color: red;margin-right: 3px;margin-left: -7px;">*</span>危爆物品存放位置:</label><input type="text" ng-model="dangermessage.location">	
+		</div>
+		<div class="formBox-big">
+			<label>危爆物品重要性论述:</label><textarea ng-model="dangermessage.description"></textarea>
+			
+		</div>
+		<div class="formBox-big">
+			<label>危爆物品危险品情况:</label><textarea ng-model="dangermessage.condition"></textarea>
+			
+		</div>
+		<div class="formBox-big">
+			<label>危爆物品安保措施:</label><textarea ng-model="dangermessage.measure"></textarea>
+			
+		</div>
+		<div class="formBox-big">
+			<label>危爆物品应急处理方案:</label><textarea ng-model="dangermessage.disposeplan"></textarea>			
+		</div>
+		<div class="formBox">
+			
+			<label>危爆物品照片：</label><div class="imgBox fileName" data-fileid="" ng-bind="dangermessage.aheadpic"></div><span class="Btn look" ng-click=>查看</span><span class="Btn updataImage" ng-click="updataImage()">上传</span>
+		</div>
+	</div>
+
+	<div class="div-sub">
+		<div class="btn clo" ng-click="close()">取消</div>
+		<div class="btn btn-default " ng-click="submitDanger()">提交</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

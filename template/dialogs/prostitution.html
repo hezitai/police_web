@@ -1,0 +1,73 @@
+<div class="prostitutionCheck">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">卖淫嫖娼检查项</span>
+	</div>
+	<div class="new-body">
+		<div class="tit">
+			<label>卖淫嫖娼人员：</label>
+			<span class="btn btn-blue btn-small btn-r" style="margin-top: 5px; border-radius: 15px; " ng-click="People.add()">添加</span>
+		</div>
+		<div class="layout" style="background: #eaeaea;margin: 5px;" ng-if="people.show">
+			<div class="form-box">	
+				<label>姓名 : </label>
+				<input type="" name="" ng-model="People.detail['ds_name']">	
+			</div>
+			<div class="form-box">
+				<label>身份证号 : </label>
+				<input type="" name="" ng-model="People.detail['ds_id']">		
+			</div>
+			<div class="form-box">
+				<label>联系电话 : </label>
+				<input type="" name="" ng-model="People.detail['ds_phone']">
+			</div>
+			<div class="form-box">	
+				<label>现住址 : </label>
+				<input type="" name="" ng-model="People.detail['ds_address']">					
+			</div>
+			<div class="form-box" style="height: 35px">
+				<span class="btn btn-blue btn-small btn-r" style="margin-top: 5px; border-radius: 15px;" ng-click="People.setPeople()">提交</span>
+			</div>
+		</div>	
+		<div class="noMore" ng-if="PeopleList.length == 0">暂未添加人员信息</div>	
+		<div class="form-box" ng-repeat="people in PeopleList">
+			<label style="display: inline;" >姓名 : </label>
+			<span ng-bind="people['ds_name']"></span>
+			<span class="btn btn-blue btn-small btn-r" style="border-radius: 15px; margin-top: 4px;" ng-click="People.delete(people,$index)">删除</span>
+			<span class="btn btn-blue btn-small btn-r" style="border-radius: 15px; margin-top: 4px;" ng-click="People.show(people)">查看</span>
+			
+			<div class="layout" style="background: #eaeaea;margin: 5px;" ng-if="people.isActive">
+				<div class="form-box">	
+					<label>姓名 : </label>
+					<input type="" name="" ng-model="People.detail['ds_name']">	
+				</div>
+				<div class="form-box">
+					<label>身份证号 : </label>
+					<input type="" name="" readonly="readonly" ng-model="People.detail['ds_id']">		
+				</div>
+				<div class="form-box">
+					<label>联系电话 : </label>
+					<input type="" name="" ng-model="People.detail['ds_phone']">
+				</div>
+				<div class="form-box">	
+					<label>现住址 : </label>
+					<input type="" name="" ng-model="People.detail['ds_address']">					
+				</div>
+				<div class="form-box" style="height: 35px">
+					<span class="btn btn-blue btn-small btn-r" style="margin-top: 5px; border-radius: 15px;" ng-click="People.setPeople()">提交</span>
+				</div>
+			</div>			
+		</div>
+		<div class="desc" style="margin-top: 10px">
+			<span >描述：</span>
+			<textarea placeholder="描述..." ng-model="options.ds_description"></textarea>
+		</div>
+		
+	</div>
+
+	<!-- <div class="div-sub">
+		<div class="btn clo" style="float: right;border-radius: 20px; color: #666;" ng-click="close()">取消</div>
+		<div class="btn btn-default " style="float: right;border-radius: 20px;" ng-click="submit()">确定</div>
+	</div> -->
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

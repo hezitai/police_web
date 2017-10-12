@@ -1,0 +1,70 @@
+<div class="caseInput pr">
+    <header-crumbs title="#/index/caseInput:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"案件录入","status":"#/index/caseInput"}]'></header-crumbs>
+    <div class="main-block pr">
+        <div class="title">案件录入</div>
+        <!-- 案件类别选择 -->
+        <div ng-if="!caseSelectShow" class="boxselect cl">
+            <span>案件类别：</span>
+            <div>
+                <div class="btn btn-blue" ng-click="btnCaseSelect('刑事')">刑事</div>
+                <div class="btn btn-blue" ng-click="btnCaseSelect('民事')">民事</div>
+                <div class="btn btn-blue" ng-click="btnCaseSelect('消防')">消防</div>
+            </div>
+        </div>
+        <div class="cl">
+            <span>案件类别：</span><select class="s1" ng-model="CaseType.index" ng-options="x.name for x in CaseType" ng-disabled="CaseType.index"></select>
+            <em> - </em><select class="s1" ng-model="CaseTypeList.index" ng-options="y.name for y in CaseTypeList"></select>
+        </div>
+        <div class="cl">
+            <span>接警时间：</span>
+            <div class="laydate-icon" type="text">
+                <span onclick="laydate()" ng-bind="laydateNow"></span>
+                <span ng-bind="laytimeNow"></span>
+            </div>
+        </div>
+        <div class="cl">
+            <span>案件名称：</span>
+            <div class="onlyread">{{laydateNow+' '+ caseAddress +' '+CaseTypeList.index.name+'案'}}</div>
+        </div>
+        <div class="cl">
+            <span>详细地址：</span>
+            <div class="onlyread" type="text" ng-bind="caseAddress" ng-click="btnCaseAddressMap()"></div>
+        </div>
+        <div class="cl">
+            <span>发案时间：</span>
+            <div class="laydate-icon" type="text">
+                <span onclick="laydate()" ng-bind="laydateStart"></span>
+                <span ng-bind="laytimeStart"></span>
+            </div>
+        </div>
+        <div class="cl">
+            <span>发案部位：</span><select ng-model="caseposition.index" ng-options="item.name for item in caseposition"></select>
+        </div>
+        <div class="cl">
+            <span>发案地区：</span><input type="text" ng-model="address" ng-readonly="address" />
+        </div>
+        <div class="cl">
+            <span>案件状态：</span><select ng-model="CaseCourseType.index" ng-options="item.name for item in CaseCourseType"></select>
+        </div>
+        <div class="cl">
+            <span>办案民警：</span><input type="text" />
+        </div>
+        <div class="cl">
+            <span>涉案人员：</span><input type="text" />
+        </div>
+        <div class="cl">
+            <span>简要案情：</span><input type="text" />
+        </div>
+        <div class="cl">
+            <span>案件照片：</span><input type="text" />
+        </div>
+        <div class="btnBox">
+            <div class="btn btn-blue bttn" ng-click="submit()">确定</div>
+        </div>
+    </div>
+    <!-- 地图 -->
+    <div class="map" ng-if="caseMap">
+        <case-map data-index="3"> </case-map>
+    </div>
+
+</div>

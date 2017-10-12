@@ -1,0 +1,103 @@
+<div class="caseCheck">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">案件信息</span>
+	</div>
+	<div class="new-body" style="padding: 10px">
+		
+		<div>
+
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>案件类别 : </label>
+					<span class="block" ng-bind="caseInfo['ds_casetype-ds_name'] ? caseInfo['ds_casetype-ds_name']:''" ></span>					
+				</div>
+			</div>
+
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>接警时间 : </label>
+					<div class="timeBox">
+						<div ng-bind="caseInfo['ds_receiveddate'] ? caseInfo['ds_receiveddate']:''" class="block"></div>
+					</div>
+				</div>
+			</div>
+			<div class="formBox-big">
+				<div class="ui_list_button ui_item_normal">
+					<label style="float: left;">案件名称 : </label>
+					<textarea class="ui_textarea" ng-model="caseInfo['ds_name']" style="padding: 5px; margin: 0 0 10px 5px; height: 80px; border-radius: 5px; width: 85%;" readonly="readonly"></textarea>
+				</div>
+			</div>
+
+			<div class="formBox-big">
+				<div class="ui_list_button ui_item_normal">
+					<label style="float: left;">详细地址 : </label>
+					<textarea class="ui_textarea" ng-model="caseInfo.ds_address" style="padding: 5px; margin: 0 0 10px 5px; height: 70px; border-radius: 5px; width: 85%;" readonly="readonly"></textarea>
+				</div>
+			</div>
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label >发案时间 : </label>
+					<div class="timeBox">
+						<div ng-bind="caseInfo.ds_happendate ? caseInfo.ds_happendate:''" class="block"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>发案部位 : </label>
+					<span class="block"  ng-bind="caseInfo['ds_caseposition'] ? caseInfo['ds_caseposition']:''"></span>
+				</div>
+			</div>
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>发案地区 : </label>
+					<input type="text" class="ui_list_input" style="width: 85%;" value="双阳区" readonly="readonly" ng-model="caseInfo.ds_caselocation">
+				</div>
+			</div>
+			<div class="formBox">
+				<div class="ui_list_button ui_item_normal">
+					<label>案件状态 : </label>
+					<span class="block" ng-bind="caseInfo['ds_casestatus']"></span>
+				</div>
+			</div>
+
+			<div class="formBox-biger">
+				<div class="ui_list_button ui_item_normal" style="line-height: 35px">
+					<label>办案民警 : </label>
+				</div>
+				<div class="formBoxs" ng-repeat="police in caseInfo.UsedList">
+					<div class="ui_list_button ui_item_small">
+						<span ng-bind="'姓名 : ' + police.name"></span>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="formBox-biger">
+				<div class="ui_list_button ui_item_normal" style="line-height: 35px">
+					<label>涉案人员 : </label>
+					
+				</div>
+
+				<div class="formBoxs" ng-repeat="people in PeopleList" ng-click="lookpersonInfo(people)">
+					<div class="ui_list_button ui_item_small">
+						<span ng-bind="'姓名 : ' + people['ds_name']"></span>						
+						<span class="ui_fc_light_blue" style="float: right; cursor: pointer;color: red;">查看</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="formBox-big" style="margin-top: 10px;">
+				<div class="ui_list_button ui_item_normal">
+					<label style="float: left;"> 简要案情 : </label>
+					<textarea class="ui_textarea" style="padding: 5px; margin: 0 0 20px 0; width: 85%; border-radius: 5px;" ng-model="caseInfo.ds_description""></textarea>
+				</div>
+			</div>
+		
+	</div>
+
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

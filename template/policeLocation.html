@@ -1,0 +1,23 @@
+<div class="policeLocation">
+	<header-crumbs title="#/index/policeLocation:{{title}}"></header-crumbs>
+	
+	<div class="main-block">
+		<div class="title">民警定位</div>
+		<div class="ChooseBox">
+			<span class="policeStation">派出所</span>
+			<select ng-options="items.ds_name for items in policeList" ng-model="policeHouse" ng-change="chooseEnd()">
+				
+			</select>	
+		</div>
+			
+		<!--<div class="btn btn-blue class1" ng-click="chooseEnd()">查询</div>-->
+	</div>
+	<div id="map">
+		<div class="map">
+			<span class="loadingMap">地图加载中,请稍等......</span>
+			<div class="maps" id="#main" ng-if="isShow">
+				<amap-set></amap-set>
+			</div>
+		</div>
+	</div>
+</div>

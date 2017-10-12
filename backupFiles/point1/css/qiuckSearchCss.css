@@ -1,0 +1,15 @@
+.quickSearch .searchBox input{
+	width: 45%;
+	margin-right: 45px;
+}
+.quickSearch .searchBox .main1{
+	height: 250px!important;
+	padding-top: 40px;
+	padding-left: 30px;
+}
+.quickSearch .searchBox .main1 span{
+	margin-right: 105px;
+	cursor: pointer;
+}
+
+

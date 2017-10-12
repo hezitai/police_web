@@ -1,0 +1,24 @@
+<div class="addDormitoryHouse">
+	
+	<div class="popnewinfo">
+		<span class="addTitle">选择地址树</span>
+	</div>
+	<div class="new-body">
+		<div style="margin-top: 10px" class=addresBox>
+			<label>地址树选择：</label>
+			<div class="addresTree">
+				<select ng-init="address.result[0] = address.list[0][address.index[0]]" ng-model="address.result[0]" class="block" ng-options="x['name'] for x in address.list[0]" ng-change="address.change('0')"></select>
+				<select ng-init="address.result[1] = address.list[1][address.index[1]]" ng-model="address.result[1]" class="block" ng-options="x['name'] for x in address.list[1]" ng-change="address.change('1')"></select>
+				<select ng-init="address.result[2] = address.list[2][address.index[2]]" ng-model="address.result[2]" class="block" ng-options="x['name'] for x in address.list[2]" ng-change="address.change('2')"></select>
+				<select ng-init="address.result[3] = address.list[3][0]" ng-model="address.result[3]" class="block" ng-options="x['name'] for x in address.list[3]" ng-change="address.change('3')"></select>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="div-sub">
+		
+		<div class="btn btn-default " style="float: right;border-radius: 20px;" ng-click="setAddressTree()">确定</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

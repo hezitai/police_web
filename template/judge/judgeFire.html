@@ -1,0 +1,64 @@
+<div class="judge" >
+	<header-crumbs title="#/index/judgePeople:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"消防火灾","status":"#/index/judgeFire"}]'></header-crumbs>
+	
+	<div class="main-block" >
+		<div class="title">筛选</div>
+		<div class="ChooseBox" ng-if="study.show" style="margin: 0 15px;">
+			<div class="chooseItem">
+				<span class="policeStation">起始时间</span>
+				<input class=" laydate-icon" type="text" onclick="laydate()" ng-model="case.star"/>
+			</div>
+			<div class="chooseItem">
+				<span class="policeStation">结束时间</span>
+				<input class="laydate-icon" type="text" ng-model="case.end" onclick="laydate()"/>
+			</div>
+			<div class="chooseItem">
+				<span class="policeStation">选择派出所</span>
+				<select class="block ui_list_input" style="margin: 4px; width: 272px;" ng-model="study.team" ng-options="x.name for x in team" ></select>
+			</div>
+			<div class="chooseItem">
+				<span class="policeStation">地址关键字</span>
+				<input type="text" class="ui_list_input" ng-model="study.screen.caseArea" style="margin: 4px; width: 271px;">
+			</div>	
+			<div class="button"><span class="btn btn-blue" ng-click="refreshMapData()">确定</span></div>
+		</div>
+		<div class="screenItem" ng-if="!study.show">
+			<div class="chooseitem" style="padding:15px;">
+				<span class="policestation">选择派出所</span>
+				<select class="block ui_list_input" style="margin: 4px; width: 400px;" ng-model="study.team" ng-options="x.name for x in team" ng-change="initPublicData()"></select>
+			</div>
+			<div class="screen_button" ng-class="study.all.show ? 'active' : ''" ng-click="refreshPublicData(study.all)">全部</div>
+			<div class="screen_button" ng-class="study.red.show ? 'active' : ''" ng-click="refreshPublicData(study.red)"><span class="ui_point ui_fc_red" ></span>三级一般({{study.red.list.length}})</div>
+			<div class="screen_button" ng-class="study.orange.show ? 'active' : ''" ng-click="refreshPublicData(study.orange)"><span class="ui_point ui_fc_orange" ></span>三级重点({{study.orange.list.length}})</div>
+			<div class="screen_button" ng-class="study.green.show ? 'active' : ''" ng-click="refreshPublicData(study.green)"><span class="ui_point ui_fc_green" ></span>二级重点({{study.green.list.length}})</div>
+		</div>
+		<!--<div class="btn btn-blue class1" ng-click="chooseEnd()">查询</div>-->
+	</div>
+	
+		<div class="map" ng-if="study.show" style="top: 250px;">
+			<span class="loadingMap">地图加载中,请稍等......</span>
+			<span class="list" style="padding: 0" ng-click="change(false)"><img src="/police_web/img/icon/fun-b.png"/></span>
+			<div class="maps" id="main">
+				<jmap-set></jmap-set>
+			</div>
+		</div>
+		<div class="map" ng-if="!study.show">
+
+			<span class="list" ng-click="change(true)"><img src="/police_web/img/map.png" style="width: 25px"></span>
+			
+			<ul class="listBox">
+				<li class="haha"><img ng-src="{{!publicList.haveProblem.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="publicList.haveProblem.show = !publicList.haveProblem.show"><span>存在消防问题: {{publicList.haveProblem.list.length}} 家</span>
+					<ul class="listItem" ng-if="publicList.haveProblem.show">
+						<li ng-repeat="item in publicList.haveProblem.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>						
+					</ul>
+				</li>	
+				<li class="haha"><img ng-src="{{!publicList.rectification.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="publicList.rectification.show = !publicList.rectification.show"><span>已整改: {{publicList.rectification.list.length}} 家</span>
+					<ul class="listItem" ng-if="publicList.rectification.show">
+						<li ng-repeat="item in publicList.rectification.list" ng-click="go(item)"><span ng-bind="item.name"></span></li>						
+					</ul>
+				</li>			
+			</ul>
+			
+		</div>
+	
+</div>

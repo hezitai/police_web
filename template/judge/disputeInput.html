@@ -1,0 +1,53 @@
+<div class="judge" >
+	<!-- <header-crumbs title="#/index/disputeInput:{{title}}" usedlocalstorage="used" usedlevel="2" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"矛盾纠纷录入","status":"#/index/disputeInput"}]'></header-crumbs> -->
+	<header-crumbs title="#/index/judgePeople:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"矛盾纠纷录入","status":"#/index/disputeInput"}]'></header-crumbs>
+	
+	
+	<div class="main-block" >
+		<div class="title">矛盾纠纷录入</div>
+		<div class="option">
+			<span>涉及人员：</span>
+			<button id="createdisputeinputinfo" style="" ng-click="People.setPeople()">添加涉及人员</button>
+			<div ng-repeat="people in People.list" ng-click="People.show()">
+				<div class="repeatinfo">
+					<span ng-bind="'姓名 : ' + people['ds_name']"></span>
+					<span ng-click="People.delete(people,$event,$index)" style="width: 50px; text-align: right;cursor: pointer; float: right;">删除<!-- <img src="/police_web/img/delete-1.png" alt=""> --></span>
+					<span style="width: 50px; text-align: right;cursor: pointer; float: right;" ng-click="People.showDialog(people)">查看<!-- <img src="/police_web/img/check-1.png" alt=""> --></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="option" style="line-height: 50px">
+			<span>是否为化解：</span>
+			<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 150px;" ng-click="options['ds_ischange'] = 'True'">
+								
+				<img ng-src="{{options['ds_ischange'] == 'True' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+				<span class="ui_fc_blue">是</span>
+			</div>
+			<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 150px;" ng-click="options['ds_ischange'] = 'False'">
+				<img ng-src="{{options['ds_ischange'] == 'False' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+				<span class="ui_fc_blue">否</span>
+			</div>
+		</div>
+		<div class="option" style="line-height: 50px"> 
+			<span>是否民转刑：</span>
+			<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 150px;" ng-click="options['ds_ischeck'] = 'True'">
+								
+				<img ng-src="{{options['ds_ischeck'] == 'True' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+				<span class="ui_fc_blue">是</span>
+			</div>
+			<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 150px;" ng-click="options['ds_ischeck'] = 'False'">
+				<img ng-src="{{options['ds_ischeck'] == 'False' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+				<span class="ui_fc_blue">否</span>
+			</div>
+		</div>
+		<div class="option">
+			<span>时间描述：</span>
+			<input type="text" style="min-width: 200px;max-width: 450px;" ng-model="options['ds_description']"/>
+		</div>
+	</div>
+	<div class="btnBox">
+		<div class="btn btn-blue bttn" ng-click="submit()" style="margin-left: 20px;">录入</div>
+	</div>
+		
+</div>

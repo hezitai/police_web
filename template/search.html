@@ -1,0 +1,59 @@
+<div class="search" >
+	<header-crumbs title="#/index/search:{{title}}"></header-crumbs>
+	<div class="searchBox" >
+		<div class="main-block">
+			<div class="title">搜索查询</div>
+			<input type="" name="" id="" value="" placeholder="请输入您要查询的内容"/>
+			<div class="btn btn-blue bttn">查询</div>
+		</div>
+		<div class="main-block main1" ng-init="flag=true">
+			<div class="title">常用搜索</div>
+			<div class="select" ng-click="flag=!flag">
+				<i><img ng-src="{{flag==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>人口信息查询</span>
+			</div>
+			<div class="select" ng-init="flage1=true" ng-click="flag1=!flag1">
+				<i><img ng-src="{{flag1==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>车辆信息查询</span>
+			</div>
+			<div class="select" ng-init="flage2=true" ng-click="flag2=!flag2">
+				<i><img ng-src="{{flag2==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>案件查询</span>
+			</div>
+			<div class="select" ng-init="flage3=true" ng-click="flag3=!flag3">
+				<i><img ng-src="{{flag3==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>行业场所</span>
+			</div>
+			<div class="select" ng-init="flage4=true" ng-click="flag4=!flag4">
+				<i><img ng-src="{{flag4==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>线索查询</span>
+			</div>
+			<div class="select" ng-init="flage5=true" ng-click="flag5=!flag5">
+				<i><img ng-src="{{flag5==true?'img/icon/select.png':'img/icon/select1.png'}}"/></i>
+				<span>房屋信息查询</span>
+			</div>
+		</div>
+	</div>	
+	<div class="searchResult" style="display: none;">
+		<div class="main-block">
+			<div class="title">查询结果</div>
+			<ul>
+				<li><span>姓名：</span>刘子薇</li>
+				<li><span>性别：</span>女</li>
+				<li><span>年龄：</span>27</li>
+				<li><span>身份证号：</span>22010219761234</li>
+				<li><span>手机号：</span>19846475595</li>
+				<li><span>手机号1：</span>13644441234</li>
+				<li><span>手机号2：</span>15526661314</li>
+				<li><span>人口类型：</span>暂住人口</li>
+				<li><span>家庭住址：</span>双阳区-辽宁大街-上东国际4栋3门702</li>
+				<li><span>车辆信息：</span>吉A-AA666，白色，马自达</li>
+				<li><span>以往住址：</span>双阳区-台北大街-台北花园1栋1门205</li>
+				<li><span>微信：</span>wangerni0510</li>
+				<li><span>QQ：</span>286546152</li>
+				<li><span>前科劣迹：</span>无</li>
+				<li><span>视频信息：</span>无</li>	
+			</ul>
+		</div>
+	</div>
+</div>

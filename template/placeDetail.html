@@ -1,0 +1,239 @@
+<div class="place">
+	<header-crumbs title="#/index/place:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+	<input type="file" id="uploadfile" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<input type="file" id="uploadFirefile" style="display: none;" onchange="angular.element(this).scope().fileFireChange()">
+	<div class="layout">
+		<div class="cl">
+			
+			<div class="belongs">
+				所属派出所 : <span ng-bind="placeMessage['ds_districtpolicestation_name-ds_name']"></span>   所属民警 : <span style="color: #1a629d">刘紫薇</span><img src="/police_web/img/reset.png" style=" width: 16px; display: inline-block; margin-left: 5px;">
+			</div>
+		</div>
+	</div>
+
+	<div class="layout cl">
+		<div class="tables" style="width: 52.5%; float: left;" >
+			<table border="0" cellspacing="0" cellpadding="0" ng-if="Show.form">
+				<!-- <tr>
+					<th colspan="5">吉林省公安机关行业场所基本情况登记表<span style="border: 1px solid #fff; border-radius: 7px; color: 12px; font-size: 14px; float: right; display: inline-block; width: 45px; cursor: pointer;" ng-click="submitChoose()">提交</span></th>
+				</tr> -->
+				<tr>
+					<th colspan="5">吉林省公安机关行业场所基本情况登记表</th>
+				</tr>
+				<tr>
+					<td>单位名称</td>
+					<td colspan="4" ng-bind="placeMessage.ds_name"></td>
+				</tr>
+				<tr>
+					<td>单位地址</td>
+					<td colspan="4" ng-bind="placeMessage.ds_address"></td>
+				</tr>
+				<tr>
+					<td>负责人</td>
+					<td>法定负责人</td>
+					<td colspan="2">治安保卫负责人</td>
+				</tr>
+				<tr>
+					<td>姓名</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_name']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_name']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>公民身份证号</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_id']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_id']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>联系电话</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_phone']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_phone']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>家庭住址</td>
+					<td ng-bind="placeMessage['ds_owner_ref-ds_address']"></td>
+					<td ng-bind="placeMessage['ds_securityowner_ref-ds_address']" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>治安保卫负责人联系电话2</td>
+					<td colspan="4" ng-bind="placeMessage['ds_securityowner_ref-ds_phone2']"></td>
+				</tr>
+				<tr>
+					<td>消防单位级别</td>
+					<td colspan="4">
+						<div class="ui_chooseBox">
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px;" ng-click="Detail['ds_firelevel'] = '100000000'">
+								
+								<img ng-src="{{Detail['ds_firelevel'] == '100000000' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">二级</span>
+							</div>
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px;" ng-click="Detail['ds_firelevel'] = '100000001'">
+								<img ng-src="{{Detail['ds_firelevel'] == '100000001' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">三级重点</span>
+							</div>
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px;" ng-click="Detail['ds_firelevel'] = '100000002'">
+								<img ng-src="{{Detail['ds_firelevel'] == '100000002' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">三级一般</span>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>是否为小场所</td>
+					<td colspan="4">
+						<div class="ui_chooseBox">
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 39%;" ng-click="Detail['ds_issmall'] = 'True'">
+								
+								<img ng-src="{{Detail['ds_issmall'] == 'True' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">是</span>
+							</div>
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 39%;" ng-click="Detail['ds_issmall'] = 'False'">
+								<img ng-src="{{Detail['ds_issmall'] == 'False' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">否</span>
+							</div>
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<div class="ui_chooseBox">
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 47%;" ng-click="Browse.changeType('100000000')">								
+								<img ng-src="{{Browse.type == '100000000' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">已反馈</span>
+							</div>
+							<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 47%;" ng-click="Browse.changeType('100000002')">
+								<img ng-src="{{Browse.type == '100000002' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+								<span class="ui_fc_blue">已应用</span>
+							</div>
+							
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<div class="grid" ng-if="Show.danger">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr class='small' >
+						<th colspan="5" style="background: #0168b7!important">危爆物品管理<span class="add" ng-click="addDangers(placeMessage['ds_publicorderid'])">添加</span></th>
+					</tr>
+					<tr class='small'>						
+						<td width='20%'>日期</td>
+						<td width='65%'>信息内容</td>
+						<td width='15%'>操作</td>						
+					</tr>
+					<tr class='small-point' ng-repeat="item in dangerList" ng-click="lookDangers(item)">						
+						<td ng-bind="item.time"></td>
+						<td class="text-left" ng-bind="item.ds_name"></td>
+						<td>
+							<div class="btn btn-small btn-light-red" ng-click="deleteDanger(item.id,$event)">×</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<ul class="school" ng-if="Show.student">
+				<div class="tit">学生管理<span class="add" ng-click="addDormitoryHouse()">添加公寓</span></div>
+				<li ng-repeat="item in dormitoryList" ng-click="lookDormitory(item['ds_address_l4_ref-ds_address_l4id'])">
+					<div class='icon'></div>
+					<div class='houseName' ng-bind="item['ds_address_l4_ref-ds_name']"></div>
+					<span class="close" ng-click="deleteHouse(item['id'],$event)"><img src="/police_web/img/close.png"></span>
+				</li>
+				
+			</ul>
+
+			<div class="signin" ng-if="Show.signin">
+				<div class="tit">从业人员签到记录</div>
+				<div class="choosetime">
+					<span>选择年份</span><select class="ui_list_input" ng-model="selectValue.year" ng-options="x.name for x in options.year"></select>
+					<span>选择月份</span><select class="ui_list_input" ng-model="selectValue.month" ng-options="x.name for x in options.month"></select>
+					<span class="button" ng-click="search()">查询</span>
+				</div>
+				<ul>
+					<li ng-repeat="item in list"><span>姓名：</span><span ng-bind="item.personName"></span><a ng-click="lookSignin(item.checkInHistoryModels)">查看记录</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tables" style="width: 43.5%; float: right; border-left: 1px solid #ddd; height: 470px; margin-top: 10px;">
+			<div class="Bookkeeper">
+				档案管理				
+			</div>
+			<div class="table-body operationBox">
+				<ul class="operation">
+					<li ng-if="detail.showpublic">
+						<img src="/police_web/img/file.png">
+						<div class="tit">行业场所治安安全管理档案</div>
+						<div class="contant" style="position: absolute;right: 5px;bottom: 4px;">							
+							<img src="/police_web/img/update.png" title="上传文档" ng-click="uploadfile()">
+							<img src="/police_web/img/revamp.png" title="下载文档" ng-click="downloadFile()">
+							<img src="/police_web/img/download.png" title="下载模板" ng-click="downloadTemplate()">
+						</div>
+					</li>
+					<li ng-if="detail.showLogistics">
+						<img src="/police_web/img/file.png">
+						<div class="tit">物流寄递行业治安管理工作档案</div>
+						<div class="contant" style="position: absolute;right: 5px;bottom: 4px;">							
+							<img src="/police_web/img/update.png" title="上传文档" ng-click="uploadfile()">
+							<img src="/police_web/img/revamp.png" title="下载文档" ng-click="downloadFile()">
+							<img src="/police_web/img/download.png" title="下载模板" ng-click="downloadTemplate()">
+						</div>
+					</li>
+					<li ng-if="detail.showPeopleList" ng-click="lookDocuments(placeMessage)">
+						<img src="/police_web/img/employee.png">
+						<div class="tit">从业人员管理</div>
+						
+					</li>
+					<li ng-if="detail.showStudents" ng-click="getDormitoryList()">
+						<img src="/police_web/img/student.png">
+						<div class="tit">学生管理</div>						
+					</li>
+					<li ng-if="detail.showFire">
+						<img src="/police_web/img/file.png">
+						<div class="tit">消防档案</div>
+						<div class="contant" style="position: absolute;right: 5px;bottom: 4px;">
+							<img src="/police_web/img/update.png" title="上传文档" ng-click="uploadFirefile()">
+							<img src="/police_web/img/revamp.png" title="下载文档" ng-click="downloadFireFile()">
+							<img src="/police_web/img/download.png" title="下载模板" ng-click="downloadFireTemplate()">
+						</div>
+					</li>
+					<li  ng-click="get()">
+						<img src="/police_web/img/dangerous.png">
+						<div class="tit">危爆物品管理</div>						
+					</li>
+					<li ng-if="detail.realname" ng-click="goRealName('index.realnameLogistics')">
+						<img src="/police_web/img/realName.png">
+						<div class="tit">实名制</div>						
+					</li>
+					<li ng-if="detail.showPeopleList" ng-click="getsinginList()">
+						<img src="/police_web/img/file.png">
+						<div class="tit">从业人员签到记录</div>						
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="layout cl">
+		<div class="tables">
+			<div class="table-title" ng-init="show=false" >
+				扣分情况
+				<!-- <div class="btn-r showDialogBtn" ng-click="showPenaltyRoReward($event);show=!show">
+					<span ng-init="show=false">操作</span>
+					<div class="is-show-penalty-ro-reward" ng-if="show">
+						
+						<div style="cursor: pointer;">加分</div>
+						<div style="cursor: pointer;" ng-click="add()">增加</div>
+					</div>
+				</div> -->
+			</div>
+			<div class="table-body min" style="height: 285px">
+				<div class="grade"><span>总分：</span><span>100</span>&nbsp;分<span class="deduct">已扣分数：</span><span class="red" ng-bind="check.buckleScore"></span>&nbsp;分</div>
+				<ul class="check" style="height: 249px; overflow-y: auto;"> 
+					<li ng-repeat="item in checkList" ng-click="lookCheckItem(item)">
+						<span ng-bind="item.time"></span>检查记录<img src="/police_web/img/icon/icon-right.png">
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

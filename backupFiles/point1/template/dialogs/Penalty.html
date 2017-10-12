@@ -1,0 +1,215 @@
+<div class="penalty cl">
+	<div class="title">扣分情况</div>
+	<select ng-model="selectType">
+		<option value="1" selected>- 请选择 -</option>
+		<option ng-repeat="item in penaltyType" value="{{item.value}}" ng-bind="item.name"></option>
+	</select>
+	<div ng-if="selectType == 1" style="line-height: 100px; text-align: center;"> 请选择扣分类型 </div>
+	<div ng-if="selectType == 100000000">
+		<div class="peoples" ng-init="message.people = []">
+			<div class="title cl">
+				<span>人员信息 : (未在岗)</span>
+				<div class="btn btn-white btn-r btn-small btn-dialog" style="margin: 3px 0 0 0;" ng-click="message.people.push({})">添加人员信息</div>
+			</div>
+			<div class="noPeoples" ng-if="message.people.length == 0">暂未添加人员信息</div>
+			<div class="layout" ng-repeat="item in message.people">
+				<div class="delete" ng-click="message.people.splice($index,1)"></div>
+				<div class="form-box cl" ng-init="item.name = ''">
+					<label>姓名</label>:
+					<input type="text" ng-model="item.name">
+					<form-warning name="姓名" value="item.name" type='isNull;isSpecial'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.idCard = ''">
+					<label>身份证号</label>:
+					<input type="text" ng-model="item.idCard">
+					<form-warning name="身份证" value="item.idCard" type='isNull;isIdCard'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.phone = ''">
+					<label>电话</label>:
+					<input type="text" ng-model="item.phone">
+					<form-warning name="电话" value="item.phone" type='isNull;isPhone'></form-warning>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selectType == 100000001">
+		<div class="peoples" ng-init="message.people = []">
+			<div class="title cl">
+				<span>人员信息 : (未在岗)</span>
+				<div class="btn btn-white btn-r btn-small btn-dialog" style="margin: 3px 0 0 0;" ng-click="message.people.push({})">添加人员信息</div>
+			</div>
+			<div class="noPeoples" ng-if="message.people.length == 0">暂未添加人员信息</div>
+			<div class="layout" ng-repeat="item in message.people">
+				<div class="delete" ng-click="message.people.splice($index,1)"></div>
+				<div class="form-box cl" ng-init="item.name = ''">
+					<label>姓名</label>:
+					<input type="text" ng-model="item.name">
+					<form-warning name="姓名" value="item.name" type='isNull;isSpecial'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.idCard = ''">
+					<label>身份证号</label>:
+					<input type="text" ng-model="item.idCard">
+					<form-warning name="身份证" value="item.idCard" type='isNull;isIdCard'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.phone = ''">
+					<label>电话</label>:
+					<input type="text" ng-model="item.phone">
+					<form-warning name="电话" value="item.phone" type='isNull;isPhone'></form-warning>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selectType == 100000002">
+		<div class="peoples" ng-init="message.people = []">
+			<div class="title cl">
+				<span>人员信息 : (未在岗)</span>
+				<div class="btn btn-white btn-r btn-small btn-dialog" style="margin: 3px 0 0 0;" ng-click="message.people.push({})">添加人员信息</div>
+			</div>
+			<div class="noPeoples" ng-if="message.people.length == 0">暂未添加人员信息</div>
+			<div class="layout" ng-repeat="item in message.people">
+				<div class="delete" ng-click="message.people.splice($index,1)"></div>
+				<div class="form-box cl" ng-init="item.name = ''">
+					<label>姓名</label>:
+					<input type="text" ng-model="item.name">
+					<form-warning name="姓名" value="item.name" type='isNull;isSpecial'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.idCard = ''">
+					<label>身份证号</label>:
+					<input type="text" ng-model="item.idCard">
+					<form-warning name="身份证" value="item.idCard" type='isNull;isIdCard'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.phone = ''">
+					<label>电话</label>:
+					<input type="text" ng-model="item.phone">
+					<form-warning name="电话" value="item.phone" type='isNull;isPhone'></form-warning>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selectType == 100000003">
+		<div class="peoples" ng-init="message.people = []">
+			<div class="title cl">
+				<span>人员信息 : (未在岗)</span>
+				<div class="btn btn-white btn-r btn-small btn-dialog" style="margin: 3px 0 0 0;" ng-click="message.people.push({})">添加人员信息</div>
+			</div>
+			<div class="noPeoples" ng-if="message.people.length == 0">暂未添加人员信息</div>
+			<div class="layout" ng-repeat="item in message.people">
+				<div class="delete" ng-click="message.people.splice($index,1)"></div>
+				<div class="form-box cl" ng-init="item.name = ''">
+					<label>姓名</label>:
+					<input type="text" ng-model="item.name">
+					<form-warning name="姓名" value="item.name" type='isNull;isSpecial'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.idCard = ''">
+					<label>身份证号</label>:
+					<input type="text" ng-model="item.idCard">
+					<form-warning name="身份证" value="item.idCard" type='isNull;isIdCard'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.phone = ''">
+					<label>电话</label>:
+					<input type="text" ng-model="item.phone">
+					<form-warning name="电话" value="item.phone" type='isNull;isPhone'></form-warning>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selectType == 100000004">
+		<div class="peoples">
+			<div>
+				
+			</div>
+		</div>
+		<div class="peoples" ng-init="message.people = []">
+			<div class="title cl">
+				<span>人员信息 : </span>
+				<div class="btn btn-white btn-r btn-small btn-dialog" style="margin: 3px 0 0 0;" ng-click="message.people.push({})">添加人员信息</div>
+			</div>
+			<div class="noPeoples" ng-if="message.people.length == 0">暂未添加人员信息</div>
+			<div class="layout" ng-repeat="item in message.people">
+				<div class="delete" ng-click="message.people.splice($index,1)"></div>
+				<div class="form-box cl" ng-init="item.name = ''">
+					<label>姓名</label>:
+					<input type="text" ng-model="item.name">
+					<form-warning name="姓名" value="item.name" type='isNull;isSpecial'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.idCard = ''">
+					<label>身份证号</label>:
+					<input type="text" ng-model="item.idCard">
+					<form-warning name="身份证" value="item.idCard" type='isNull;isIdCard'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.phone = ''">
+					<label>电话</label>:
+					<input type="text" ng-model="item.phone">
+					<form-warning name="电话" value="item.phone" type='isNull;isPhone'></form-warning>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selectType == 100000005">
+		<div class="peoples">
+			<div class="title cl">
+				<span>人员信息 : (未在岗)</span>
+				<div class="btn btn-white btn-r btn-small btn-dialog" style="margin: 3px 0 0 0;" ng-click="message.people.push({})">添加人员信息</div>
+			</div>
+			<div class="noPeoples" ng-if="message.people.length == 0">暂未添加人员信息</div>
+			<div class="layout" ng-repeat="item in message.people">
+				<div class="delete" ng-click="message.people.splice($index,1)"></div>
+				<div class="form-box cl" ng-init="item.name = ''">
+					<label>姓名</label>:
+					<input type="text" ng-model="item.name">
+					<form-warning name="姓名" value="item.name" type='isNull;isSpecial'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.idCard = ''">
+					<label>身份证号</label>:
+					<input type="text" ng-model="item.idCard">
+					<form-warning name="身份证" value="item.idCard" type='isNull;isIdCard'></form-warning>	
+				</div>
+				<div class="form-box cl" ng-init="item.phone = ''">
+					<label>电话</label>:
+					<input type="text" ng-model="item.phone">
+					<form-warning name="电话" value="item.phone" type='isNull;isPhone'></form-warning>	
+				</div>
+			</div>
+		</div>
+		<div class="peoples">
+			<div class="title cl">
+				<span>人员信息 : (未填写)</span>
+			</div>
+			<div class="layout">
+				<div class="form-box cl">
+					<label>人数</label>:
+					<input type="text" ng-init="unHavePeopleNum = 0" ng-model="unHavePeopleNum">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if="selectType == 100000007">
+		消防检查
+	</div>
+	<div ng-if="selectType == 100000006">
+		<textarea ng-if="inArray(selectType)" placeholder="请输入扣分原因"></textarea>
+		<div class="peoples">
+			<div class="layout">
+				<div class="form-box cl">
+					<label>扣除分数</label>:
+					<input type="text" ng-init="unHavePeopleNum = 0" ng-model="unHavePeopleNum">
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div ng-if="!inArray(selectType)" style="line-height: 100px; text-align: center;">
+		暂无相关类型
+	</div>
+
+<!-- 	<textarea ng-if="!(selectType != 100000000 && selectType != 100000001 && selectType != 100000002 && selectType != 100000003 && selectType != 100000004 && selectType != 100000005)" placeholder="请输入扣分原因"></textarea> -->
+
+	<div></div>
+	<div>
+		<div class="btn btn-dialog btn-white btn-r" ng-click="cancel()">取消</div>	
+		<div class="btn btn-dialog btn-blue btn-r" ng-if="inArray(selectType) && selectType != '1'" ng-click="creatPenalty()">提交</div>
+	</div>
+
+
+
+
+</div>

@@ -1,0 +1,48 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">详细信息</span>
+	</div>
+	<div class="new-body">
+		<div class="formBox">
+			<label>顾客姓名:</label><input type="text" class="long" class="ui_list_input" ng-model="detail['ds_person-ds_name']"/>
+			
+		</div>
+		<div class="formBox">
+			<label>身份证号:</label><input class="long" type="text" readonly="readonly" class="ui_list_input" ng-model="detail['ds_person-ds_id']"/>			
+		</div>
+		<div class="formBox">
+			<label>联系电话:</label><input class="long" type="text" ng-model="detail['ds_person-ds_phone']"/>
+			
+		</div>
+		<div class="formBox">
+			<label>加工时间:</label><input class="long laydate-icon" type="text" onclick="laydate()" ng-model="detail.date"/>
+			
+		</div>
+		<div class="formBox">
+			<label>物品名称:</label><input class="long" type="text" class="ui_list_input" ng-model="detail['ds_name']" />		
+		</div>
+		<div class="formBox" style="padding: 5px 0 0 0;">
+			<label>物品类型:</label><input class="long" type="text" class="ui_list_input" ng-model="detail['ds_type']"/>		
+		</div>
+		<div class="formBox" style="padding: 5px 0 0 0;">
+			<label>物品品牌:</label><input class="long" type="text" class="ui_list_input" ng-model="detail['ds_brand']"/>		
+		</div>
+		<div class="formBox" style="padding: 5px 0 0 0;">
+			<label>物品重量:</label><input class="long" type="text" class="ui_list_input" ng-model="detail['ds_weight']"/>		
+		</div>
+		<div class="formBox-big" style="padding: 5px 0 0 0;">
+			<label>物品描述:</label><textarea style="padding: 10px; margin: 0 0 5px 0;" class="ui_textarea" ng-model="detail['ds_information']"></textarea>	
+		</div>
+		<div class="formBox">
+			
+			<label>物品照片：</label><div class="imgBox fileName" data-fileid="" ng-bind="detail.aheadpic"></div><span class="Btn look" ng-click="lookImg()">查看</span><span class="Btn updataImage" ng-click="updataImage()">上传</span>
+		</div>
+	</div>
+
+	<div class="div-sub">
+		<div class="btn clo" ng-click="close()">取消</div>
+		<div class="btn btn-default " ng-click="upData()">提交</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

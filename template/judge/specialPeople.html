@@ -1,0 +1,40 @@
+<div class="judge" >
+	<header-crumbs title="#/index/judgePeople:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"特殊重点人员录入","status":"#/index/specialPeople"}]'></header-crumbs>
+	
+	
+	<div class="main-block" >
+		<div class="title">筛选</div>
+		<div class="option">
+			<span>姓名：</span>
+			<input type="" name="" id="" value="" ng-model="options.name"/>
+		</div>
+		
+		<div class="option">
+			<span>身份证号：</span>
+			<input type="" name="" id="" value="" ng-model="options.id"/>
+		</div>
+		
+		<div class="option" style="line-height: 50px">
+			<span>是否为逃犯：</span>
+			<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 150px;" ng-click="Detail['ds_issmall'] = 'True'">
+								
+				<img ng-src="{{Detail['ds_issmall'] == 'True' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+				<span class="ui_fc_blue">是</span>
+			</div>
+			<div class="ui_radio ui_text_left" style="margin: 0 0 0 15px; width: 150px;" ng-click="Detail['ds_issmall'] = 'False'">
+				<img ng-src="{{Detail['ds_issmall'] == 'False' ?'img/icon/select.png':'img/icon/select1.png'}}" />
+				<span class="ui_fc_blue">否</span>
+			</div>
+		</div>
+		<div class="option">
+			<span>录入原因：</span>
+			<!-- <textarea style="resize: none;border: 1px solid #ccc;font-size: 16px;color: #5b5b5b;text-indent: 10px;width: 50%;height: 70px;margin: 5px;display: inline-block;"></textarea> -->
+			<input type="" name="" id="" value="" ng-model="options.ds_description"/>
+		</div>
+	</div>
+	<div class="btnBox">
+		<div class="btn btn-blue bttn" ng-click="submit()" style="margin-left: 20px;">提交</div>
+	</div>
+		
+	
+</div>

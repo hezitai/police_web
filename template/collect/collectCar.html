@@ -1,0 +1,93 @@
+<div class="collect">
+
+
+	<input type="file" id="collectCarImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<header-crumbs title="#/index/collect:{{title}}" usedlocalstorage="list" list='[{"startName":"信息采集","status":"#/index/collect"},{"startName":"车辆信息采集","status":"#/index/collectCar"}]'></header-crumbs>
+	
+	<div class="main-block carbox" >
+		<div class="title">驾驶员信息</div>
+		<ul class="car-collect">
+			<li>
+				<span class="car-class1" >姓名:</span>
+				<input type="text" class="car-class2" ng-model="driver.name">
+			</li>
+			<li>
+				<span class="car-class1" >身份证号:</span>
+				<input type="text" class="car-class2" ng-model="driver.idCard">
+			</li>
+			<li>
+				<span class="car-class1" >联系电话:</span>
+				<input type="text" class="car-class2" ng-model="driver.phone">
+			</li>
+			
+			 
+		</ul>
+	</div>
+	<div class="main-block carbox" >
+		<div class="title">车主信息</div>
+		<ul class="car-collect">
+			<li>
+				<span class="car-class1" >姓名:</span>
+				<input type="text" class="car-class2" ng-model="master.name">
+			</li>
+			<li>
+				<span class="car-class1" >身份证号:</span>
+				<input type="text" class="car-class2" ng-model="master.idCard">
+			</li>
+			<li>
+				<span class="car-class1" >联系电话:</span>
+				<input type="text" class="car-class2" ng-model="master.phone">
+			</li>
+			
+			 
+		</ul>
+	</div>
+	<div class="main-block carbox" >
+		<div class="title">车辆信息</div>
+		<ul class="car-collect">
+			<li>
+				<span class="car-class1" >车辆型号:</span>
+				<input type="text" class="car-class2" ng-model="car.name">
+			</li>
+			<li>
+				<span class="car-class1" >车辆颜色:</span>
+				<input type="text" class="car-class2" ng-model="car.color">
+			</li>
+			<li>
+				<span class="car-class1" >车牌号:</span>
+				<input type="text" class="car-class2" ng-model="car.number">
+			</li>
+			<div class="ui_list">
+				<div class="ui_list_button">
+					<div style="line-height: 40px">
+						<span style="width: 10%; display: inline-block;">详细地址 : </span>
+						<div class="ui_text_right" ng-click="choosePosition()" style="display: inline-block; margin: 5px;">
+							<span class="choosePlace" >手动选择</span>
+						</div>
+					</div>							
+					<textarea style="padding: 10px; margin: 0px 0 20px 10%; height: 60px;width: 88%" class="ui_textarea" ng-model="car.ds_address"></textarea>
+				</div>
+			</div>
+			<div class="div1">
+				<span class="car-class4" >详细描述:</span>
+				<textarea   class="car-class3" placeholder="请输入描述" ng-model="carCollect.carDescription"></textarea>
+			</div>
+			<div class="div2">
+				<span class="car-class4">上传图片:</span>
+				<div class="car-class5  clo">
+					<div class="imagecar" ng-repeat="item in picture.images track by $index">
+						<div class="picdiv"><img ng-src="{{item}}" class="pic1" ng-click="updataImage('updata',$index)">
+						<!-- <button aria-label="Dismiss" class="ngdialog-close img-close" ng-click="deletePic($index)"></button> -->
+						<img src="img/close.png" class="img-close" ng-click="deletePic($index)">
+						</div>
+					</div>
+					<div class="picdiv"><img src="img/sign/addImage.png" class="pic1" ng-click="updataImage('creat',null)" style="border: 1px solid #DDDDDD;"></div>
+				</div>
+			</div>
+			 
+		</ul>
+	</div>
+	<div class="car-sub">
+		<div class="btn btn-blue class1" ng-click="submit()">提交</div>
+	</div>
+</div>

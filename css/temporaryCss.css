@@ -1,0 +1,47 @@
+.temporary .people-find{
+	margin-left:30px;
+	margin-top: 10px;
+	margin-bottom: 26px;
+
+}
+			
+.temporary .people-find .people-id{
+	 font-size: 16px; 
+	 color: #B7B7B7;
+	 height: 30px;
+	  line-height: 30px; 
+	  width: 40%;
+	  border: 1px solid #D5D5D5;
+	  margin-right: 40px;
+	  border-radius: 2px;	  
+}
+.temporary .people-find .people-submit{
+	min-width: 100px;
+	width: 7%;
+	height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	display: inline-block;
+	background-color: #1D83C5;
+	color: white;
+	border-radius: 3px;
+	
+}
+
+
+.temporary .main-block.people-box{
+	margin-top:50px;
+}
+
+
+.temporary .people-info{
+	margin-top: 20px;
+	margin-left: 20px;
+
+}
+.temporary  .main-block.people-box .people-info li{
+	line-height: 36px;
+	height: 36px;
+	font-size: 16px;
+	color: #383838;
+}

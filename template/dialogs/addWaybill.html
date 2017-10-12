@@ -1,0 +1,44 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">详细信息</span>
+	</div>
+	<div class="new-body">
+		<div class="formBox">
+			<label>订单编号:</label><input type="text" class="long" ng-model="detail['ds_ordernum']" class="ui_list_input"/>
+			
+		</div>		
+		<div class="formBox">
+			<label>邮寄物品:</label><input class="long" type="text" ng-model="detail['ds_name']" class="ui_list_input"/>
+		</div>	
+		<div class="formBox">
+			<label>寄件人姓名:</label><input class="long" type="text" ng-model="detail['ds_person-ds_name']" class="ui_list_input"/>
+		</div>
+		<div class="formBox">
+			<label>寄件人身份证号:</label><input class="long" type="text" ng-model="detail['ds_person-ds_id']" class="ui_list_input"/>			
+		</div>
+		<div class="formBox">
+			<label>寄件人电话号:</label><input class="long" type="text" ng-model="detail['ds_person-ds_phone']" class="ui_list_input"/>
+			
+		</div>
+		<div class="formBox">
+			<label>收件人姓名:</label><input class="long" type="text" ng-model="detail['ds_receivernic']" class="ui_list_input"/>		
+		</div>
+		<div class="formBox">
+			<label>收件人电话号:</label><input class="long" type="text" ng-model="detail['ds_receiverphone']" class="ui_list_input"/>		
+		</div>
+		<div class="formBox-big" style="padding: 5px 0 0 0;">
+			<label>物品描述:</label><textarea style="padding: 10px; margin: 0 0 5px 0;" class="ui_textarea" ng-model="detail['ds_information']"></textarea>	
+		</div>
+		<div class="formBox">
+			
+			<label>危爆物品照片：</label><div class="imgBox fileName" data-fileid="" ng-bind="detail.aheadpic"></div><span class="Btn look" ng-click=>查看</span><span class="Btn updataImage" ng-click="updataImage()">上传</span>
+		</div>
+	</div>
+
+	<div class="div-sub">
+		<div class="btn clo" ng-click="close()">取消</div>
+		<div class="btn btn-default " ng-click="submit()">提交</div>
+	</div>
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

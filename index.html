@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="manage" ng-controller="viewName">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title ng-bind="title"></title>
+
+    <link rel="stylesheet" type="text/css" href="/police_web/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/police_web/css/carCss.css">
+    <link rel="stylesheet" type="text/css" href="/police_web/css/temporaryCss.css">
+    <link rel="stylesheet" type="text/css" href="/police_web/css/qiuckSearchCss.css">
+    <link rel="stylesheet" type="text/css" href="/police_web/css/default.css" />
+
+    <link rel="stylesheet" type="text/css" href="/police_web/css/ngDialog.min.css" />
+    <link rel="stylesheet" type="text/css" href="/police_web/css/ngDialog-theme-default.css" />
+    <link rel="stylesheet" type="text/css" href="/police_web/libs/js/need/laydate.css" />
+
+    <!-- <script type="text/javascript" src="/police_web/libs/js/jquery.min.js"></script> -->
+    <script type="text/javascript" src="/police_web/libs/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/police_web/libs/js/angular.js"></script>
+    <script type="text/javascript" src="/police_web/libs/js/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/police_web/libs/js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/police_web/libs/js/ngDialog.js"></script>
+    <script type="text/javascript" src="/police_web/libs/js/laydate.js"></script>
+    <script type="text/javascript" src="/police_web/libs/js/jquery.form.js"></script>
+
+
+    <script type="text/javascript" src="/police_web/js/services.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers.js"></script>
+    <script type="text/javascript" src="/police_web/js/app.js"></script>
+    <script type="text/javascript" src="/police_web/js/filter.js"></script>
+    <script type="text/javascript" src="/police_web/js/directive.js"></script>
+
+    <!-- services -->
+    <script type="text/javascript" src="/police_web/js/services/optionSideService.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/homePageServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/placeServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/addressTree.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/sendServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/policeManagementServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/messageServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/jobsServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/pointServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/missionServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/collectServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/patrolServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/houseServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/policeLocationServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/addressServices.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/dangerousServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/studyServices.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/dutyServices.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/searchServers.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/caseInputServices.js"></script>
+    <script type="text/javascript" src="/police_web/js/services/queryLogServer.js"></script>
+
+    <!-- controllers -->
+    <script type="text/javascript" src="/police_web/js/controllers/homePage.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/place.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/search.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/send.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/policeManagement.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/message.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/jobs.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/point.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/mission.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/collect.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/patrol.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/house.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/policeLocation.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/demo.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/dangerous.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/judge.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/unsteadinessMessage.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/duty.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/caseInput.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/specialPeople.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/disputeInput.js"></script>
+    <script type="text/javascript" src="/police_web/js/controllers/queryLog.js"></script>
+
+    <!-- app -->
+    <script src="http://webapi.amap.com/maps?v=1.3&key=c8d499635271ab4f9d449d35911e2cf1&plugin=AMap.Autocomplete"></script>
+    <!-- <script type="text/javascript" src="/manage/js/controllers/dialog.js"></script> -->
+</head>
+
+<body>
+    <div ui-view style="width: 100%; height: 100%; min-width: 1006px;"></div>
+</body>
+
+</html>

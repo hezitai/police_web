@@ -1,0 +1,38 @@
+<div class="queryLog" id="querylog">
+	<header-crumbs title="#/index/queryLog:{{title}}"></header-crumbs>
+	<div class="search">
+		<p class="search_title">搜索查询</p>
+		<div class="search_body">
+			<div class="select marginleft">
+				<p>查询类别</p>
+				<select ng-model="option.queryclassValue" ng-change="" ng-options="b.info for b in option.queryclass"></select>
+			</div>
+			<div class="select">
+				<p>派出所</p>
+				<select ng-model="option.policeHouseValue" ng-change="option.policeValue = option.policeHouseValue.subset[0]" ng-options="a.teamName for a in station"></select>
+			</div>
+			<div class="select">
+				<p>警员姓名</p>
+				<select ng-model="option.policeValue" ng-change="" ng-options="a.name for a in option.policeHouseValue.subset"></select>
+			</div>
+			<div class="select">
+				<p>查询时间</p>
+				<input type="text" class="laydate-icon" id="starttime" onclick="laydate({elem: '#starttime'})" style="cursor: pointer;color: #A9A9A9;" ng-model="option.data"/><!--  ng-model="case.star"-->
+			</div>
+			<div class="searchbtn">
+				<button ng-click="submit(option)">查询</button>
+			</div>
+		</div>
+	</div>
+	<div class="result">
+		<p class="result_title">查询结果</p>
+		<ul class="result_list">
+			<li ng-repeat="x in option.queryInfo">
+				<p>查询类别：</p><span ng-bind="x.queryClass"></span>
+				<p>姓名：</p><span ng-bind="x.name"></span>
+				<p>查询用途：</p><span ng-bind="x.queryUse"></span>
+				<a ng-click="check(x)">查看</a>
+			</li>
+		</ul>
+	</div>
+</div>

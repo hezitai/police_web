@@ -1,0 +1,59 @@
+<div class="houseLivingNowMessage">
+    <div class="title" ng-bind="houseMessage.ds_liveway.split(':')[1]+'信息'"></div>
+    <div class="messagebox cl">
+        <span>姓名：</span>
+        <div class="marginright" ng-bind="houseMessage['ds_person_ref-ds_name']"></div>
+        <span>身份证号码：</span>
+        <div ng-bind="houseMessage['ds_person_ref-ds_id']"></div>
+    </div>
+    <div class="messagebox cl">
+        <span>出生日期：</span>
+        <div class="marginright" ng-bind="houseMessage.birth"></div>
+        <span>性别：</span>
+        <div ng-bind="houseMessage.sex"></div>
+    </div>
+    <div class="messagebox cl">
+        <span>入住时间：</span>
+        <div class="marginright" ng-bind="houseMessage.ds_startdate.show"></div>
+        <span>截止时间：</span>
+        <div ng-bind="houseMessage.ds_enddate.show"></div>
+    </div>
+    <div class="messagebox cl">
+        <span>文化程度：</span>
+        <select class="marginright" ng-model="houseMessage['ds_person_ref-ds_education']" ng-options="item.name for item in options.education" ng-disabled="houseMessage['ds_person_ref-ds_education']"></select>
+        <span>民族：</span>
+        <select ng-model="houseMessage['ds_person_ref-ds_nation']" ng-options="item.name for item in options.nation" ng-disabled="houseMessage['ds_person_ref-ds_nation']"></select>
+    </div>
+    <div class="messagebox cl">
+        <span>婚姻状况：</span>
+        <select class="marginright" ng-model="houseMessage['ds_person_ref-ds_marriage']" ng-options="item.name for item in options.marriage" ng-disabled="houseMessage['ds_person_ref-ds_marriage']"></select>
+        <span>户口类别：</span>
+        <select ng-model="houseMessage['ds_person_ref-ds_account']" ng-options="item.name for item in options.familyregister" ng-disabled="houseMessage['ds_person_ref-ds_account']"></select>
+    </div>
+    <div class="messagebox cl">
+        <span>血型：</span>
+        <select class="marginright" ng-model="houseMessage['ds_person_ref-ds_bloodtype']" ng-options="item.name for item in options.bloodtype" ng-disabled="houseMessage['ds_person_ref-ds_bloodtype']"></select>
+        <span>身高：</span>
+        <div ng-bind="houseMessage['ds_person_ref-ds_height']"></div>
+    </div>
+    <div class="messagebox cl">
+        <span>联系电话1：</span>
+        <div class="marginright" ng-bind="houseMessage['ds_person_ref-ds_phone']"></div>
+        <span>联系电话2：</span>
+        <div ng-bind="houseMessage['ds_person_ref-ds_phone2']"></div>
+    </div>
+    <div class="messagebox cl">
+        <span>QQ：</span>
+        <div class="marginright" ng-bind="houseMessage['ds_person_ref-ds_qq']"></div>
+        <span>微信：</span>
+        <div ng-bind="houseMessage['ds_person_ref-ds_wechat']"></div>
+    </div>
+    <div class="address cl">
+        <span>现居住地址：</span>
+        <div ng-bind="houseMessage['ds_person_ref-ds_address']"></div>
+    </div>
+    <div class="address cl">
+        <span>身份证正面照：</span>
+        <img ng-src="{{houseMessage.img}}">
+    </div>
+</div>

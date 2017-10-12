@@ -1,0 +1,39 @@
+<div class="firstPage" ng-click="UserMenu.hide()">
+	<div class="header">
+		<div class="logo"><a href=""><img src="/manage/img/logo/logo.png"></a></div>
+		<div class="tool">
+			<div class="search"><a href="" ng-click="stateGo('index.quickSearch',true)"></a></div>
+			<div class="time">
+				<p class="date" ng-bind="date.day"></p>
+			</div>
+			<div class="user" ng-class="userMenuShow ? 'open' : ''" ng-click="UserMenu.switch($event)">
+				<div class="user-button">
+					<span class="name" ng-bind="manageName"></span>
+					<p>欢迎您</p>
+				</div>
+				<div class="icon"></div>
+				<div class="user-menu">
+					<div class="item" ng-click="stateGo('index.contactUs',true)" style="cursor: pointer;">联系我们</div>
+					<div class="item" ng-click="loginOut()">退出登陆</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="nav">
+		<div class="item index-menu active cl" ng-click="stateGo('index.homePage',true)">
+			<div class="icon"></div>
+			<div class="name">首页</div>
+		</div>
+		<div ng-repeat="navItem in navList" class="item cl {{navItem.isUsed?'':'disable'}}" ng-class="navItem.stateName.indexOf(stateName) != -1 ? 'active' : ''" ng-click="stateGo(navItem.stateName,navItem.isUsed)">
+			<span></span>
+			<div class="name" ng-bind="navItem.name"></div>
+		</div>
+	</div>
+	<div class="main" id="main">
+		<div ui-view></div>
+	</div>
+	<div class="footer">
+		<p>Copyright 2016 Lighting Inc.All Right Reserved 长春点亮科技有限公司 | 保留所有权</p>
+		<p>法律声明&nbsp;&nbsp;|&nbsp;&nbsp;隐私</p>
+	</div>
+</div>

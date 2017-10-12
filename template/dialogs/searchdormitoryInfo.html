@@ -1,0 +1,30 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">寝室信息</span>
+	</div>
+	<div class="new-body addRealHouse">
+		<div class="formBox">
+			<label >单位名称:</label><input id="" readonly="readonly" ng-model="detail.publicordername" style="width: 80%;">
+		</div>
+		<div class="formBox">
+			<label>寝室楼名称:</label><input type="text" ng-model="detail.ds_address" readonly="readonly" style="width: 80%;">
+			
+		</div>	
+		<div class="formBox">
+			<label>寝室名称:</label><input type="text" ng-model="detail.roomName" readonly="readonly" style="width: 80%;">
+			
+		</div>
+		<div class="formBox">
+			<label>寝室楼层:</label><input type="text" ng-model="detail.ds_floor" readonly="readonly" style="width: 80%;">	
+			
+		</div>
+		<div class="formBox">
+			<label>寝室号码:</label><input type="text" ng-model="detail.ds_roomfigure" style="width: 80%;" readonly="readonly">	
+			
+		</div>
+			
+	</div>
+
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

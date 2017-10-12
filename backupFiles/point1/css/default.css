@@ -1,0 +1,592 @@
+
+/* 首页 */
+.homePage .person-info{
+	width: 96%;
+	margin:30px 20px 10px 20px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+.homePage .person-info .sign{
+	float: right;
+	width: 6%;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	display: inline-block;
+
+}
+.homePage .person-info  .person-sign{
+	display: inline-block;
+	font-size: 20px;
+	color: #1a629d;
+	vertical-align: middle;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.homePage .undone{
+	width: 96%;
+	margin:10px 20px 10px 20px;
+	border: 1px solid #ccc;
+	height: 370px;
+}
+
+.homePage .bottom-box{
+	width: 96%;
+	margin:16px 20px 10px 20px;
+	height: 268px;
+}
+
+.homePage .bottom-box .new-news{
+	display: inline-block;
+	border:1px solid #ccc;
+	width: 49%;
+	height: 268px;
+	float: left;
+}
+.homePage .bottom-box .time-sign{
+	display: inline-block;
+	border:1px solid #ccc;
+	width: 49.5%;
+	height: 268px;
+	float: right;
+
+}
+.homePage .bottom-box .time-sign .time-top {
+	width: 100%;
+	height: 40px;
+	background-color: #0068b7;
+}
+.homePage .bottom-box .time-sign .time-top .time-word{
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+	margin-top: 6px;
+	margin-left: 12px;
+
+}
+.homePage .bottom-box .time-sign .time-top .timer-pic{
+	width: 38px;
+	height: 26px;
+	vertical-align: middle;
+	margin-left: 20px;
+	margin-top: -4px;
+}
+
+.homePage .bottom-box .time-sign .time-top .ymd{
+	display: inline-block;
+	font-size: 20px;
+	color: white;
+	margin-left: 20px;
+
+}
+
+.homePage .bottom-box .time-sign .time-body{
+	border-collapse: collapse;
+	width: 100%;
+	cellspacing:0;
+}
+.homePage .bottom-box .time-sign .time-body th{
+	background-color: #F2F3F7;
+	border: 1px solid #ccc;
+	height: 35px;
+	font-size: 18px;
+
+}
+.homePage .bottom-box .time-sign .time-body .time-row{
+	width: 100%;
+
+}
+.homePage .bottom-box .time-sign .time-body .time-row td{
+	width: 14%;
+	text-align: center;
+	height: 35px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 18px;
+	position: relative;
+}
+.homePage .bottom-box .time-sign .time-body .time-row .sign-pic{
+	position: absolute;
+	width: 18px;
+	height: 16px;
+	top:12px;
+	right: 4px;
+}
+
+评分标准
+.scale .box{
+	padding: 0 15px 0 15px;
+}
+.scale .box .title1{
+	width: 50%;
+	height: 50px;
+	text-align: center;
+	color: #1a629c;
+	line-height: 50px;
+	font-size: 18px;
+	border-bottom: 1px #1A629C solid;
+	float: left;
+	cursor: pointer;
+}
+.scale .box .title1:active{
+	color: #656565;
+	border-bottom-color: #e1e1e1;
+}
+.scale .box .title2{
+	width: 50%;
+	height: 50px;
+	text-align: center;
+	color: #656565;
+	line-height: 50px;
+	font-size: 18px;
+	border-bottom: 1px #e1e1e1 solid;
+	float: left;
+	cursor: pointer;
+}
+.scale .box .section1 .list{
+	border-bottom: 1px dotted #e0e0e0;
+	padding-bottom: 2px;
+}
+.scale .box .section1 .list p{
+	font-size: 17px;
+	display: inline-block;
+	color: #656565;
+	line-height: 47px;
+	text-align: left;
+	cursor: pointer;
+}
+.scale .box .section1 .list img{
+	margin-right: 10px;
+}
+.scale .box .section1 .list ul{
+	background: #f1f1f1;
+	padding: 18px 20px 18px 78px;
+	color: #888888;
+	font-size: 14px;
+}
+.scale .box .section1 .list ul li{
+	line-height: 33px;
+}
+/*消息中心*/
+.message .messagebox{
+	padding: 15px;
+}
+.message .btnbox{
+	width: 99%;
+	height: 58px;
+	line-height: 58px;
+	border: 1px #dddddd solid;
+	text-align: left;
+	padding-left: 10px;
+	
+}
+.message .messagebox .grid{
+	margin: 0px !important;
+	padding-top: 15px;
+	position: relative;
+}
+.message .messagebox .grid .text-left{
+	cursor: pointer;
+}
+.message .messagebox .grid .btnA{
+	position: absolute;
+	right: 20px;
+	top: 61px;
+}
+.message .messagebox .grid .btnB{
+	position: absolute;
+	right: 20px;
+	top: 101px;
+}
+.message .messagebox .grid .btnC{
+	position: absolute;
+	right: 20px;
+	top: 140px;
+}
+
+
+.otherMessage  .other-content{
+	width: 300px;
+	height: 200px;
+	text-indent: 2em;
+	font-size: 18px;
+	overflow: auto;
+}
+.otherMessage  .divv {
+	
+	text-align: center!important;
+}
+.otherMessage  .divv .clodiv{
+	display: inline-block;
+	
+}
+/*发送通知*/
+.send .sendbox{
+	padding: 20px 15px;
+	width: 100%;	
+}
+.send .sendbox .leftside{
+	width: 100%;
+	
+}
+.send .sendbox .leftside .recipient .inputBox{
+	width: 95%;
+	display: inline-block;
+	line-height: 30px;
+	height: 30px;
+}
+.send .sendbox .leftside .recipient  .inputBox span {
+	font-size: 16px;
+	color: #666666;
+	display: inline-block;
+	display: hidden;
+	padding-left: 10px;
+	vertical-align: top;	
+}
+.send .sendbox .leftside .recipient .inputBox .small-box{
+	width: 80%;
+	height: 28px;
+	line-height: 28px;
+	border: 1px #dddddd solid;
+	margin-left: 6px;	
+	display: inline-block;
+	position: relative;
+}
+.send .moveBar {
+	width: 83%;
+	height: 28px; 
+	line-height: 28px;
+	float: right;
+}
+.send .moveBar .bar-list {
+	left: 0px;
+}
+.send .moveBar .left,.moveBar .right {
+	width: 28px; height: 28px; line-height: 24px;
+}
+.send .moveBar .move-list {
+	min-width: 90%;
+}
+.send .sendbox .leftside .recipient  .inputBox .moveBar span {
+	padding: 0px;
+}
+.send .sendbox .leftside .recipient .inputBox .small-box .small{
+	width: 16%;
+	height: 26px;
+	line-height: 26px;
+	border-right: 1px solid #ccc;
+	vertical-align: top;
+	padding-left: 6px ;
+}
+.send .sendbox .leftside .recipient .inputBox .small-box .receive-person{
+	 height: 24px;
+	line-height: 24px; 
+	margin:0 8px ;
+}
+.send .sendbox .leftside .recipient .inputBox .small-box .receive-person .xx{
+	font-size: 16px;
+	display: inline-block;
+	width: 20px;
+	padding: 0;
+	margin-top:0;
+	text-align: center;
+}
+.send .sendbox .leftside .recipient .inputBox .small-box .receive-person .st{
+	font-size: 16px;
+	padding: 0;
+	margin:0;
+}
+.send .sendbox .leftside .recipient .inputBox select{
+	border: 1px solid #dddddd;
+	height: 30px;
+	margin-left: -5px;
+	vertical-align: top;
+	border-left:0px!important;
+	padding-left: 4px; 
+	width: 11%;
+}
+.send .sendbox .leftside .content{
+	margin-top: 20px;
+	width: 95%;
+}
+.send .sendbox .leftside .content  span {
+	font-size: 16px;
+	color: #666666;
+	display: inline-block;
+	padding-left: 10px;
+	vertical-align: top;	
+}
+.send .sendbox .leftside .content textarea{
+	width: 91%;
+	height: 518px;
+	border: 1px #DDDDDD solid;	
+	overflow: hidden;
+	resize:none;
+	margin-left: 22px;
+}
+.send .sendbox .sub{
+	text-align: center;
+}
+.send .sendbox  .sub  .btn.btn-blue.sub{
+	margin-top: 40px;	
+} 
+.send .searchMoreList{
+	border:1px solid #ccc;
+	width:100%;
+	height: 200px;
+	position:absolute;
+	top:30px;
+	left: 0;
+	overflow: auto;
+	display: none;
+	background-color: #F9F9F9;
+}
+.send .searchMoreList ul{
+	margin:10px 6px ; 
+	display: block;
+	padding: 10px 6px;
+}
+.send .searchMoreList .wh{
+	width: 12%;
+	display: inline-block;
+	/* border: 1px solid black; */
+	float: left;
+	margin:0;
+	font-size: 16px;
+}
+.send .searchMoreList li{
+	display: inline-block;
+	margin: 0 20px; 
+	position: relative;
+	/* border: 1px solid green; */
+}
+.send .searchMoreList .wh1{
+	float: right;
+	width: 87%;
+	/* border: 1px solid red; */
+}
+.send .searchMoreList .class1{
+	padding: 0!important;	
+}
+.send .searchMoreList .class1:hover{
+	padding: 0!important;
+	color: #004A87!important;	
+}
+.send .searchMoreList .class1:hover:after{
+	content:''; 
+	display: block; 
+	width: 24px;
+	height: 20px;
+	position: absolute;
+	top: -3px;
+	left:-2px;
+	background: url(/manage/img/icon/active.png)!important;
+	z-index: 999!important;
+}
+.send .searchMoreList .wh1 li .click {
+	 display:none; 
+	 width: 15px; 
+	 height: 15px;
+	  padding: 0!important;
+	  margin-top: 2px;
+	 position: relative;
+}
+
+
+/*工作清单*/
+.jobs .jobbox{
+	padding: 15px;
+}
+.jobs .btnbox{
+	width: 100%;
+	height: 58px;
+	line-height: 58px;
+	border: 1px #dddddd solid;
+	text-align: left;
+	padding-left: 10px;
+}
+/*联系我们*/
+.contactUs .contactUsBox{
+	padding: 23px 15px;
+}
+.contactUs .contactUsBox .advise{
+	color: #948686;
+	font-size: 14px;
+	line-height: 25px;
+}
+.contactUs .contactUsBox h4{
+	font-size: 17px;
+	color: #42578c;
+	margin-top: 55px;
+}
+.contactUs .contactUsBox .workTime{
+	font-size: 13px;
+	color: #a5a5a5;
+}
+.contactUs .contactUsBox .address,.path,.tel,.url,.mail{
+	font-size: 14px;
+	color: #656565;
+	line-height: 24px;
+}
+
+/*行业场所查询*/
+.placeSearch .placeSearchBox .main-block{
+	padding-top: 30px;
+	padding-left: 35px;
+}
+.placeSearch .placeSearchBox .main-block span{
+	font-size: 16px;
+	color: #393939;
+}
+.placeSearch .placeSearchBox .placeName{
+	margin-left: 38px;
+	font-size: 14px!important;
+}
+.placeSearch .placeSearchBox .Name{
+	font-size: 14px!important;
+}
+.placeSearch .placeSearchBox .btn{
+	margin-left: 60px;
+}
+.placeSearch .placeSearchBox ul li{
+	line-height: 35px;
+}
+.placeSearch .placeSearchBox ul{
+	padding:10px;
+}
+
+/*线索查询*/
+.clueSearch .clueSearchBox .main-block{
+	padding-top: 30px;
+	padding-left: 35px;
+}
+.clueSearch .clueSearchBox .main-block .keyword{
+	font-size: 14px;
+	color: #393939;
+}
+.clueSearch .clueSearchBox .main-block input{
+	width: 40%;
+	margin-right: 38px;
+}
+.clueSearch .clueSearchBox .main1{
+	height: 300px;
+}
+.clueSearch .clueSearchBox .main1 ol{
+	 list-style-type: decimal;
+}
+.clueSearch .clueSearchBox .main1 ol li{
+	font-size: 16px;
+	color: #393939;
+	line-height: 35px;
+}
+
+/*案件查询*/
+.caseSearch .caseSearchBox .main2{
+	height: 150px;
+	text-align: center;
+}
+.caseSearch .caseSearchBox .inputs{
+	width: 70%;
+	padding:18px 35px 35px 35px;
+	float: left;
+	text-align: left;
+}
+.caseSearch .caseSearchBox .inputs select,input{
+	width: 33%;
+}
+.caseSearch .caseSearchBox .inputs select{
+	outline: none;
+	border: 1px #DDDDDD solid;
+	height: 36px;
+	margin-left: 5px;
+}
+.caseSearch .caseSearchBox .inputs .caseClass,.keyword,.caseTime,.people{
+	margin-right: 20px;
+}
+.caseSearch .caseSearchBox .inputs .people{
+	display: inline-block;
+	margin-left: 68px;
+}
+.caseSearch .caseSearchBox .inputs .keyword{
+	display: inline-block;
+	margin-left: 60px;
+}
+.caseSearch .caseSearchBox .inputs .caseTime,.people{
+	margin-top: 20px;
+}
+.caseSearch .caseSearchBox .btn{
+	float: left;
+	margin: 50px;
+}
+.caseSearch .caseSearchBox .main1{
+	text-align: left!important;
+	color: #383838;	
+	font-size: 16px;
+}
+.caseSearch .caseSearchBox .main1 li{
+	line-height: 36px;
+}
+.caseSearch .caseSearchBox .main1 ul{
+	margin: 21px 31px;
+}
+
+/* 任务发布 */
+
+.release .release-box{
+	width: 100%;
+
+}
+
+
+.release  .release-box   .tack-style li{
+	display: inline-block;
+	width: 25%;
+}
+.release  .release-box   .tack-style .class1{
+	width: 80%;
+	border-radius: 3px;
+	margin:0!important;
+}
+.release  .release-box   .tack-style .class2{
+	display: inline-block;
+	font-size: 16px;
+	text-indent: 2em;
+	border-radius: 3px;
+	margin-bottom: 3%;
+}
+.release  .release-box  textarea{
+	width: 99%;
+	height: 180px;
+	border: 1px #DDDDDD solid;	
+	resize:none;
+	overflow: auto;
+}
+.release  .release-box  .participants{
+	width: 80%;
+	border:1px solid #ccc;
+}
+.release .release-box .select1{
+	border: 1px solid #dddddd;
+	height: 35px;
+	line-height: 35px;
+	/* margin-top: -4px; */
+	margin-left: -10px;
+	border-left:0px!important;
+	width: 12%;
+	border-radius: 0;
+}
+.release .release-box .class3{
+	display: inline-block;
+	font-size: 16px;
+	text-indent: 2em;
+	border-radius: 3px;
+	margin: 2% 0;
+}
+
+/* 重点人口 */
+.point  .new-point{
+	width: 300px;
+	height: 300px;
+	border: 1px solid red;
+}

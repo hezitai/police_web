@@ -1,0 +1,25 @@
+<div class="duty">
+	<header-crumbs title="#/index/duty:{{title}}"></header-crumbs>
+	<div class="dutybox">
+		<div class="dutysearchbox">
+			<select name="" id="searchselect"  ng-model="option.policeHouseSelected" ng-options="x.name for x in option.policeHouse" ng-change="changeSelect()"></select>
+		</div>
+		<div class="dutylist">
+			<p class="listtitle">警务排班</p>
+			<div class="dutystarttime">
+				<p>开始时间：<span ng-bind="option.showDate" ></span></p>
+			</div>
+			<div class="dutyclass" ng-repeat="item in option.rulesList">
+				<div>
+					<p>第{{$index + 1}}班</p><span ng-if="item.onoff" style="color: red;font-size: 16px;">（当前值班）</span>
+				</div>
+				<div>
+					<p class="dom_block">值班领导：</p><ul style="display: inline-block;width: 650px; margin-top: 10px;"><li><p class="inlink_block" ng-bind="item.leader.name"></p><p ng-bind="item.leader.phone"></p></li></ul><br />
+					<p class="dom_block">值班长：</p><ul style="display: inline-block;width: 650px; margin-top: 10px;"><li><p class="inlink_block" ng-bind="item.manager.name"></p><p ng-bind="item.manager.phone"></p></li></ul><br />
+					<p class="dom_block">值班民警：</p><ul style="display: inline-block;width: 650px; margin-top: 10px;"><li class="dom_li" ng-repeat="dutypolice in item.dutypolice track by $index"><p class="inlink_block" ng-bind="dutypolice.name"></p><p ng-bind="dutypolice.phone"></p></li></ul><br />
+					<p class="dom_block">巡逻民警：</p><ul style="display: inline-block;width: 650px; margin-top: 10px;"><li class="dom_li" ng-repeat="roundpolice in item.roundpolice track by $index"><p class="inlink_block" ng-bind="roundpolice.name"></p><p ng-bind="roundpolice.phone"></p></li></ul><br />
+				</div>
+			</div> 
+		</div>
+	</div>
+</div>	

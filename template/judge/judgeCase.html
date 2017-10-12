@@ -1,0 +1,58 @@
+<div class="place">
+	<header-crumbs title="#/index/judgeCase:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"案件","status":"#/index/judgeCase"}]'></header-crumbs>
+
+	<div class="map" style="position: absolute; top: 55px; left: 20px; right: 20px; bottom: 20px; border: 1px solid #ddd;" ng-if="study.show">
+		<div class="skew"><span class="num">共找到<span style="color: red"> {{study.list.length}} </span>起案件</span></div>
+		<span class="list" style="padding: 0;margin: 5px;border: 1px solid #ddd;border-radius: 4px; top: 25px; right: -117px;" ng-click="change(false)"><img src="/police_web/img/icon/fun-b.png"/></span>
+		<span class="loadingMap" style="color: #999; display: block; text-align: center; margin: 250px auto;">地图加载中,请稍等......</span>
+		<div class="searchPublic">
+			<input type="" name="" ng-model="study.screen.caseArea">
+			<span ng-click="refreshData()"><img src="/police_web/img/icon/search.gif"></span>
+		</div>
+		<div class="searchResultList" style="height: 145px;">
+			<select class="policestation" ng-model="study.team" ng-options="x.name for x in team"></select>
+			<input class="star laydate-icon" type="text" onclick="laydate()" ng-model="case.star" placeholder="请选择开始时间" />
+			<input class="star laydate-icon" type="text" onclick="laydate()" ng-model="case.end" placeholder="请选择结束时间" />			
+			<select class="block" ng-model="case.Type" ng-options="x.name for x in caseType" ng-change="changeCaseType()"></select>
+			<span style=" float: left;">&nbsp; - &nbsp;</span>
+			<select class="block" ng-model="case.SubType" ng-options="x.name for x in case.Type.subSet" ng-change="changeCaseSubSetType()"></select>
+		</div>
+		<public-map></public-map>
+	</div>
+	<div class="main-block" ng-if="!study.show">
+		<div class="title">筛选</div>
+		<div class="ChooseBox" style="margin: 0 15px;">
+			<div class="chooseCaseItem">
+				<span class="policeStation">起始时间</span>
+				<input class=" laydate-icon" type="text" onclick="laydate()" ng-model="case.star"/>
+			</div>
+			<div class="chooseCaseItem">
+				<span class="policeStation">结束时间</span>
+				<input class="laydate-icon" type="text" ng-model="case.end" onclick="laydate()"/>
+			</div>
+			<div class="chooseCaseItem">
+				<span class="policeStation">选择派出所</span>
+				<select class="block ui_list_input" style="margin: 4px; width: 253px;" ng-model="study.team" ng-options="x.name for x in team" ></select>
+			</div>
+			<div class="chooseCaseItem">
+				<span class="policeStation" style="float: left;line-height: 30px;">案件类别</span>
+				<select class="block" style="width: 113px; float: left; margin-left: 9px;" ng-model="case.Type" ng-options="x.name for x in caseType" ng-change="changeCaseType()"></select>
+				<span style=" float: left;">&nbsp; - &nbsp;</span>
+				<select class="block" style="width: 113px; float: left;" ng-model="case.SubType" ng-options="x.name for x in case.Type.subSet" ng-change="changeCaseSubSetType()"></select>
+			</div>
+			<div class="chooseCaseItem">
+				<span class="policeStation">地址关键字</span>
+				<input type="text" class="ui_list_input" ng-model="study.screen.caseArea" style="margin: 4px; width: 251px;">
+			</div>	
+			<div class="button"><span class="btn btn-blue" ng-click="refreshData()">确定</span></div>
+		</div>
+	</div>
+	<div class="listcase" ng-if="!study.show">
+		<span class="list" ng-click="change(true)"><img src="/police_web/img/map.png" style="width: 25px"></span>
+		<ul>
+			<li ng-repeat="item in study.list" ng-click="caseInfo(item)"><span ng-bind="item.caseTime"></span></li>			
+		</ul>
+	</div>
+	
+	<paging-link page-nums=15 ng-if="flag"></paging-link>
+</div>

@@ -1,0 +1,30 @@
+<div class="temporary">
+	<header-crumbs title="#/index/temporary:{{title}}"></header-crumbs>
+
+
+	<div class="main-block">
+		<div class="title">人口查询</div>
+		<div class="people-find">
+			<input type="text" class="people-id"  ng-model="userInput.idcardNum" placeholder="请输入姓名或身份证号" > 
+			<div class="btn btn-blue "  ng-click="peopleSearch()">查询</div>
+
+		</div>
+		
+	</div>
+
+
+	<div class="main-block people-box">
+		<div class="title">查询结果</div>
+		<div class="people-info" ng-repeat="item in searchList.showList">
+			<ul>
+				<li><span >姓名：</span><span ng-bind="item.ds_name"></span></li>
+				<li><span>性别：</span><span ng-bind="item.ds_gender"></span></li>
+				<li><span>年龄：</span><span ng-bind="item.ds_age"></span></li>
+				<li><span>身份证号：</span><span ng-bind="item.ds_id"></span></li>
+				<li><span>人口类别：</span><span ng-bind="item.ds_stayStyle">暂住人口</span></li>
+			</ul>
+		</div>
+		
+	</div>
+
+</div>

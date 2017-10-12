@@ -1,0 +1,28 @@
+<div class="car">
+	<header-crumbs title="#/index/car:{{title}}"></header-crumbs>
+
+	<div class="main-block">
+		<div class="title">车辆查询</div>
+		<div class="car-find">
+			<input type="text" class="car-id" ng-model="carInput.cardNum" placeholder="请输入车牌号"> 
+			<div class="btn btn-blue" ng-click="carSearch()">查询</div>
+		</div>
+		
+	</div>
+
+
+	<div class="main-block car-box ">
+		<div class="title">查询结果</div>
+		<div class="car-info" ng-repeat='item in nameInfo.showinfo'>
+			<ul>
+				<li><span>车牌号：</span><span ng-bind="item.ds_number"></span></li>
+				<li><span>车牌信息：</span><span ng-bind="item.ds_information"></span></li>
+				<li><span>车主姓名：</span><span ng-bind="item['ds_person-ds_name']"></span></li>
+				<li><span>车主身份证号：</span><span  ng-bind="item['ds_person-ds_id']"></span></li>
+			</ul>
+			
+		</div>
+		
+	</div>
+
+</div>

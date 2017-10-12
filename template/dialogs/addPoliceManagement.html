@@ -1,0 +1,49 @@
+<!-- 新增警员 -->
+<div class="addPoliceManagement">
+    <div class="title" ng-bind="dialogTitle"></div>
+    <div class="box cl">
+        <div>
+            <div class="cl">
+                <span>警号：</span>
+                <input type="text" ng-model="createPolice.policeNum" ng-disabled="inp_1">
+            </div>
+            <div class="cl">
+                <span>AD用户：</span>
+                <input type="text" ng-model="createPolice.logonName" ng-disabled="inp_1">
+            </div>
+            <div class="cl">
+                <span>联系电话：</span>
+                <input type="text" ng-model="createPolice.phone">
+            </div>
+        </div>
+        <div class="rightbox">
+            <div class="cl">
+                <span>姓：</span>
+                <input type="text" class="inp_1" ng-model="createPolice.lastName">
+                <span class="spa_1">名：</span>
+                <input type="text" class="inp_2" ng-model="createPolice.firstName">
+            </div>
+            <div class="cl">
+                <span>身份证号：</span>
+                <input type="text" ng-model="createPolice.cardId">
+            </div>
+            <div class="cl">
+                <span>所属部门：</span>
+                <select ng-model="allPoliceOptionside.select" ng-options="x.ds_name for x in allPoliceOptionside.array"></select>
+            </div>
+        </div>
+    </div>
+    <div class="box2 cl" ng-init="power_0='0' ; power_1='1' ; power_2='2'">
+        <span>警员权限：</span>
+        <div class="cl">
+            <span ng-class="power === 0? 'checked' : ''">局长</span><em ng-click="powerSelect(0)" ng-class="power === 0? 'checked' : ''"></em>
+        </div>
+        <div class="cl">
+            <span ng-class="power === 1? 'checked' : ''">所长</span><em ng-click="powerSelect(1)" ng-class="power === 1? 'checked' : ''"></em>
+        </div>
+        <div class="cl">
+            <span ng-class="power === 2? 'checked' : ''">警员</span><em ng-click="powerSelect(2)" ng-class="power === 2? 'checked' : ''"></em>
+        </div>
+    </div>
+    <div class="btn btn-blue" ng-click="btnSubmit()">提交</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="judge" >
+	<header-crumbs title="#/index/judgePeople:{{title}}" usedlocalstorage="list" list='[{"startName":"信息研判","status":"#/index/judge"},{"startName":"人员","status":"#/index/judgePeople"}]'></header-crumbs>
+	
+	<span class="reload" ng-click="refreshData()">刷新</span>
+	<div class="main-block" >
+		<div class="title">筛选</div>
+		<div class="ChooseBox">
+			<span class="policeStation">选择派出所</span>
+			<select class="block ui_list_input" style="margin: 4px; width: 91%;" ng-model="study.team" ng-options="x.name for x in team" ng-change="refreshData()"></select>	
+		</div>
+		<div class="screenItem">
+			<div class="screen_button" ng-class="study.all.show ? 'active' : ''" ng-click="refreshMap(study.all)">全部</div>
+			<div class="screen_button" ng-class="study.red.show ? 'active' : ''" ng-click="refreshMap(study.red)"><span class="ui_point ui_fc_red" ></span>高风险({{study.red.num}})</div>
+			<div class="screen_button" ng-class="study.orange.show ? 'active' : ''" ng-click="refreshMap(study.orange)"><span class="ui_point ui_fc_orange" ></span>中风险({{study.orange.num}})</div>
+			<div class="screen_button" ng-class="study.green.show ? 'active' : ''" ng-click="refreshMap(study.green)"><span class="ui_point ui_fc_green" ></span>低风险({{study.green.num}})</div>
+		</div>
+		<!--<div class="btn btn-blue class1" ng-click="chooseEnd()">查询</div>-->
+	</div>
+	
+		<div class="map" ng-if="study.show">
+			<span class="loadingMap">地图加载中,请稍等......</span>
+			<span class="list" style="padding: 0" ng-click="change(false)"><img src="/police_web/img/icon/fun-b.png"/></span>
+			<div class="maps" id="main">
+				<jmap-set></jmap-set>
+			</div>
+		</div>
+		<div class="map" ng-if="!study.show">
+			<span class="list" ng-click="change(true)"><img src="/police_web/img/map.png" style="width: 25px"></span>
+			<ul class="listBox">
+				<li class="haha" ng-repeat="people in peopleTypes"><img ng-src="{{!people.show ? '/police_web/img/icon/fold.png' : '/police_web/img/icon/fold-show.png'}}" ng-click="people.show = !people.show"><span>{{people.name + ' : (' + people.list.length + ')'}}</span>
+					<ul class="listItem" ng-if="people.show">
+						<li ng-repeat="item in people.list" ng-click="resetPeople(item.id)"><span ng-bind="item.name"></span></li>						
+					</ul>
+				</li>				
+			</ul>
+		</div>
+	
+</div>

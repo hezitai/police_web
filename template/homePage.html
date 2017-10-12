@@ -1,0 +1,150 @@
+<div class="homePage">
+    <header-crumbs title="#/index/homePage:{{title}}"></header-crumbs>
+    <div class="person-info">
+        <div class="person-sign">{{userManage.policeNum ? userManage.name+' , '+ userManage.policeNum + '号警员,': ''}} 欢迎登录本系统!</div>
+    </div>
+    <div class="parameter cl">
+        <!-- 行业场所 -->
+        <div class="box pr">
+            <div class="title cl">
+                <span class="fl">行业场所</span>
+                <span class="fr">共<em ng-bind="public.publicList.length"></em>家</span>
+            </div>
+            <div class="place cl">
+                <div>
+                    <!-- 红条 -->
+                    <div class="red" ng-style="redWidth"></div>
+                </div>
+                <span class="one" ng-bind="public.redCount"></span>
+            </div>
+            <div class="place cl">
+                <div>
+                    <!-- 橙条 -->
+                    <div class="orange" ng-style="orangeWidth"></div>
+                </div>
+                <span class="two" ng-bind="public.orangeCount"></span>
+            </div>
+            <div class="place cl">
+                <div>
+                    <!-- 蓝条 -->
+                    <div class="blue" ng-style="greenWidth"></div>
+                </div>
+                <span class="three" ng-bind="public.greenCount"></span>
+            </div>
+            <div class="bot cl">
+                <div><span class="red"></span>红色</div>
+                <div><span class="orange"></span>橙色</div>
+                <div><span class="blue"></span>绿色</div>
+            </div>
+            <div class="box_pab" ng-if="!publicLoading">行业场所正在加载中,请稍后...</div>
+        </div>
+        <!-- 重点人员 -->
+        <div class="box pr">
+            <div class="title">重点人员</div>
+            <div class="important cl">
+                <div class="view">
+                    <div class="border cl pr">
+                        <!-- 蓝色 -->
+                        <div class="blue" ng-style="diWidth">
+                            <span ng-bind="importantPeople.greenCount+'人'"></span>
+                        </div>
+                        <!-- 绿色 -->
+                        <div class="green" ng-style="zhongWidth">
+                            <span ng-bind="importantPeople.orangeCount+'人'"></span>
+                        </div>
+                        <!-- 红色 -->
+                        <div class="red" ng-style="gaoWidth">
+                            <span ng-bind="importantPeople.redCount+'人'"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="state">
+                    <div><span class="blue"></span>低风险</div>
+                    <div><span class="green"></span>中风险</div>
+                    <div><span class="red"></span>高风险</div>
+                </div>
+            </div>
+            <div class="box_pab" ng-if="!importantLoading">重点人员正在加载中,请稍后...</div>
+        </div>
+        <!-- 出租房屋 -->
+        <div class="box housebox pr">
+            <div class="title">出租房屋</div>
+            <div class="houseview cl">
+                <div class="text">
+                    <span ng-bind="rentHouseMessage.yesterdayRentCount+'家'"></span>
+                    <span ng-bind="rentHouseMessage.rentCount+'家'"></span>
+                </div>
+                <div class="view">
+                    <div class="orange" ng-style="yesterdayWidth"></div>
+                    <div class="green" ng-style="totalWidth"></div>
+                </div>
+            </div>
+            <div class="state">
+                <div><span class="orange"></span>昨日新增出租房屋</div>
+                <div><span class="green"></span>出租房屋总数</div>
+            </div>
+            <div class="box_pab" ng-if="!rentLoading">出租房屋正在加载中,请稍后...</div>
+        </div>
+    </div>
+    <div class="parameter cl">
+        <!-- 案件管理 -->
+        <div class="manage pr">
+            <div class="title cl">
+                <div class="fl">案件管理</div>
+                <span class="fr">昨日新增<em ng-bind="caseYesterday.total"></em>起案件</span>
+            </div>
+            <div class="management">
+                <!-- ng-repeat -->
+                <div class="case cl" ng-repeat="item in caseYesterday">
+                    <div ng-bind="item.type"></div>
+                    <span ng-bind="item.list.length"></span>
+                </div>
+            </div>
+            <div class="box_pab box_pab2" ng-if="!caseLoading">案件管理正在加载中,请稍后...</div>
+        </div>
+        <!-- 警务排班 -->
+        <div class="manage policemanage pr" ng-init="show=true">
+            <div class="title">
+                <div>警务排班</div>
+            </div>
+            <div class="police cl">
+                <div class="fl">派出所</div>
+                <select class="fl" ng-model="homePageServers.select" ng-options="item.ds_name for item in homePageServers.allPolice" ng-change="changeSelect()"></select>
+            </div>
+            <div class="gundong">
+                <div class="policelist" ng-if="show">
+                    <div class="list cl">
+                        <div class="left">带班领导：</div>
+                        <span ng-bind="homePageServers.dutyPolice.leader.name"></span>
+                    </div>
+                    <div class="list cl">
+                        <div class="left">值班长：</div>
+                        <span ng-bind="homePageServers.dutyPolice.manager.name">啊啊</span>
+                    </div>
+                    <div class="list cl">
+                        <div class="left">值班民警：</div>
+                        <div>
+                            <div ng-repeat="x in homePageServers.dutyPolice.dutypolice">
+                                <!-- ng-repeat -->
+                                <span ng-bind="x.name +' '+ x.phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list cl">
+                        <div class="left">巡逻民警：</div>
+                        <div>
+                            <div ng-repeat="x in homePageServers.dutyPolice.roundpolice">
+                                <!-- ng-repeat -->
+                                <span ng-bind="x.name + x.phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="policelist" ng-if="!show">
+                    <div class="show">暂 无 排 班 信 息 . . .</div>
+                </div>
+            </div>
+            <div class="box_pab box_pab2" ng-if="!dutyLoading">警务排班正在加载中,请稍后...</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="dangers">
+	<input type="file" id="uploadImage" style="display: none;" onchange="angular.element(this).scope().fileChange()">
+	<div class="popnewinfo">
+		<span class="addTitle">学生信息</span>
+	</div>
+	<div class="new-body">
+		<div class="formBox">
+			<label>姓名:</label><input type="text" class="long" class="ui_list_input" ng-model="detail['ds_name']"/>
+			
+		</div>
+		<div class="formBox">
+			<label>身份证号:</label><input class="long" type="text" class="ui_list_input" ng-model="detail['ds_id']"/>			
+		</div>
+		<div class="formBox">
+			<label>联系电话:</label><input class="long" type="text" ng-model="detail['ds_phone']"/>
+			
+		</div>
+		<div class="formBox">
+			<label>户籍:</label><input class="long" type="text" class="ui_list_input" ng-model="detail['ds_nativeplace']" />		
+		</div>
+		
+	</div>
+
+	<div><button aria-label="Dismiss" class="ngdialog-close"></button></div>
+</div>

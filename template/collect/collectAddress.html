@@ -1,0 +1,59 @@
+<div class="collect">
+	<header-crumbs title="#/index/collect:{{title}}" usedlocalstorage="list" list='[{"startName":"信息采集","status":"#/index/collect"},{"startName":"地址树管理","status":"#/index/collectAddress"}]'></header-crumbs>
+	<div class="collectAddress">
+		<span>地址树选择：</span>
+		<ul style="width: 50%">
+			<li >
+				<select ng-init="address.result[0] = address.list[0][address.index[0]]" ng-model="address.result[0]" class="block" ng-options="x['name'] for x in address.list[0]" ng-change="address.change('0')"></select>
+			</li>
+			<li>
+				<select ng-init="address.result[1] = address.list[1][address.index[1]]" ng-model="address.result[1]" class="block" ng-options="x['name'] for x in address.list[1]" ng-change="address.change('1')"></select>				
+				<i><img src="img/icon/add.png" ng-click="AddressTreeModal.SubSecond.add()" alt="添加二级地址树" title="添加二级地址树" /></i>
+				<div class="addTree" ng-if="AddressTreeModal.SubSecond.show">
+					
+					<div class="formBox">
+						<label>名称:</label>
+						<input type="text" ng-model="AddressTreeModal.SubSecond.name" class="ui_list_input" style=" height: 30px; width: 80%; margin-left: 10px; border: 1px solid #ddd; padding: 0 5px;">						
+					</div>		
+					<div class="div-sub" style="text-align: right; padding: 10px;margin-top: 10px;">
+						<div class="close" ng-click="AddressTreeModal.SubSecond.show = false">取消</div>
+						<div class="submit" ng-click="AddressTreeModal.addSubSecond()">添加</div>
+					</div>
+				</div>
+				
+			</li>
+			<li>
+				<select ng-init="address.result[2] = address.list[2][address.index[2]]" ng-model="address.result[2]" class="block" ng-options="x['name'] for x in address.list[2]" ng-change="address.change('2')"></select>
+				
+				<i><img src="img/icon/add.png" ng-click="AddressTreeModal.SubThird.add()" title="添加三级地址树"/></i>
+				<div class="addTree" ng-if="AddressTreeModal.SubThird.show">
+					
+					<div class="formBox">
+						<label>名称:</label>
+						<input type="text" ng-model="AddressTreeModal.SubThird.name" class="ui_list_input" style=" height: 30px; width: 80%; margin-left: 10px; border: 1px solid #ddd; padding: 0 5px;">						
+					</div>		
+					<div class="div-sub" style="text-align: right; padding: 10px;margin-top: 10px;">
+						<div class="close" ng-click="AddressTreeModal.SubThird.show=false">取消</div>
+						<div class="submit" ng-click="AddressTreeModal.addSubThird()">添加</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<select ng-init="address.result[3] = address.list[3][0]" ng-model="address.result[3]" class="block" ng-options="x['name'] for x in address.list[3]"></select>
+				
+				<i><img src="img/icon/add.png" ng-click="AddressTreeModal.SubFourth.add()" title="添加四级地址树"/></i>
+				<div class="addTree" ng-if="AddressTreeModal.SubFourth.show">
+					
+					<div class="formBox">
+						<label>名称:</label>
+						<input type="text" ng-model="AddressTreeModal.SubFourth.name" class="ui_list_input" style=" height: 30px; width: 80%; margin-left: 10px; border: 1px solid #ddd; padding: 0 5px;">						
+					</div>		
+					<div class="div-sub" style="text-align: right; padding: 10px;margin-top: 10px;">
+						<div class="close" ng-click="AddressTreeModal.SubFourth.show=false">取消</div>
+						<div class="submit" ng-click="AddressTreeModal.addSubFourth()">添加</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

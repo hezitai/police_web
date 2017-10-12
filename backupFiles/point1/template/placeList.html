@@ -1,0 +1,27 @@
+<div class="place">
+	<header-crumbs title="#/index/place:{{title}}" usedlocalstorage='used' usedlevel=2></header-crumbs>
+	<div class="addressTree cl">
+		<span>地址树选择 : </span>
+		<address-tree-box></address-tree-box>
+		<div class="add-plice">+</div>
+		<div class="btn btn-blue search" ng-click="getPlace()"><i></i>查询</div>
+	</div>
+
+	<div class="grid cl">
+		<move-bar html="<div ng-repeat='item in placeTypeArray' ng-bind='item.name'></div>"></move-bar>
+	</div>
+
+	<div class="grid cl">
+		<a ng-click="GoPlaceDetail('123','123',true)">所属民警</a>
+
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<a ng-click="GoPlaceDetail('123','123',false)">非所属民警</a>
+	</div>
+
+
+
+</div>
